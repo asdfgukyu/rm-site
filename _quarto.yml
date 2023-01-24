@@ -1,6 +1,6 @@
 project:
   type: book
-  output_dir: docs
+output_dir: docs
 
 book:
   title: "xx"
