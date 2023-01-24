@@ -3,8 +3,8 @@ project:
   output-dir: docs
 
 book:
-  title: "xx"
-  author: "Jane Doe"
+  title: "CASA0023 Remote Sensing Cities and Environment"
+  author: "Guk Yu"
   date: "24/01/2023"
   chapters:
     - index.qmd
