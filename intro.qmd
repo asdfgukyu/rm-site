@@ -1,9 +1,7 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+Guk is a urban data scientist with background in cultural production.Profile xxx.cv xxx.
 
-See @knuth84 for additional discussion of literate programming.
+## Purpose
 
-```{r}
-1 + 1
-```
+This learning diary is the assignment output of CASA00023 Remote Sensing Cities and Environment. The structure this book will be broken down by weeks, each with a different learning objective.

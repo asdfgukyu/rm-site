@@ -1,9 +1,5 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+This book is created for assignment purposes at CASA0023 Remote Sensing Cities and Environments at the Centre for Advance Spatial Analysis, UCL London.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-```{r}
-1 + 1
-```
+This book is created from R markdown and executable code.
