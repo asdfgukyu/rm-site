@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "CASA0023 Remote Sensing Cities and Environment",
     "section": "",
-    "text": "This book is created for assignment purposes at CASA0023 Remote Sensing Cities and Environments at the Centre for Advance Spatial Analysis, UCL London.\nThis book is created from R markdown and executable code."
+    "text": "This book is created for assignment purposes at CASA0023 Remote Sensing Cities and Environments at the Centre for Advance Spatial Analysis, UCL London.\nGuk is a urban data scientist with background in cultural production.Profile xxx.cv xxx.\n\n\nThis learning diary is the assignment output of CASA00023 Remote Sensing Cities and Environment. The structure this book will be broken down by weeks, each with a different learning objective.\nThis book is created from R markdown and executable code."
   },
   {
     "objectID": "intro.html",
@@ -16,7 +16,7 @@
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "5  Summary",
+    "title": "4  Summary",
     "section": "",
     "text": "1 + 1\n\n[1] 2"
   },
@@ -37,50 +37,50 @@
   {
     "objectID": "week1.html#application",
     "href": "week1.html#application",
-    "title": "2  Week 1: Introduction",
-    "section": "2.2 Application",
-    "text": "2.2 Application"
+    "title": "1  Week 1: Introduction",
+    "section": "1.2 Application",
+    "text": "1.2 Application"
   },
   {
     "objectID": "week1.html#reflection",
     "href": "week1.html#reflection",
-    "title": "2  Week 1: Introduction",
-    "section": "2.3 Reflection",
-    "text": "2.3 Reflection"
+    "title": "1  Week 1: Introduction",
+    "section": "1.3 Reflection",
+    "text": "1.3 Reflection"
   },
   {
     "objectID": "week2.html#application",
     "href": "week2.html#application",
-    "title": "3  Week 2: Portfolio Tools",
-    "section": "3.2 Application",
-    "text": "3.2 Application"
+    "title": "2  Week 2: Portfolio Tools",
+    "section": "2.2 Application",
+    "text": "2.2 Application"
   },
   {
     "objectID": "week2.html#reflection",
     "href": "week2.html#reflection",
-    "title": "3  Week 2: Portfolio Tools",
-    "section": "3.3 Reflection",
-    "text": "3.3 Reflection"
+    "title": "2  Week 2: Portfolio Tools",
+    "section": "2.3 Reflection",
+    "text": "2.3 Reflection"
   },
   {
     "objectID": "week3.html#application",
     "href": "week3.html#application",
-    "title": "4  Week 3: Corrections",
-    "section": "4.2 Application",
-    "text": "4.2 Application"
+    "title": "3  Week 3: Corrections",
+    "section": "3.2 Application",
+    "text": "3.2 Application"
   },
   {
     "objectID": "week3.html#reflection",
     "href": "week3.html#reflection",
-    "title": "4  Week 3: Corrections",
-    "section": "4.3 Reflection",
-    "text": "4.3 Reflection"
+    "title": "3  Week 3: Corrections",
+    "section": "3.3 Reflection",
+    "text": "3.3 Reflection"
   },
   {
     "objectID": "week2.html#summary",
     "href": "week2.html#summary",
-    "title": "3  Week 2: Portfolio Tools",
-    "section": "3.1 Summary",
-    "text": "3.1 Summary"
+    "title": "2  Week 2: Portfolio Tools",
+    "section": "2.1 Summary",
+    "text": "2.1 Summary"
   }
 ]
