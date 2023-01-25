@@ -1,8 +1,8 @@
 # Week 2: Portfolio Tools
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='40%'}
 xaringanExtra::embed_xaringan(
-  url = "https://asdfgukyu.github.io/remote-sensing/",
+  url = "https://asdfgukyu.github.io/remote-sensing/w2/Portfolio_starter.html#1",
   ratio = "16:9")
 ```
 
