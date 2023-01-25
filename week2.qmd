@@ -1,5 +1,11 @@
 # Week 2: Portfolio Tools
 
+```{r, echo = FALSE}
+xaringanExtra::embed_xaringan(
+  url = "https://asdfgukyu.github.io/remote-sensing/",
+  ratio = "16:9")
+```
+
 ## Summary
 
 ## Application
