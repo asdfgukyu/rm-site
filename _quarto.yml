@@ -6,6 +6,7 @@ book:
   title: "CASA0023 Remote Sensing Cities and Environment"
   author: "Guk Yu"
   date: "24/01/2023"
+  favicon: favicon.png
   chapters:
     - index.qmd
     - week1.qmd
