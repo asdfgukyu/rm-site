@@ -11,7 +11,7 @@ xaringanExtra::embed_xaringan(
 ### Electromagnetic Spectrum
 The electromagnetic spectrum is made up of thousands of bands. From visible light, UV, Infrared, Radar, FM TV, short wave.
 
-```{r echo=FALSE, out.width='80%', fig.align='center'}
+```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/Atmospheric-Electromagnetic-Opacity.png")
 ```
 
@@ -25,23 +25,20 @@ knitr::include_graphics("img/Atmospheric-Electromagnetic-Opacity.png")
 * ie: green vegetation mainly requires red and near-infrared bands to detect, whereas soil requires mid-infrared bands (6 and 7) to be detected. Bodies of water can be detected mostly within visible light, RBGs.
 * Landsat data surveys visible light, near infrared and short wave infrared.
 
-```{r echo=FALSE, out.width='80%', fig.align='center'}
+```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/spectral_signatures_landsat_450.jpeg")
 ```
 **Temporal**: How frequently the data is collected. Often there is a direct trade off between pixel resolution and update frequency -- higher the resolution, lower the update frequency. Good rm data is spenny!!
-
-```{r echo=FALSE, out.width='80%', fig.align='center'}
-knitr::include_graphics("img/w1app.png")
-```
-This shows applications of varying temporal and spatial resolution, what occasion it's best for and what satellite provides that spatial resolution.An interesting point is RM data for emergency responses require fairly granular spatial resolution and frequent temporal resolution -- so as to track minute changes in landscapes. However as mentioned above, there are direct trade offs between temporal and pixel resolution. For satellites to provide both high temporal and spatial resolution requires huge sums of cost and investment. With growing threats from the climate crisis on the urban landscape -- do we currently have the capacity to effectively monitor damages and respond on time?
-
-
 
 **Radiometric**: Able to identify difference in light or reflectance of Earth surface.
 
 * The higher the bit, the higher the depth, the higher the ability to detect texture? 
 
 
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics("img/w1app.png")
+```
+This shows applications of varying temporal and spatial resolution, what occasion it's best for and what satellite provides that spatial resolution.An interesting point is RM data for emergency responses require fairly granular spatial resolution and frequent temporal resolution -- so as to track minute changes in landscapes. However as mentioned above, there are direct trade offs between temporal and pixel resolution. For satellites to provide both high temporal and spatial resolution requires huge sums of cost and investment. With growing threats from the climate crisis on the urban landscape -- do we currently have the capacity to effectively monitor damages and respond on time?
 
 ### Factors that influences Electromagnetic waves
 
