@@ -34,27 +34,21 @@ knitr::include_graphics("img/spectral_signatures_landsat_450.jpeg")
 
 * The higher the bit, the higher the depth, the higher the ability to detect texture? 
 
-
 ```{r echo=FALSE, out.width='80%', fig.align='center'}
 knitr::include_graphics("img/w1app.png")
 ```
 This shows applications of varying temporal and spatial resolution, what occasion it's best for and what satellite provides that spatial resolution.An interesting point is RM data for emergency responses require fairly granular spatial resolution and frequent temporal resolution -- so as to track minute changes in landscapes. However as mentioned above, there are direct trade offs between temporal and pixel resolution. For satellites to provide both high temporal and spatial resolution requires huge sums of cost and investment. With growing threats from the climate crisis on the urban landscape -- do we currently have the capacity to effectively monitor damages and respond on time?
 
 ### Factors that influences Electromagnetic waves
-
 Flouresence
 Polarization
 Bidirectional Reflectance Distribution
 Scattering
 Atmospheric
 
-
-
 why things are useful, why you'd use this and not that in certain purposes.
 
-
 ### Practical: Landsat, Sentinel, QGIS, SNAP
-
 
 ## Application
 
