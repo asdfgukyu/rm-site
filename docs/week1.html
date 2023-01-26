@@ -142,9 +142,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">1.1</span>  Summary</a>
   <ul class="collapse">
   <li><a href="#lecture-overview-what-is-remote-sensing" id="toc-lecture-overview-what-is-remote-sensing" class="nav-link" data-scroll-target="#lecture-overview-what-is-remote-sensing"><span class="toc-section-number">1.1.1</span>  Lecture Overview: What is Remote Sensing?</a></li>
-  <li><a href="#resolutions-of-remote-sensing-images" id="toc-resolutions-of-remote-sensing-images" class="nav-link" data-scroll-target="#resolutions-of-remote-sensing-images"><span class="toc-section-number">1.1.2</span>  Resolutions of remote sensing images</a></li>
-  <li><a href="#factors-that-influences-electromagnetic-waves" id="toc-factors-that-influences-electromagnetic-waves" class="nav-link" data-scroll-target="#factors-that-influences-electromagnetic-waves"><span class="toc-section-number">1.1.3</span>  Factors that influences Electromagnetic waves</a></li>
-  <li><a href="#practical-landsat-sentinel-qgis-snap" id="toc-practical-landsat-sentinel-qgis-snap" class="nav-link" data-scroll-target="#practical-landsat-sentinel-qgis-snap"><span class="toc-section-number">1.1.4</span>  Practical: Landsat, Sentinel, QGIS, SNAP</a></li>
+  <li><a href="#electromagnetic-spectrum" id="toc-electromagnetic-spectrum" class="nav-link" data-scroll-target="#electromagnetic-spectrum"><span class="toc-section-number">1.1.2</span>  Electromagnetic Spectrum</a></li>
+  <li><a href="#resolutions-of-remote-sensing-images" id="toc-resolutions-of-remote-sensing-images" class="nav-link" data-scroll-target="#resolutions-of-remote-sensing-images"><span class="toc-section-number">1.1.3</span>  Resolutions of remote sensing images</a></li>
+  <li><a href="#factors-that-influences-electromagnetic-waves" id="toc-factors-that-influences-electromagnetic-waves" class="nav-link" data-scroll-target="#factors-that-influences-electromagnetic-waves"><span class="toc-section-number">1.1.4</span>  Factors that influences Electromagnetic waves</a></li>
+  <li><a href="#practical-landsat-sentinel-qgis-snap" id="toc-practical-landsat-sentinel-qgis-snap" class="nav-link" data-scroll-target="#practical-landsat-sentinel-qgis-snap"><span class="toc-section-number">1.1.5</span>  Practical: Landsat, Sentinel, QGIS, SNAP</a></li>
   </ul></li>
   <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">1.2</span>  Application</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">1.3</span>  Reflection</a></li>
@@ -183,8 +184,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="resolutions-of-remote-sensing-images" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="resolutions-of-remote-sensing-images"><span class="header-section-number">1.1.2</span> Resolutions of remote sensing images</h3>
+<section id="electromagnetic-spectrum" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="electromagnetic-spectrum"><span class="header-section-number">1.1.2</span> Electromagnetic Spectrum</h3>
+<p>The electromagnetic spectrum is made up of thousands of bands. From visible light, UV, Infrared, Radar, FM TV, short wave.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/Atmospheric-Electromagnetic-Opacity.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="resolutions-of-remote-sensing-images" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="resolutions-of-remote-sensing-images"><span class="header-section-number">1.1.3</span> Resolutions of remote sensing images</h3>
 <p><strong>Spatial</strong>: the size of the raster grid per pixel (cm/m). The smaller the measure the more detailed the image will be.</p>
 <ul>
 <li>Something like MODIS would have very high spatial data?</li>
@@ -198,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/spectral_signatures_landsat_450.jpeg" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="img/spectral_signatures_landsat_450.jpeg" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -208,33 +222,24 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/w1app.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="img/w1app.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>This shows the application of varying temporal and spatial resolution, and what it’s best for.</p>
+<p>This shows applications of varying temporal and spatial resolution, what occasion it’s best for and what satellite provides that spatial resolution.An interesting point is RM data for emergency responses require fairly granular spatial resolution and frequent temporal resolution – so as to track minute changes in landscapes. However as mentioned above, there are direct trade offs between temporal and pixel resolution. For satellites to provide both high temporal and spatial resolution requires huge sums of cost and investment. With growing threats from the climate crisis on the urban landscape – do we currently have the capacity to effectively monitor damages and respond on time?</p>
 <p><strong>Radiometric</strong>: Able to identify difference in light or reflectance of Earth surface.</p>
 <ul>
 <li>The higher the bit, the higher the depth, the higher the ability to detect texture?</li>
 </ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/Atmospheric-Electromagnetic-Opacity.png" class="img-fluid figure-img" style="width:60.0%"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
-<section id="factors-that-influences-electromagnetic-waves" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="factors-that-influences-electromagnetic-waves"><span class="header-section-number">1.1.3</span> Factors that influences Electromagnetic waves</h3>
+<section id="factors-that-influences-electromagnetic-waves" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="factors-that-influences-electromagnetic-waves"><span class="header-section-number">1.1.4</span> Factors that influences Electromagnetic waves</h3>
 <p>Flouresence Polarization Bidirectional Reflectance Distribution Scattering Atmospheric</p>
-<p>** Go deeper on specific areas ** why things are useful, why you’d use this and not that in certain purposes.</p>
+<p>why things are useful, why you’d use this and not that in certain purposes.</p>
 </section>
-<section id="practical-landsat-sentinel-qgis-snap" class="level3" data-number="1.1.4">
-<h3 data-number="1.1.4" class="anchored" data-anchor-id="practical-landsat-sentinel-qgis-snap"><span class="header-section-number">1.1.4</span> Practical: Landsat, Sentinel, QGIS, SNAP</h3>
+<section id="practical-landsat-sentinel-qgis-snap" class="level3" data-number="1.1.5">
+<h3 data-number="1.1.5" class="anchored" data-anchor-id="practical-landsat-sentinel-qgis-snap"><span class="header-section-number">1.1.5</span> Practical: Landsat, Sentinel, QGIS, SNAP</h3>
 </section>
 </section>
 <section id="application" class="level2" data-number="1.2">
