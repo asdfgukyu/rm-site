@@ -2,12 +2,44 @@
 
 ## Summary
 
-### Lecture: What is Remote Sensing?
+### Lecture Overview: What is Remote Sensing?
 ```{r, echo = FALSE, out.width='40%'}
 xaringanExtra::embed_xaringan(
   url = "https://miro.com/app/board/uXjVPuJYqY0=/?share_link_id=663563464417",
   ratio = "16:9")
 ```
+
+#### Resolutions of remote sensing images
+* Spatial: the size of the raster grid per pixel (cm/m). The smaller the measure the more detailed the image will be.
+  * Something like MODIS would have very high spatial data?
+* Spectral: The number of bands from the electromagnetic spectrum it is surveying. Often earth surfaces require multispectral data for it to form a true colour image. 
+  * ie: green vegetation mainly requires red and near-infrared bands to detect, whereas soil requires mid-infrared bands (6 and 7) to be detected. Bodies of water can be detected mostly within visible light, RBGs.
+  * Landsat data surveys visible light, near infrared and short wave infrared.
+* Temporal: How frequently the data is collected. Often there is a direct trade off between pixel resolution and update frequency -- higher the resolution, lower the update frequency. Good rm data is spenny!!
+* Radiometric: Able to identify difference in light or reflectance of Earth surface.
+  * The higher the bit, the higher the depth, the higher the ability to detect texture? 
+
+
+```{r echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics("img/Atmospheric-Electromagnetic-Opacity.png")
+```
+
+
+```{r echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics("img/spectral_signatures_landsat_450.jpeg")
+```
+
+
+#### Factors that influences Electromagnetic waves
+
+Flouresence
+Polarization
+Bidirectional Reflectance Distribution
+Scattering
+Atmospheric
+
+
+
 
 ** Go deeper on specific areas **
 why things are useful, why you'd use this and not that in certain purposes.
