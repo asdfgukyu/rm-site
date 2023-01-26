@@ -1,4 +1,4 @@
-# Week 2: Portfolio Tools
+# Portfolio Tools
 
 This week's learning diary is to produce a Xarigan presentation and host it on a Quarto website. The content of the presentation includes 9 slides on Landsat 8 and 9, providing overview of the satellites (Summary), notable academic papers that have utilised data from these satellites (Application) and individual reflection.
 
