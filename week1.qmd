@@ -2,12 +2,23 @@
 
 ## Summary
 
+### Lecture: What is Remote Sensing?
 ```{r, echo = FALSE, out.width='40%'}
 xaringanExtra::embed_xaringan(
   url = "https://miro.com/app/board/uXjVPuJYqY0=/?share_link_id=663563464417",
   ratio = "16:9")
 ```
 
+** Go deeper on specific areas **
+why things are useful, why you'd use this and not that in certain purposes.
+
+
+### Practical: Landsat, Sentinel, QGIS, SNAP
+
+
 ## Application
 
+Papers that have used this, why its good, why its not.
+
 ## Reflection
+
