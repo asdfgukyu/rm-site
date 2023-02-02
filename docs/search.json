@@ -61,5 +61,26 @@
     "title": "CASA0023 Remote Sensing Cities and Environment",
     "section": "",
     "text": "This book is created for assignment purposes at CASA0023 Remote Sensing Cities and Environments at the Centre for Advance Spatial Analysis, UCL London.\nGuk is a urban data scientist with background in cultural production.Profile xxx.cv xxx.\n\n\nThis learning diary is the assignment output of CASA00023 Remote Sensing Cities and Environment. The structure this book will be broken down by weeks, each with a different learning objective.\nThis book is created from R markdown and executable code."
+  },
+  {
+    "objectID": "week4.html",
+    "href": "week4.html",
+    "title": "4  Policy",
+    "section": "",
+    "text": "Sustainable Development Goals\nUN SDG11: Make cities and human settlements inclusive, safe, resilient and sustainable\nTarget 11.1: By 2030, ensure access for all to adequate, safe and affordable housing and basic services and upgrade slums.\nNairobi Climate Action Plan 2020-2050\n\nUntil the Covid-19 pandemic, Nairobi was one of the fastest growing economies in Africa with annual average growth of 5.9% between 2010 - 2018 (USAid, nd), GDP worth $36 billion (C40, nd)\n2/3 of Kenyans continues to live in poverty, making less than £3.2 per day\n70% Kenyan families are chronically vulnerable to food and nutrition insecurity and preventable diseases.\n75% of Nairobi is informal settlements, with predicted number of urban population living in slums to double in the next 15 years.\nInformal settlements only cover 5% of total residential land of the city. (UN Habitat, 2005)\nThis city is extremely vulnerable against impact of the climate crisis— haltering food security, reduce access to clean water, exposure to extreme heat.\nNairobi has set out 15 climate resilience action to strength the city against extreme weather, of which pertained very little detail onto how laid actions would be implemented.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion on ******how****** the city of Nairobi aims to move towards such goals is unclear from this document.\nThe only mention of geospatial technology (GIS, satellite imagery) is briefly mentioned once, where the government acknowledge the lack of GIS technology to further enable an accessible and wide-spread urban transit system.\nThis shows the Nairobi government has a little idea onto how to harness Earth Observation data to push forward their urban climate agenda.\nBuild houses in climate sensitive areas?????\nSlum mapping — see where slums will expand and provide amenities accordingly."
+  },
+  {
+    "objectID": "week4.html#application",
+    "href": "week4.html#application",
+    "title": "4  Policy",
+    "section": "4.2 Application",
+    "text": "4.2 Application\nIncrease access to climate resilience programme — Identify arid land/flood zones, disaster mapping.\n\nSlum identification — see where slums will expand and provide amenities accordingly.\nhttps://www.mdpi.com/2072-4292/8/6/455"
+  },
+  {
+    "objectID": "week4.html#reflection",
+    "href": "week4.html#reflection",
+    "title": "4  Policy",
+    "section": "4.3 Reflection",
+    "text": "4.3 Reflection"
   }
 ]
