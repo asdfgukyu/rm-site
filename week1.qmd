@@ -28,11 +28,20 @@ knitr::include_graphics("img/Atmospheric-Electromagnetic-Opacity.png")
 **Spectral**: Number of bands from the electromagnetic spectrum it is surveying. Often earth surfaces require multispectral data for it to form a true colour image.
 
 - ie: green vegetation mainly requires red and near-infrared bands to detect, whereas soil requires mid-infrared bands (6 and 7) to be detected. Bodies of water can be detected mostly within visible light, RBGs.
-- Landsat data surveys visible light, near infrared and short wave infrared
+- Landsat data surveys visible light, near infrared and short wave infrared.
 
-```{r echo=FALSE, out.width='90%', fig.align='center'}
-knitr::include_graphics("img/spectral_signatures_landsat_450.jpeg")
+An example from the practical:
+This scatter image was produced from sentinel data of Dhakar, Bangladesh.
+Band 4 = Red
+Band 8 = NIR
+* High NIR and Low Red - high vegetation since veg peaks in NIR (see above)
+* Low red Low NIR - Wet soil.
+
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+
+knitr::include_graphics("img/scatter_bangladesh.png")
 ```
+
 
 **Temporal**: How frequently the data is collected. Often there is a direct trade off between pixel resolution and update frequency -- higher the resolution, lower the update frequency. Good rm data is spenny!!
 
@@ -45,7 +54,9 @@ Data format: Generally raster, but depending on sensor.
 - LiDAR is point data in x, y and z (height) → good for elevation models.
 
 ```{r echo=FALSE, out.width='80%', fig.align='center'}
+
 knitr::include_graphics("img/w1app.png")
+
 ```
 
 A bit of thinking:
@@ -72,6 +83,18 @@ _Applications of varying temporal and spatial resolution, what occasion it's bes
 - Quad: transmit and receive up to 4 types.
 
 ### Practical: Landsat, Sentinel, QGIS, SNAP
+**Data Source:**
+Sentinel Data: Copernicus Open Access Hub
+Landsat Data: Earth Explorer USGS
+Boundary Data (for masking): https://gadm.org/
+
+**Colour compositions:**
+True Colour: colours we see with our eyes B2, B3, B4.
+False Colour: composite of waves human eyes cannot see.
+* Infrared: B8, B4, B3. Plants reflect NIR and green light and absorbing red.
+* Agriculture: B11, B8, B2. Detecting healthy vegetation in dark green
+* Moisture:(B8A-B11)/(B8A+B11). Detecting water stressed.
+
 
 ## Application
 
@@ -85,7 +108,8 @@ The Intergovernmental Panel on Climate Change stated Earth observing satellites 
 
 Development of urban areas can be measured with medium to high spatial resolution satellite images including SPOT, Landsat, and Aster, providing a large mass of data on urban growth (Patino, Duque, 2013). Sutton (2013) measured the sprawl of cities using nightime satellite imagery, using lights as a proxy for urban activities. Elkhrachy (2022) has specifically used SAR data to detect depth of flash flood water in risk zones. Kumar & Jain (2017) used earth data and Analytic Hierarchy Process technique to evaluate site suitability for urban development. They specifically looked for geomorphology, transport network, land use/cover and access to ground water. 1 meter spatial resolution images from from IKONOS data was used.
 
-```{r}
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+
 knitr::include_graphics("img/wk1_urban_dev.png")
 ```
 
