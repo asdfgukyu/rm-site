@@ -18,16 +18,17 @@ The electromagnetic spectrum is made up of thousands of bands. From visible ligh
 knitr::include_graphics("img/Atmospheric-Electromagnetic-Opacity.png")
 ```
 
+- The earth surface either **absorb** energy or **transmit** energy.
+- The colour we see is the visible light waves that is reflected off of the object. Apple is red because it absorbs all visible light and reflects red.
+
 ### Resolutions of remote sensing images
 
-**Spatial**: the size of the raster grid per pixel (cm/m). The smaller the measure the more detailed the image will be.
+**Spatial**: Size of raster grid per pixel (cm/m). The smaller the measure the more detailed the image will be.
 
--   Something like MODIS would have very high spatial data?
+**Spectral**: Number of bands from the electromagnetic spectrum it is surveying. Often earth surfaces require multispectral data for it to form a true colour image.
 
-**Spectral**: The number of bands from the electromagnetic spectrum it is surveying. Often earth surfaces require multispectral data for it to form a true colour image.
-
--   ie: green vegetation mainly requires red and near-infrared bands to detect, whereas soil requires mid-infrared bands (6 and 7) to be detected. Bodies of water can be detected mostly within visible light, RBGs.
--   Landsat data surveys visible light, near infrared and short wave infrared.
+- ie: green vegetation mainly requires red and near-infrared bands to detect, whereas soil requires mid-infrared bands (6 and 7) to be detected. Bodies of water can be detected mostly within visible light, RBGs.
+- Landsat data surveys visible light, near infrared and short wave infrared
 
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/spectral_signatures_landsat_450.jpeg")
@@ -37,30 +38,67 @@ knitr::include_graphics("img/spectral_signatures_landsat_450.jpeg")
 
 **Radiometric**: Able to identify difference in light or reflectance of Earth surface.
 
--   The higher the bit, the higher the depth, the higher the ability to detect texture?
+- The higher the bit, the higher the depth, the higher the ability to detect texture
+
+Data format: Generally raster, but depending on sensor.
+
+- LiDAR is point data in x, y and z (height) → good for elevation models.
 
 ```{r echo=FALSE, out.width='80%', fig.align='center'}
 knitr::include_graphics("img/w1app.png")
 ```
 
-This shows applications of varying temporal and spatial resolution, what occasion it's best for and what satellite provides that spatial resolution.An interesting point is RM data for emergency responses require fairly granular spatial resolution and frequent temporal resolution -- so as to track minute changes in landscapes. However as mentioned above, there are direct trade offs between temporal and pixel resolution. For satellites to provide both high temporal and spatial resolution requires huge sums of cost and investment. With growing threats from the climate crisis on the urban landscape -- do we currently have the capacity to effectively monitor damages and respond on time?
+A bit of thinking:
+_Applications of varying temporal and spatial resolution, what occasion it's best for and what satellite provides that spatial resolution. An interesting point is RM data for emergency responses require fairly granular spatial resolution and frequent temporal resolution -- so as to track minute changes in landscapes. However as mentioned above, there are direct trade offs between temporal and pixel resolution. For satellites to provide both high temporal and spatial resolution requires huge sums of cost and investment. With growing threats from the climate crisis on the urban landscape -- do we currently have the capacity to effectively monitor damages and respond on time?_
 
 ### Factors influencing Electromagnetic waves
 
-Florescence Polarization Bidirectional Reflectance Distribution Scattering Atmospheric
+**Rayleigh Scattering**: Scattering of waves off of molecules in the air (the atmosphere).
 
-why things are useful, why you'd use this and not that in certain purposes as the image resolution and quality increase as well.  
+- Blue waves are smaller, making it easier to scatter →  sky = blue.
+- Higher the scatter/absorption, deeper the colour. Deep ocean is dark because there are more water molecules to scatter and absorb waves → no reflection.
+
+**Bidirectional Reflectance Distribution Function (BRDF)**: 
+
+- changing angles of sensors and levels of illumination
+- earth surface that is smooth/diffuse that causes reflectance to go in different directions.
+- Shadows: Backscattering - sun behind observer | forward scattering - sun opposite observer.
+
+**Polarization (SAR data):** 
+
+- EMR waves with 2 waves oscillating perpendicularly. How they reflect depends on texture of the earth surface, moisture, salinity, density, orientation.
+- Single: same polarization transmitted and received
+- Dual: transmit one, get another
+- Quad: transmit and receive up to 4 types.
 
 ### Practical: Landsat, Sentinel, QGIS, SNAP
 
 ## Application
 
-Since the emergence of accessible Landsat Satellite images in 1967, earth data have since been used for a wide range of purposes including tracking land use, urbanisation, drought, wildfires, biomass changes and other natural and human caused changes (USGS, nd). Most notably, our understanding of the Earth's environmental systems has been drastically increased (Bretherton, 1988). Coupled with substantial environmental changes in recent decades, remote sensing data has allowed changes to be tracked and analysed over the last century. Sultana & Satyanarayana (2020) have used satellite imagery to assess the rate of urbanization and urban heat island intensities in urban India. Matricardi et al (2010) analysed the effects of tropical forest degradation as a result of logging and fire, and implemented policy recommendation accordingly. The Intergovernmental Panel on Climate Change stated Earth observing satellites as a critical and valuable tool to track changes and improving climate predictions (European Space Agency, 2021). Extensive reports using earth data includes measuring glacier and sea ice decline, sea level rise and climate modelling.
+Since the emergence of accessible Landsat Satellite images in 1967, earth data have since been used for a wide range of purposes including tracking land use, urbanisation, drought, wildfires, biomass changes and other natural and human caused changes (USGS, nd). 
 
-Our current understanding of the climate crisis would not be this advanced if satellite data were not publicly available. However this continues to highlight the lack of satellite imagery that satisfy all resolution, where temporal, spatial and spectral frequency are of the highest quality. Earth sensing data is vital in monitoring and predicting the health of our planet, surely more investment should be in this field its quality?
+#### Environment 
+
+The Intergovernmental Panel on Climate Change stated Earth observing satellites as a critical and valuable tool to track changes and improving climate predictions (European Space Agency, 2021).  Coupled with substantial environmental changes in recent decades, remote sensing data has allowed changes to be tracked and analysed over the last century. Sultana & Satyanarayana (2020) have used satellite imagery to assess the rate of urbanization and urban heat island intensities in urban India. Matricardi et al (2010) analysed the effects of tropical forest degradation as a result of logging and fire, and implemented policy recommendation accordingly, taking advantage of the extensive spectral bands available. Extensive reports by international climate driven bodies have used earth data to measure glacier and sea ice decline, sea level rise and climate modelling.
+
+#### Urban Development
+
+Development of urban areas can be measured with medium to high spatial resolution satellite images including SPOT, Landsat, and Aster, providing a large mass of data on urban growth (Patino, Duque, 2013). Sutton (2013) measured the sprawl of cities using nightime satellite imagery, using lights as a proxy for urban activities. Elkhrachy (2022) has specifically used SAR data to detect depth of flash flood water in risk zones. Kumar & Jain (2017) used earth data and Analytic Hierarchy Process technique to evaluate site suitability for urban development. They specifically looked for geomorphology, transport network, land use/cover and access to ground water. 1 meter spatial resolution images from from IKONOS data was used.
+
+```{r}
+knitr::include_graphics("img/wk1_urban_dev.png")
+```
+
+#### Assisting social analysis
+
+Satellite imagery has allowed for a spatial perspective when it comes to studying social processes such as urban poverty, quality of life (Weber & Hirsch 1992), residential desirability (Green 1957). Generating estimation about the urban population was reported to be one of the top 5 recurrent research theme within remote sensing urban environments in 2002 (Phinn, Stanford, Scarth, Murray, & Shyy). For example, Li and Weng (2007) derived environmental variables such as greenness, temperature from Landsat EMT+ as proxies to material and environmental welfare and crowdedness. This is integrated with US census data to generate a Quality of Life Index. Duque, Patino et al (2015) used Quickbird images of 0.6m spatial resolution (extremely high res!!) to generate a intra-urban Slum index. This was executed through per-pixel classification of urban texture and structures.
 
 
 ## Reflection
 
+- Remote sensing data has in a way revolutionised how people approach spatial analysis. Especially since these earth data became publicly available and free to access.
+- Utilising the varying spectral properties of earth surfaces and objects, analysis of urban areas have hugely benefitted, with high density buildings, transport networks, urban vegetation — RM data essentially the need to physically surface overviews of urban characteristics (although detailed, high resolution ones still relies on manual surveying).
+- Although powerful, earth data often needs to be in company of other data, especially demographic, social and economic data for urban analysis to translate into urban policies.
+- There is a wide range of analysis that could be done with RM data, including regression analysis, neural network deep learning, principal component analysis and classification. Options are endless!!!!
 
 
