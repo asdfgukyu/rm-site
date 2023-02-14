@@ -1,8 +1,24 @@
 # Preface {.unnumbered}
 
-This book is created for assignment purposes at CASA0023 Remote Sensing Cities and Environments at the Centre for Advance Spatial Analysis, UCL London.
+<div>
+   <div style="float: right; position: relative; top: 0px; padding: 20px;">
+   ![Abdul n I :)](img/abs-n-me.jpg){fig-align="right" width="160" align="right" style="margin: 0 1em 0 1em"}
+   </div>
+    
+Hello! Welcome to my learning diary for CASA0023 Remote Sensing Cities and Environments at the Centre for Advance Spatial Analysis, UCL London. 
 
-Guk is a urban data scientist with background in cultural production.Profile xxx.cv xxx.
+
+I am a socio-cultural geographer, a producer in the culture sector and a spatial data scientist (!) . I got my undergraduate degree at the London School of Economics in Human Geography where I studied topics from urban planning, economic geography, and international development to investigating urban socio-spatial dynamics and role of the creative sector in urban space. 
+
+</div>
+
+
+Swiftly after graduation I entered the cultural sector where I assist in theatre, dance, visual art and moving images programme curation and production in Hong Kong and London for three years.
+
+Currently at CASA, I would like to further my geographic knowledge and gain technical skills and enter the field of urban sustainability. I am particularly interested in the topics of public housing, equity and climate resilience !
+
+
+
 
 ## Purpose
 

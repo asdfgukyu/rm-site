@@ -18,8 +18,8 @@ The electromagnetic spectrum is made up of thousands of bands. From visible ligh
 knitr::include_graphics("img/Atmospheric-Electromagnetic-Opacity.png")
 ```
 
-- The earth surface either **absorb** energy or **transmit** energy.
-- The colour we see is the visible light waves that is reflected off of the object. Apple is red because it absorbs all visible light and reflects red.
+-   The earth surface either **absorb** energy or **transmit** energy.
+-   The colour we see is the visible light waves that is reflected off of the object. Apple is red because it absorbs all visible light and reflects red.
 
 ### Resolutions of remote sensing images
 
@@ -27,31 +27,25 @@ knitr::include_graphics("img/Atmospheric-Electromagnetic-Opacity.png")
 
 **Spectral**: Number of bands from the electromagnetic spectrum it is surveying. Often earth surfaces require multispectral data for it to form a true colour image.
 
-- ie: green vegetation mainly requires red and near-infrared bands to detect, whereas soil requires mid-infrared bands (6 and 7) to be detected. Bodies of water can be detected mostly within visible light, RBGs.
-- Landsat data surveys visible light, near infrared and short wave infrared.
+-   ie: green vegetation mainly requires red and near-infrared bands to detect, whereas soil requires mid-infrared bands (6 and 7) to be detected. Bodies of water can be detected mostly within visible light, RBGs.
+-   Landsat data surveys visible light, near infrared and short wave infrared.
 
-An example from the practical:
-This scatter image was produced from sentinel data of Dhakar, Bangladesh.
-Band 4 = Red
-Band 8 = NIR
-* High NIR and Low Red - high vegetation since veg peaks in NIR (see above)
-* Low red Low NIR - Wet soil.
+An example from the practical: This scatter image was produced from sentinel data of Dhakar, Bangladesh. Band 4 = Red Band 8 = NIR \* High NIR and Low Red - high vegetation since veg peaks in NIR (see above) \* Low red Low NIR - Wet soil.
 
 ```{r echo=FALSE, out.width='50%', fig.align='center'}
 
 knitr::include_graphics("img/scatter_bangladesh.png")
 ```
 
-
 **Temporal**: How frequently the data is collected. Often there is a direct trade off between pixel resolution and update frequency -- higher the resolution, lower the update frequency. Good rm data is spenny!!
 
 **Radiometric**: Able to identify difference in light or reflectance of Earth surface.
 
-- The higher the bit, the higher the depth, the higher the ability to detect texture
+-   The higher the bit, the higher the depth, the higher the ability to detect texture
 
 Data format: Generally raster, but depending on sensor.
 
-- LiDAR is point data in x, y and z (height) → good for elevation models.
+-   LiDAR is point data in x, y and z (height) → good for elevation models.
 
 ```{r echo=FALSE, out.width='80%', fig.align='center'}
 
@@ -59,50 +53,41 @@ knitr::include_graphics("img/w1app.png")
 
 ```
 
-A bit of thinking:
-_Applications of varying temporal and spatial resolution, what occasion it's best for and what satellite provides that spatial resolution. An interesting point is RM data for emergency responses require fairly granular spatial resolution and frequent temporal resolution -- so as to track minute changes in landscapes. However as mentioned above, there are direct trade offs between temporal and pixel resolution. For satellites to provide both high temporal and spatial resolution requires huge sums of cost and investment. With growing threats from the climate crisis on the urban landscape -- do we currently have the capacity to effectively monitor damages and respond on time?_
+A bit of thinking: *Applications of varying temporal and spatial resolution, what occasion it's best for and what satellite provides that spatial resolution. An interesting point is RM data for emergency responses require fairly granular spatial resolution and frequent temporal resolution -- so as to track minute changes in landscapes. However as mentioned above, there are direct trade offs between temporal and pixel resolution. For satellites to provide both high temporal and spatial resolution requires huge sums of cost and investment. With growing threats from the climate crisis on the urban landscape -- do we currently have the capacity to effectively monitor damages and respond on time?*
 
 ### Factors influencing Electromagnetic waves
 
 **Rayleigh Scattering**: Scattering of waves off of molecules in the air (the atmosphere).
 
-- Blue waves are smaller, making it easier to scatter →  sky = blue.
-- Higher the scatter/absorption, deeper the colour. Deep ocean is dark because there are more water molecules to scatter and absorb waves → no reflection.
+-   Blue waves are smaller, making it easier to scatter → sky = blue.
+-   Higher the scatter/absorption, deeper the colour. Deep ocean is dark because there are more water molecules to scatter and absorb waves → no reflection.
 
-**Bidirectional Reflectance Distribution Function (BRDF)**: 
+**Bidirectional Reflectance Distribution Function (BRDF)**:
 
-- changing angles of sensors and levels of illumination
-- earth surface that is smooth/diffuse that causes reflectance to go in different directions.
-- Shadows: Backscattering - sun behind observer | forward scattering - sun opposite observer.
+-   changing angles of sensors and levels of illumination
+-   earth surface that is smooth/diffuse that causes reflectance to go in different directions.
+-   Shadows: Backscattering - sun behind observer \| forward scattering - sun opposite observer.
 
-**Polarization (SAR data):** 
+**Polarization (SAR data):**
 
-- EMR waves with 2 waves oscillating perpendicularly. How they reflect depends on texture of the earth surface, moisture, salinity, density, orientation.
-- Single: same polarization transmitted and received
-- Dual: transmit one, get another
-- Quad: transmit and receive up to 4 types.
+-   EMR waves with 2 waves oscillating perpendicularly. How they reflect depends on texture of the earth surface, moisture, salinity, density, orientation.
+-   Single: same polarization transmitted and received
+-   Dual: transmit one, get another
+-   Quad: transmit and receive up to 4 types.
 
 ### Practical: Landsat, Sentinel, QGIS, SNAP
-**Data Source:**
-Sentinel Data: Copernicus Open Access Hub
-Landsat Data: Earth Explorer USGS
-Boundary Data (for masking): https://gadm.org/
 
-**Colour compositions:**
-True Colour: colours we see with our eyes B2, B3, B4.
-False Colour: composite of waves human eyes cannot see.
-* Infrared: B8, B4, B3. Plants reflect NIR and green light and absorbing red.
-* Agriculture: B11, B8, B2. Detecting healthy vegetation in dark green
-* Moisture:(B8A-B11)/(B8A+B11). Detecting water stressed.
+**Data Source:** Sentinel Data: Copernicus Open Access Hub Landsat Data: Earth Explorer USGS Boundary Data (for masking): https://gadm.org/
 
+**Colour compositions:** True Colour: colours we see with our eyes B2, B3, B4. False Colour: composite of waves human eyes cannot see. \* Infrared: B8, B4, B3. Plants reflect NIR and green light and absorbing red. \* Agriculture: B11, B8, B2. Detecting healthy vegetation in dark green \* Moisture:(B8A-B11)/(B8A+B11). Detecting water stressed.
 
 ## Application
 
-Since the emergence of accessible Landsat Satellite images in 1967, earth data have since been used for a wide range of purposes including tracking land use, urbanisation, drought, wildfires, biomass changes and other natural and human caused changes (USGS, nd). 
+Since the emergence of accessible Landsat Satellite images in 1967, earth data have since been used for a wide range of purposes including tracking land use, urbanisation, drought, wildfires, biomass changes and other natural and human caused changes (USGS, nd).
 
-#### Environment 
+#### Environment
 
-The Intergovernmental Panel on Climate Change stated Earth observing satellites as a critical and valuable tool to track changes and improving climate predictions (European Space Agency, 2021).  Coupled with substantial environmental changes in recent decades, remote sensing data has allowed changes to be tracked and analysed over the last century. Sultana & Satyanarayana (2020) have used satellite imagery to assess the rate of urbanization and urban heat island intensities in urban India. Matricardi et al (2010) analysed the effects of tropical forest degradation as a result of logging and fire, and implemented policy recommendation accordingly, taking advantage of the extensive spectral bands available. Extensive reports by international climate driven bodies have used earth data to measure glacier and sea ice decline, sea level rise and climate modelling.
+The Intergovernmental Panel on Climate Change stated Earth observing satellites as a critical and valuable tool to track changes and improving climate predictions (European Space Agency, 2021). Coupled with substantial environmental changes in recent decades, remote sensing data has allowed changes to be tracked and analysed over the last century. Sultana & Satyanarayana (2020) have used satellite imagery to assess the rate of urbanization and urban heat island intensities in urban India. Matricardi et al (2010) analysed the effects of tropical forest degradation as a result of logging and fire, and implemented policy recommendation accordingly, taking advantage of the extensive spectral bands available. Extensive reports by international climate driven bodies have used earth data to measure glacier and sea ice decline, sea level rise and climate modelling.
 
 #### Urban Development
 
@@ -117,12 +102,9 @@ knitr::include_graphics("img/wk1_urban_dev.png")
 
 Satellite imagery has allowed for a spatial perspective when it comes to studying social processes such as urban poverty, quality of life (Weber & Hirsch 1992), residential desirability (Green 1957). Generating estimation about the urban population was reported to be one of the top 5 recurrent research theme within remote sensing urban environments in 2002 (Phinn, Stanford, Scarth, Murray, & Shyy). For example, Li and Weng (2007) derived environmental variables such as greenness, temperature from Landsat EMT+ as proxies to material and environmental welfare and crowdedness. This is integrated with US census data to generate a Quality of Life Index. Duque, Patino et al (2015) used Quickbird images of 0.6m spatial resolution (extremely high res!!) to generate a intra-urban Slum index. This was executed through per-pixel classification of urban texture and structures.
 
-
 ## Reflection
 
-- Remote sensing data has in a way revolutionised how people approach spatial analysis. Especially since these earth data became publicly available and free to access.
-- Utilising the varying spectral properties of earth surfaces and objects, analysis of urban areas have hugely benefitted, with high density buildings, transport networks, urban vegetation — RM data essentially the need to physically surface overviews of urban characteristics (although detailed, high resolution ones still relies on manual surveying).
-- Although powerful, earth data often needs to be in company of other data, especially demographic, social and economic data for urban analysis to translate into urban policies.
-- There is a wide range of analysis that could be done with RM data, including regression analysis, neural network deep learning, principal component analysis and classification. Options are endless!!!!
-
-
+-   Remote sensing data has in a way revolutionised how people approach spatial analysis. Especially since these earth data became publicly available and free to access.
+-   Utilising the varying spectral properties of earth surfaces and objects, analysis of urban areas have hugely benefitted, with high density buildings, transport networks, urban vegetation --- RM data essentially the need to physically surface overviews of urban characteristics (although detailed, high resolution ones still relies on manual surveying).
+-   Although powerful, earth data often needs to be in company of other data, especially demographic, social and economic data for urban analysis to translate into urban policies.
+-   There is a wide range of analysis that could be done with RM data, including regression analysis, neural network deep learning, principal component analysis and classification. Options are endless!!!!
