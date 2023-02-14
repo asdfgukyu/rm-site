@@ -2,6 +2,12 @@
 
 ## Summary
 
+```{r, echo = FALSE, out.width='40%'}
+xaringanExtra::embed_xaringan(
+  url = "https://miro.com/app/board/uXjVPnESy2c=/?share_link_id=946785466297",
+  ratio = "16:10")
+```
+
 ## Application
 
 ## Reflection

@@ -13,8 +13,8 @@ book:
     - week2.qmd
     - week3.qmd
     - week4.qmd
+    - week5.qmd
     - glossary.qmd
-    - summary.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -24,7 +24,6 @@ format:
     theme:
         light: [cosmo, flatly]
         dark: [cosmo, darkly]
-    code-link: true
        
        
   pdf:
