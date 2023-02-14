@@ -5,7 +5,7 @@ This week's learning diary is to produce a Xarigan presentation and host it on a
 ```{r, echo = FALSE, out.width='40%'}
 xaringanExtra::embed_xaringan(
   url = "https://asdfgukyu.github.io/remote-sensing/w2/Portfolio_starter.html#1",
-  ratio = "16:9")
+  ratio = "16:10")
 ```
 
 ## 
