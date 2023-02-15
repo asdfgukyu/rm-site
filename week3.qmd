@@ -16,6 +16,12 @@ Satellite data isn’t perfect, will have flaws and we need to fix it before we 
 
 Process of removing geometric distortions caused by factors such as sensor perspective (off nadir), terrain relief (hill v flat ground), Wind (on plane) and Earth's curvature and rotation. 
 
+::: {layout-ncol=2}
+![](img/geometric_distortion.jpeg)
+
+![](img/geometric_distortion2.jpeg)
+:::
+
 #### Solution
 
 **Ground Control Points** (GPS) to match satellite images to a reference datasets — another map, GPS data etc, using regression.
@@ -37,19 +43,17 @@ Normally RMSE is set as 0.5, but you might want to add more GCPs to reduce RMSE.
 
 Adjacency Effect: reflective surfaces bleeds into other pixels caused by scattering, making the image hazy and reduces contrast.
 
+![Atmospheric correction for 3 images.](img/atmos-correction.png)
+
+
 **When and when not to correct:**
 
-*Unnecessary*
-
-- Classification of a single image
-- Independent classification of multi date imagery
-- Composite images (combining images)
-- Single dates or where training data extracted from all data
-
-*Necessary*
-
-- Biophysical parameters needed (e.g. temperature, leaf area index, NDVI)
-- Using spectral signatures through time and space
+Unnecessary|Necessary
+-----|-----:
+Classification of a single image |Biophysical parameters needed (e.g. temperature, leaf area index, NDVI)
+Independent classification of multi date imagery| Using spectral signatures through time and space
+Single dates  data |
+Already Composited images|
 
 **BUT** : Andy corrects it all anyway, just in case
 
@@ -68,7 +72,7 @@ Psuedo Invariant Features (PIF)
 **Absolute Correction**
 
 - Change digital brightness values into a scaled surface reflectance via atmospheric radiative transfer models. This is done to the whole image
-- But this is difficult to do bc needs a lot of data and $$
+- But this is difficult to do bc needs a lot of data and money.
 
 **Empirical Line Correction**
 
@@ -80,6 +84,8 @@ Psuedo Invariant Features (PIF)
 (Refer to glossary for terms)
 
 Make things nadir. This would be used if satellite passes adjacent to a mountain top instead of directly above it.
+
+![Orthorectification of a mountain top to nadir.](img/topolo-correction.jpeg)
 
 Often uses cosine correction to calculate sun’s zenith and incidence angle
 
@@ -99,19 +105,124 @@ But it’s good to know anyway and not all data are ARD (drone images, v high re
 
 ### Mosaicking
 
-## Image Enhancement
+Says what it does on the can! Just like feathering and merging, we are joining 2 or more images together. 
 
+The images must have some overlapping, or else there’ll be gaps in your map. The overlapping will be dealt with through feathering (blending) so that seamlines are not visible. 
+
+Merging code:
+```{r eval=FALSE}
+m1 <- terra::mosaic(listlandsat_9i, listlandsat_9ii, fun="mean")
+```
+
+## Image Enhancement
+To emphasize/exaggerate certain spectral traits.
 ### Contrast Enhancement
 
 Different materials don’t reflect varying energy back — making it hard to differentiate between things. Images are also designed to avoid saturation in DN.
 
-Solutions:
 - Image stretching applied to DN
-- Ratio
-- Filtering
-- PCA
-- Texture
 
+### Ratio
+
+Difference between 2 spectral bands that have a certain spectral response -- making it easier to identify certain landscape features. This is the NDVI Index, index that refers to a specific item, and uses simple formula to get them. 
+
+Refer to [Index Database/](https://www.indexdatabase.de/) for more!!
+
+Here we’re extracting healthy vegetation
+Band 5 - Band 4 (red)
+```{r eval=FALSE}
+m1_NDVI <- (m1$LC09_L2SP_137043_20230126_20230128_02_T1_SR_B5 - m1$LC09_L2SP_137043_20230126_20230128_02_T1_SR_B4 ) / (m1$LC09_L2SP_137043_20230126_20230128_02_T1_SR_B5 + m1$LC09_L2SP_137043_20230126_20230128_02_T1_SR_B4)
+
+m1_NDVI %>%
+  plot(.)
+```
+
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+knitr::include_graphics("img/bangladesh-ratio.png")
+```
+The greener, there more healthy vegetation there is. Since this is EO image of Dhaka (aka flood zone), vegetation is only present further to the north.
+
+This is to filter out features that has higher NDVI score.
+```{r eval=FALSE}
+veg <- m1_NDVI %>%
+  terra::classify(., cbind(-Inf, 0.2, NA))
+```
+
+### Filtering
+
+Filtering refers to any kind of moving window operation (zooming out) to our data, saved as a separate raster file, either low or high pass filters.
+
+### Texture
+
+Use glcm package to select 8 texture measures.
+
+- Can specify size of moving window here
+- specify shift in co-occurency — if there are multiple shifts —  will return mean for each pixel.
+
+This will take 7-10mins!!
+```{r eval=FALSE}
+glcm <- glcm(band4_raster,
+                   window = c(7, 7),
+                   #shift=list(c(0,1), c(1,1), c(1,0), c(1,-1)), 
+                   statistics = c("homogeneity"))
+```
+
+INSERT CODE
+
+### Data Fusion
+
+append new raster data onto existing data OR merge several bands and make new easter dataset
+
+Here: merging the texture measure (glcm) and the original raster
+
+```{r eval=FALSE}
+# for the next step of PCA we need to keep this in a raster (and not terra) format...
+m1_raster <- stack(m1)
+
+Fuse <- stack(m1_raster, glcm)
+```
+
+### PCA
+
+reduce dimensionality of data!
+
+To scale data, aka compare data that isnt measured in the same way (spectral bands 4 and 5) and textural data - use the scale function to standardise deviation.
+
+To get the mean: use scale = FALSE
+We can also set the number of samples for PCA
+```{r eval=FALSE}
+library(RStoolbox)
+
+Fuse_3_bands <- stack(Fuse$LC09_L2SP_137043_20230126_20230128_02_T1_SR_B4, Fuse$LC09_L2SP_137043_20230126_20230128_02_T1_SR_B5, Fuse$glcm_homogeneity)
+
+scale_fuse<-scale(Fuse_3_bands)
+
+pca <- rasterPCA(Fuse, 
+                 nSamples =100,
+                 spca = TRUE)
+```
+
+
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+knitr::include_graphics("img/PCA-output.png")
+```
+Here Comp 1 & 2 explains 0.81% of the variance. Often this is enough for analysis, so we extract only these 2.
+
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+knitr::include_graphics("img/PCA_layer1.png")
+```
+This is the output of just layer 1.
+
+
+## A little about data format
+
+Landsat data are collected in rows and paths made up of  grids of images.
+
+Data is are in tiers and levels.
+
+**Tier**: Tier 1 denotes best quality, Tier 2 are good but with some clouds that affects radiometric calibration, covering GCPs.
+
+Level: Level 1 is delivered through DN, Level 2 has surface reflectance and surface temperature, Level 3 are specific products ie Burned Area, surface water extent.
 
 ## Application
 
