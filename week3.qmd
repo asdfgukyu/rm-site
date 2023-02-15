@@ -124,11 +124,11 @@ Different materials don’t reflect varying energy back — making it hard to di
 
 ### Ratio
 
-Difference between 2 spectral bands that have a certain spectral response -- making it easier to identify certain landscape features. This is the NDVI Index, index that refers to a specific item, and uses simple formula to get them. 
+Difference between 2 spectral bands that have a certain spectral response -- making it easier to identify certain landscape features. This is the remote sensing index, index that refers to a specific item, and uses simple formula to get them. 
 
-Refer to [Index Database/](https://www.indexdatabase.de/) for more!!
+Refer to [Index Database](https://www.indexdatabase.de/) for more!! There is an index for virtually everything on earth. From soil type, tree health, moisture level, rock/metal type etc etc...
 
-Here we’re extracting healthy vegetation
+Here we’re extracting healthy vegetation, formula from Normalized Difference Vegetation Index.
 Band 5 - Band 4 (red)
 ```{r eval=FALSE}
 m1_NDVI <- (m1$LC09_L2SP_137043_20230126_20230128_02_T1_SR_B5 - m1$LC09_L2SP_137043_20230126_20230128_02_T1_SR_B4 ) / (m1$LC09_L2SP_137043_20230126_20230128_02_T1_SR_B5 + m1$LC09_L2SP_137043_20230126_20230128_02_T1_SR_B4)
@@ -226,4 +226,16 @@ Level: Level 1 is delivered through DN, Level 2 has surface reflectance and surf
 
 ## Application
 
+We outlined generally how these corrections and enhancements are executed. However when it comes to application, there are lots of debates around how best to correct/enhance an image. 
+
+For example, Wang et al (2012) found we choose and design the Ground Control Points (GCPs) have strong effects on the accuracy of geometric correction. They used a universal kriging model-based sampling method that takes into account the spatial auto-covariance of regression residual, and extracts results accordingly. They found that the more disperse and even the distribution of the GCPs, the higher the geometric correction precision. 
+
+Academics also develop new methods of correction and enhancements specifically to extract earth features they want and accessibility of certain methods. Pandey (2014) use PCA to map tree species in coastal Portugal depending on the tree species’ reflectance signatures. He highlighted the high cost involved to do this using GCPs, and that the increasing temporal and spectral frequency of earth data made developing automatic image registration software possible. At the end 15 PC layers contained 99.42% of the information of the original hyperspectral image. 
+
+Sometimes you don’t know if an image needs to be corrected or not if there are no obvious signs of haze or clouds visible to us. In a similar vein to reduce costly ground observation data (but also to test whether atmospheric correction (AC) is needed for improving the reliability of the estimated values of 2 key clear water parameters), Sriwongsitanon et al (2011) evaluated the influence of atmospheric correction and number of sampling points on the accuracy of water clarity assessment. They collected data on clarity and sediment parameters at 80 ground observation points as reference and used three Landsat 5 TM images to conduct the experiment in the largest lake in Thailand. They found AC has a statistically significant influence over the max and min values of the sediment parameter and clarity parameter, making the images more accurate in assessing water clarity, thus encouraged to be applied to when assessing clarity of water. They also concluded that only 32/80 of the observation points were needed for the satellite image to obtain a reliable assessment as a result of AC, instead of all 80. (wohoo!)
+
 ## Reflection
+This week was actually quite interesting. To understand how satellite images are tweaked and handled before they could actually be used for analysis feels the same as data cleaning before we go into EDA. Although cumbersome at times, I feel this is the most effective way to get to know your data before conducting analysis.
+
+It's actually very useful to know how these correction and enhancement methods work before we dive straight into GEE with ARD. I feel more confident knowing how to deal with earth observation data, in case I ever need to deal with raw images. 
+
