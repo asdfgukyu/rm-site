@@ -8,6 +8,111 @@ xaringanExtra::embed_xaringan(
   ratio = "16:10")
 ```
 
+## Data Correction
+
+Satellite data isn’t perfect, will have flaws and we need to fix it before we get into it, yuh.
+
+### Geometric Correction
+
+Process of removing geometric distortions caused by factors such as sensor perspective (off nadir), terrain relief (hill v flat ground), Wind (on plane) and Earth's curvature and rotation. 
+
+#### Solution
+
+**Ground Control Points** (GPS) to match satellite images to a reference datasets — another map, GPS data etc, using regression.
+
+- **Forward Mapping**: we have the xy in a correct image, xiyi in the uncorrected data, and change the data to it.
+    - but the point is randomly placed on the correct image — not ideal
+- **Backward Mapping**: predicting the wrong image with the correct image — more accurate, QGIS.
+    - takes **every point** of the correct image and maps it onto the uncorrected image
+
+**RMSE and Resampling**
+
+Normally RMSE is set as 0.5, but you might want to add more GCPs to reduce RMSE.
+
+ During this, data might be slightly shifted → so must resample the final raster by aligning via the nearest neighbour, linear, cubic. But grid cells might not align due to resolution etc etc.
+
+### Atmospheric Correction
+
+#### Mainly scattering & topographic attenuation
+
+Adjacency Effect: reflective surfaces bleeds into other pixels caused by scattering, making the image hazy and reduces contrast.
+
+**When and when not to correct:**
+
+*Unnecessary*
+
+- Classification of a single image
+- Independent classification of multi date imagery
+- Composite images (combining images)
+- Single dates or where training data extracted from all data
+
+*Necessary*
+
+- Biophysical parameters needed (e.g. temperature, leaf area index, NDVI)
+- Using spectral signatures through time and space
+
+**BUT** : Andy corrects it all anyway, just in case
+
+#### Solution
+
+**Relative Correction**
+
+Take a really dark pixel ( often the ocean) so that it can be assumed that it does not reflect the atmosphere at all, and subtract it to each pixel as a baseline.
+
+Psuedo Invariant Features (PIF)
+
+- from different images to identify features that don’t change (carparks)
+- take regression, where y is the base image, apply model.
+- base model often is the middle one in time series.
+
+**Absolute Correction**
+
+- Change digital brightness values into a scaled surface reflectance via atmospheric radiative transfer models. This is done to the whole image
+- But this is difficult to do bc needs a lot of data and $$
+
+**Empirical Line Correction**
+
+- Go out to the field at take measurements using a field spectrometer, but you need to be at the right time a place where the satellite is right above…
+- This is also essentially done through linear regression
+
+### Orthorectification Correction
+
+(Refer to glossary for terms)
+
+Make things nadir. This would be used if satellite passes adjacent to a mountain top instead of directly above it.
+
+Often uses cosine correction to calculate sun’s zenith and incidence angle
+
+### Radiometric Calibration
+
+Satellites capture image brightness and is stored as  Digital Number, which has no units and difficult to use!
+
+Radiometric Calibration is converting DN to spectral radiance.
+
+After all of that…
+
+There is **Landsat ARD - surface reflectance** that is already corrected… 
+
+But it’s good to know anyway and not all data are ARD (drone images, v high resolution images)
+
+## Data Joining
+
+### Mosaicking
+
+## Image Enhancement
+
+### Contrast Enhancement
+
+Different materials don’t reflect varying energy back — making it hard to differentiate between things. Images are also designed to avoid saturation in DN.
+
+Solutions:
+- Image stretching applied to DN
+- Ratio
+- Filtering
+- PCA
+- Texture
+
+
 ## Application
 
 ## Reflection

@@ -150,8 +150,23 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">3.1</span>  Summary</a></li>
-  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">3.2</span>  Application</a></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">3.3</span>  Reflection</a></li>
+  <li><a href="#data-correction" id="toc-data-correction" class="nav-link" data-scroll-target="#data-correction"><span class="toc-section-number">3.2</span>  Data Correction</a>
+  <ul class="collapse">
+  <li><a href="#geometric-correction" id="toc-geometric-correction" class="nav-link" data-scroll-target="#geometric-correction"><span class="toc-section-number">3.2.1</span>  Geometric Correction</a></li>
+  <li><a href="#atmospheric-correction" id="toc-atmospheric-correction" class="nav-link" data-scroll-target="#atmospheric-correction"><span class="toc-section-number">3.2.2</span>  Atmospheric Correction</a></li>
+  <li><a href="#orthorectification-correction" id="toc-orthorectification-correction" class="nav-link" data-scroll-target="#orthorectification-correction"><span class="toc-section-number">3.2.3</span>  Orthorectification Correction</a></li>
+  <li><a href="#radiometric-calibration" id="toc-radiometric-calibration" class="nav-link" data-scroll-target="#radiometric-calibration"><span class="toc-section-number">3.2.4</span>  Radiometric Calibration</a></li>
+  </ul></li>
+  <li><a href="#data-joining" id="toc-data-joining" class="nav-link" data-scroll-target="#data-joining"><span class="toc-section-number">3.3</span>  Data Joining</a>
+  <ul class="collapse">
+  <li><a href="#mosaicking" id="toc-mosaicking" class="nav-link" data-scroll-target="#mosaicking"><span class="toc-section-number">3.3.1</span>  Mosaicking</a></li>
+  </ul></li>
+  <li><a href="#image-enhancement" id="toc-image-enhancement" class="nav-link" data-scroll-target="#image-enhancement"><span class="toc-section-number">3.4</span>  Image Enhancement</a>
+  <ul class="collapse">
+  <li><a href="#contrast-enhancement" id="toc-contrast-enhancement" class="nav-link" data-scroll-target="#contrast-enhancement"><span class="toc-section-number">3.4.1</span>  Contrast Enhancement</a></li>
+  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">3.5</span>  Application</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">3.6</span>  Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -185,11 +200,106 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="application" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="application"><span class="header-section-number">3.2</span> Application</h2>
+<section id="data-correction" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="data-correction"><span class="header-section-number">3.2</span> Data Correction</h2>
+<p>Satellite data isn’t perfect, will have flaws and we need to fix it before we get into it, yuh.</p>
+<section id="geometric-correction" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="geometric-correction"><span class="header-section-number">3.2.1</span> Geometric Correction</h3>
+<p>Process of removing geometric distortions caused by factors such as sensor perspective (off nadir), terrain relief (hill v flat ground), Wind (on plane) and Earth’s curvature and rotation.</p>
+<section id="solution" class="level4" data-number="3.2.1.1">
+<h4 data-number="3.2.1.1" class="anchored" data-anchor-id="solution"><span class="header-section-number">3.2.1.1</span> Solution</h4>
+<p><strong>Ground Control Points</strong> (GPS) to match satellite images to a reference datasets — another map, GPS data etc, using regression.</p>
+<ul>
+<li><strong>Forward Mapping</strong>: we have the xy in a correct image, xiyi in the uncorrected data, and change the data to it.
+<ul>
+<li>but the point is randomly placed on the correct image — not ideal</li>
+</ul></li>
+<li><strong>Backward Mapping</strong>: predicting the wrong image with the correct image — more accurate, QGIS.
+<ul>
+<li>takes <strong>every point</strong> of the correct image and maps it onto the uncorrected image</li>
+</ul></li>
+</ul>
+<p><strong>RMSE and Resampling</strong></p>
+<p>Normally RMSE is set as 0.5, but you might want to add more GCPs to reduce RMSE.</p>
+<p>During this, data might be slightly shifted → so must resample the final raster by aligning via the nearest neighbour, linear, cubic. But grid cells might not align due to resolution etc etc.</p>
 </section>
-<section id="reflection" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.3</span> Reflection</h2>
+</section>
+<section id="atmospheric-correction" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="atmospheric-correction"><span class="header-section-number">3.2.2</span> Atmospheric Correction</h3>
+<section id="mainly-scattering-topographic-attenuation" class="level4" data-number="3.2.2.1">
+<h4 data-number="3.2.2.1" class="anchored" data-anchor-id="mainly-scattering-topographic-attenuation"><span class="header-section-number">3.2.2.1</span> Mainly scattering &amp; topographic attenuation</h4>
+<p>Adjacency Effect: reflective surfaces bleeds into other pixels caused by scattering, making the image hazy and reduces contrast.</p>
+<p><strong>When and when not to correct:</strong></p>
+<p><em>Unnecessary</em></p>
+<ul>
+<li>Classification of a single image</li>
+<li>Independent classification of multi date imagery</li>
+<li>Composite images (combining images)</li>
+<li>Single dates or where training data extracted from all data</li>
+</ul>
+<p><em>Necessary</em></p>
+<ul>
+<li>Biophysical parameters needed (e.g.&nbsp;temperature, leaf area index, NDVI)</li>
+<li>Using spectral signatures through time and space</li>
+</ul>
+<p><strong>BUT</strong> : Andy corrects it all anyway, just in case</p>
+</section>
+<section id="solution-1" class="level4" data-number="3.2.2.2">
+<h4 data-number="3.2.2.2" class="anchored" data-anchor-id="solution-1"><span class="header-section-number">3.2.2.2</span> Solution</h4>
+<p><strong>Relative Correction</strong></p>
+<p>Take a really dark pixel ( often the ocean) so that it can be assumed that it does not reflect the atmosphere at all, and subtract it to each pixel as a baseline.</p>
+<p>Psuedo Invariant Features (PIF)</p>
+<ul>
+<li>from different images to identify features that don’t change (carparks)</li>
+<li>take regression, where y is the base image, apply model.</li>
+<li>base model often is the middle one in time series.</li>
+</ul>
+<p><strong>Absolute Correction</strong></p>
+<ul>
+<li>Change digital brightness values into a scaled surface reflectance via atmospheric radiative transfer models. This is done to the whole image</li>
+<li>But this is difficult to do bc needs a lot of data and $$</li>
+</ul>
+<p><strong>Empirical Line Correction</strong></p>
+<ul>
+<li>Go out to the field at take measurements using a field spectrometer, but you need to be at the right time a place where the satellite is right above…</li>
+<li>This is also essentially done through linear regression</li>
+</ul>
+</section>
+</section>
+<section id="orthorectification-correction" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="orthorectification-correction"><span class="header-section-number">3.2.3</span> Orthorectification Correction</h3>
+<p>(Refer to glossary for terms)</p>
+<p>Make things nadir. This would be used if satellite passes adjacent to a mountain top instead of directly above it.</p>
+<p>Often uses cosine correction to calculate sun’s zenith and incidence angle</p>
+</section>
+<section id="radiometric-calibration" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="radiometric-calibration"><span class="header-section-number">3.2.4</span> Radiometric Calibration</h3>
+<p>Satellites capture image brightness and is stored as Digital Number, which has no units and difficult to use!</p>
+<p>Radiometric Calibration is converting DN to spectral radiance.</p>
+<p>After all of that…</p>
+<p>There is <strong>Landsat ARD - surface reflectance</strong> that is already corrected…</p>
+<p>But it’s good to know anyway and not all data are ARD (drone images, v high resolution images)</p>
+</section>
+</section>
+<section id="data-joining" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="data-joining"><span class="header-section-number">3.3</span> Data Joining</h2>
+<section id="mosaicking" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="mosaicking"><span class="header-section-number">3.3.1</span> Mosaicking</h3>
+</section>
+</section>
+<section id="image-enhancement" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="image-enhancement"><span class="header-section-number">3.4</span> Image Enhancement</h2>
+<section id="contrast-enhancement" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="contrast-enhancement"><span class="header-section-number">3.4.1</span> Contrast Enhancement</h3>
+<p>Different materials don’t reflect varying energy back — making it hard to differentiate between things. Images are also designed to avoid saturation in DN.</p>
+<p>Solutions: - Image stretching applied to DN - Ratio - Filtering - PCA - Texture</p>
+</section>
+</section>
+<section id="application" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="application"><span class="header-section-number">3.5</span> Application</h2>
+</section>
+<section id="reflection" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.6</span> Reflection</h2>
 
 
 </section>

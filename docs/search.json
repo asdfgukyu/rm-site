@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "CASA0023 Remote Sensing Cities and Environment",
     "section": "",
-    "text": "Abdul n I :)\n\n\n\nHello! Welcome to my learning diary for CASA0023 Remote Sensing Cities and Environments at the Centre for Advance Spatial Analysis, UCL London.\nI am a socio-cultural geographer, a producer in the culture sector and a spatial data scientist (!) . I got my undergraduate degree at the London School of Economics in Human Geography where I studied topics from urban planning, economic geography, and international development to investigating urban socio-spatial dynamics and role of the creative sector in urban space.\n\nSwiftly after graduation I entered the cultural sector where I assist in theatre, dance, visual art and moving images programme curation and production in Hong Kong and London for three years.\nCurrently at CASA, I would like to further my geographic knowledge and gain technical skills and enter the field of urban sustainability. I am particularly interested in the topics of public housing, equity and climate resilience !\n\n\nThis learning diary is the assignment output of CASA00023 Remote Sensing Cities and Environment. The structure this book will be broken down by weeks, each with a different learning objective.\nThis book is created from R markdown and executable code."
+    "text": "Hello! Welcome to my learning diary for CASA0023 Remote Sensing Cities and Environments at the Centre for Advance Spatial Analysis, UCL London.\nI am a socio-cultural geographer, a producer in the culture sector and a spatial data scientist (!) . I got my undergraduate degree at the London School of Economics in Human Geography where I studied topics from urban planning, economic geography, and international development to investigating urban socio-spatial dynamics and role of the creative sector in urban space.\n\nSwiftly after graduation I entered the cultural sector where I assist in theatre, dance, visual art and moving images programme curation and production in Hong Kong and London for three years.\nCurrently at CASA, I would like to further my geographic knowledge and gain technical skills and enter the field of urban sustainability. I am particularly interested in the topics of public housing, equity and climate resilience !\n\n\nThis learning diary is the assignment output of CASA00023 Remote Sensing Cities and Environment. The structure this book will be broken down by weeks, each with a different learning objective.\nThis book is created from R markdown and executable code."
   },
   {
     "objectID": "week1.html",
@@ -35,25 +35,39 @@
     "text": "This week’s learning diary is to produce a Xarigan presentation and host it on a Quarto website. The content of the presentation includes 9 slides on Landsat 8 and 9, providing overview of the satellites (Summary), notable academic papers that have utilised data from these satellites (Application) and individual reflection."
   },
   {
-    "objectID": "week2.html#section",
-    "href": "week2.html#section",
-    "title": "2  Portfolio Tools",
-    "section": "2.1 ",
-    "text": "2.1"
+    "objectID": "week3.html#data-correction",
+    "href": "week3.html#data-correction",
+    "title": "3  Corrections",
+    "section": "3.2 Data Correction",
+    "text": "3.2 Data Correction\nSatellite data isn’t perfect, will have flaws and we need to fix it before we get into it, yuh.\n\n3.2.1 Geometric Correction\nProcess of removing geometric distortions caused by factors such as sensor perspective (off nadir), terrain relief (hill v flat ground), Wind (on plane) and Earth’s curvature and rotation.\n\n3.2.1.1 Solution\nGround Control Points (GPS) to match satellite images to a reference datasets — another map, GPS data etc, using regression.\n\nForward Mapping: we have the xy in a correct image, xiyi in the uncorrected data, and change the data to it.\n\nbut the point is randomly placed on the correct image — not ideal\n\nBackward Mapping: predicting the wrong image with the correct image — more accurate, QGIS.\n\ntakes every point of the correct image and maps it onto the uncorrected image\n\n\nRMSE and Resampling\nNormally RMSE is set as 0.5, but you might want to add more GCPs to reduce RMSE.\nDuring this, data might be slightly shifted → so must resample the final raster by aligning via the nearest neighbour, linear, cubic. But grid cells might not align due to resolution etc etc.\n\n\n\n3.2.2 Atmospheric Correction\n\n3.2.2.1 Mainly scattering & topographic attenuation\nAdjacency Effect: reflective surfaces bleeds into other pixels caused by scattering, making the image hazy and reduces contrast.\nWhen and when not to correct:\nUnnecessary\n\nClassification of a single image\nIndependent classification of multi date imagery\nComposite images (combining images)\nSingle dates or where training data extracted from all data\n\nNecessary\n\nBiophysical parameters needed (e.g. temperature, leaf area index, NDVI)\nUsing spectral signatures through time and space\n\nBUT : Andy corrects it all anyway, just in case\n\n\n3.2.2.2 Solution\nRelative Correction\nTake a really dark pixel ( often the ocean) so that it can be assumed that it does not reflect the atmosphere at all, and subtract it to each pixel as a baseline.\nPsuedo Invariant Features (PIF)\n\nfrom different images to identify features that don’t change (carparks)\ntake regression, where y is the base image, apply model.\nbase model often is the middle one in time series.\n\nAbsolute Correction\n\nChange digital brightness values into a scaled surface reflectance via atmospheric radiative transfer models. This is done to the whole image\nBut this is difficult to do bc needs a lot of data and $$\n\nEmpirical Line Correction\n\nGo out to the field at take measurements using a field spectrometer, but you need to be at the right time a place where the satellite is right above…\nThis is also essentially done through linear regression\n\n\n\n\n3.2.3 Orthorectification Correction\n(Refer to glossary for terms)\nMake things nadir. This would be used if satellite passes adjacent to a mountain top instead of directly above it.\nOften uses cosine correction to calculate sun’s zenith and incidence angle\n\n\n3.2.4 Radiometric Calibration\nSatellites capture image brightness and is stored as Digital Number, which has no units and difficult to use!\nRadiometric Calibration is converting DN to spectral radiance.\nAfter all of that…\nThere is Landsat ARD - surface reflectance that is already corrected…\nBut it’s good to know anyway and not all data are ARD (drone images, v high resolution images)"
+  },
+  {
+    "objectID": "week3.html#data-joining",
+    "href": "week3.html#data-joining",
+    "title": "3  Corrections",
+    "section": "3.3 Data Joining",
+    "text": "3.3 Data Joining\n\n3.3.1 Mosaicking"
+  },
+  {
+    "objectID": "week3.html#image-enhancement",
+    "href": "week3.html#image-enhancement",
+    "title": "3  Corrections",
+    "section": "3.4 Image Enhancement",
+    "text": "3.4 Image Enhancement\n\n3.4.1 Contrast Enhancement\nDifferent materials don’t reflect varying energy back — making it hard to differentiate between things. Images are also designed to avoid saturation in DN.\nSolutions: - Image stretching applied to DN - Ratio - Filtering - PCA - Texture"
   },
   {
     "objectID": "week3.html#application",
     "href": "week3.html#application",
     "title": "3  Corrections",
-    "section": "3.2 Application",
-    "text": "3.2 Application"
+    "section": "3.5 Application",
+    "text": "3.5 Application"
   },
   {
     "objectID": "week3.html#reflection",
     "href": "week3.html#reflection",
     "title": "3  Corrections",
-    "section": "3.3 Reflection",
-    "text": "3.3 Reflection"
+    "section": "3.6 Reflection",
+    "text": "3.6 Reflection"
   },
   {
     "objectID": "week4.html",
