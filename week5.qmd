@@ -124,7 +124,7 @@ print(median, "median") //Print to Console
 
 Every EO data has its specific Scale Factor information. Here from the @HowUseScale, Landsat Level 2 images have Surface Reflectance and Surface Temperature scale factors...
 
-```{r echo=FALSE, out.width='90%', fig.align='center'}
+```{r echo=FALSE, out.width='90%', fig.align='center', fig.cap="Landsat Level 2 Scale Factor Source: @HowUseScale"}
 knitr::include_graphics("img/usgs_landsat2.png")
 ```
 
