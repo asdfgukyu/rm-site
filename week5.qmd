@@ -4,12 +4,13 @@ Because this week's material is mainly to get acquainted with GEE using the skil
 
 ## Summary
 
-### What is GEE?
+**What is GEE?**
+
 A geospatial processing service, allow for large scale analysis
 -   EO data are all stored on the server
 Handy because it maps out the output immediately --- good for visualisation
 
-### Google does things a little differently...
+_Google does things a little differently..._
 
 **Naming Things...**
 
