@@ -83,6 +83,25 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -514,9 +533,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="application" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="application"><span class="header-section-number">3.6</span> Application</h2>
 <p>We outlined generally how these corrections and enhancements are executed. However when it comes to application, there are lots of debates around how best to correct/enhance an image.</p>
-<p>For example, Wang et al (2012) found we choose and design the Ground Control Points (GCPs) have strong effects on the accuracy of geometric correction. They used a universal kriging model-based sampling method that takes into account the spatial auto-covariance of regression residual, and extracts results accordingly. They found that the more disperse and even the distribution of the GCPs, the higher the geometric correction precision.</p>
-<p>Academics also develop new methods of correction and enhancements specifically to extract earth features they want and accessibility of certain methods. Pandey (2014) use PCA to map tree species in coastal Portugal depending on the tree species’ reflectance signatures. He highlighted the high cost involved to do this using GCPs, and that the increasing temporal and spectral frequency of earth data made developing automatic image registration software possible. At the end 15 PC layers contained 99.42% of the information of the original hyperspectral image.</p>
-<p>Sometimes you don’t know if an image needs to be corrected or not if there are no obvious signs of haze or clouds visible to us. In a similar vein to reduce costly ground observation data (but also to test whether atmospheric correction (AC) is needed for improving the reliability of the estimated values of 2 key clear water parameters), Sriwongsitanon et al (2011) evaluated the influence of atmospheric correction and number of sampling points on the accuracy of water clarity assessment. They collected data on clarity and sediment parameters at 80 ground observation points as reference and used three Landsat 5 TM images to conduct the experiment in the largest lake in Thailand. They found AC has a statistically significant influence over the max and min values of the sediment parameter and clarity parameter, making the images more accurate in assessing water clarity, thus encouraged to be applied to when assessing clarity of water. They also concluded that only 32/80 of the observation points were needed for the satellite image to obtain a reliable assessment as a result of AC, instead of all 80. (wohoo!)</p>
+<p>For example, <span class="citation" data-cites="wangEffectSamplingDesign2012a">Wang et al. (<a href="references.html#ref-wangEffectSamplingDesign2012a" role="doc-biblioref">2012</a>)</span> found we choose and design the Ground Control Points (GCPs) have strong effects on the accuracy of geometric correction. They used a universal kriging model-based sampling method that takes into account the spatial auto-covariance of regression residual, and extracts results accordingly. They found that the more disperse and even the distribution of the GCPs, the higher the geometric correction precision.</p>
+<p>Academics also develop new methods of correction and enhancements specifically to extract earth features they want and accessibility of certain methods. <span class="citation" data-cites="pandeyMappingTreeSpecies2014b">Pandey, Tate, and Balzter (<a href="references.html#ref-pandeyMappingTreeSpecies2014b" role="doc-biblioref">2014</a>)</span> use PCA to map tree species in coastal Portugal depending on the tree species’ reflectance signatures. He highlighted the high cost involved to do this using GCPs, and that the increasing temporal and spectral frequency of earth data made developing automatic image registration software possible. At the end 15 PC layers contained 99.42% of the information of the original hyperspectral image.</p>
+<p>Sometimes you don’t know if an image needs to be corrected or not if there are no obvious signs of haze or clouds visible to us. In a similar vein to reduce costly ground observation data (but also to test whether atmospheric correction (AC) is needed for improving the reliability of the estimated values of 2 key clear water parameters), <span class="citation" data-cites="sriwongsitanonInfluenceAtmosphericCorrection2011a">Sriwongsitanon, Surakit, and Thianpopirug (<a href="references.html#ref-sriwongsitanonInfluenceAtmosphericCorrection2011a" role="doc-biblioref">2011</a>)</span> evaluated the influence of atmospheric correction and number of sampling points on the accuracy of water clarity assessment. They collected data on clarity and sediment parameters at 80 ground observation points as reference and used three Landsat 5 TM images to conduct the experiment in the largest lake in Thailand. They found AC has a statistically significant influence over the max and min values of the sediment parameter and clarity parameter, making the images more accurate in assessing water clarity, thus encouraged to be applied to when assessing clarity of water. They also concluded that only 32/80 of the observation points were needed for the satellite image to obtain a reliable assessment as a result of AC, instead of all 80. (wohoo!)</p>
 </section>
 <section id="reflection" class="level2" data-number="3.7">
 <h2 data-number="3.7" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.7</span> Reflection</h2>
@@ -524,6 +543,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>It’s actually very useful to know how these correction and enhancement methods work before we dive straight into GEE with ARD. I feel more confident knowing how to deal with earth observation data, in case I ever need to deal with raw images.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-pandeyMappingTreeSpecies2014b" class="csl-entry" role="doc-biblioentry">
+Pandey, Prem Chandra, Nicholas J. Tate, and Heiko Balzter. 2014. <span>“Mapping <span>Tree Species</span> in <span>Coastal Portugal Using Statistically Segmented Principal Component Analysis</span> and <span>Other Methods</span>.”</span> <em>IEEE Sensors Journal</em> 14 (12): 4434–41. <a href="https://doi.org/10.1109/JSEN.2014.2335612">https://doi.org/10.1109/JSEN.2014.2335612</a>.
+</div>
+<div id="ref-sriwongsitanonInfluenceAtmosphericCorrection2011a" class="csl-entry" role="doc-biblioentry">
+Sriwongsitanon, Nutchanart, Kritsanat Surakit, and Sansarith Thianpopirug. 2011. <span>“Influence of Atmospheric Correction and Number of Sampling Points on the Accuracy of Water Clarity Assessment Using Remote Sensing Application.”</span> <em>Journal of Hydrology</em> 401 (3): 203–20. <a href="https://doi.org/10.1016/j.jhydrol.2011.02.023">https://doi.org/10.1016/j.jhydrol.2011.02.023</a>.
+</div>
+<div id="ref-wangEffectSamplingDesign2012a" class="csl-entry" role="doc-biblioentry">
+Wang, Jianghao, Yong Ge, Gerard B. M. Heuvelink, Chenghu Zhou, and Dick Brus. 2012. <span>“Effect of the Sampling Design of Ground Control Points on the Geometric Correction of Remotely Sensed Imagery.”</span> <em>International Journal of Applied Earth Observation and Geoinformation</em> 18 (August): 91–100. <a href="https://doi.org/10.1016/j.jag.2012.01.001">https://doi.org/10.1016/j.jag.2012.01.001</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
