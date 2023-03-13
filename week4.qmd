@@ -1,12 +1,40 @@
 # Policy
+This week focuses on how we may utilise insights gained from Earth Observation analysis to assist local, regional and national government to implement data-drive policies, whilst increasing compliance to urban/glolbal agendas.
 
-## Summary
+## Case Study: Informal Settlements in Nairobi, Kenya
+### Context
+
+```{r echo=FALSE, out.width='90%', fig.align='center',fig.cap= "Source: @globalpartnershipforresult-basedappraoachesKenyaAssessmentKayoleSowetond."}
+knitr::include_graphics("img/informal_set.png")
+```
+
+-   Until the Covid-19 pandemic, Nairobi was one of the fastest growing economies in Africa with annual average growth of 5.9% between 2010 - 2018 (@EconomicGrowthTrade2023a), GDP worth \$36 billion (@Nairobia)
+-   2/3 of Kenyans continues to live in poverty, making less than £3.2 per day
+-   70% Kenyan families are chronically vulnerable to food and nutrition insecurity and preventable diseases.
+-   75% of Nairobi is informal settlements, with predicted number of urban population living in slums to double in the next 15 years.
+-   Informal settlements covers 5% of total residential land of the city. (UN Habitat, 2005)
+-   This city is extremely vulnerable against impact of the climate crisis--haltering food security, reduce access to clean water, exposure to extreme heat.
+
+### International Framework
 
 **Sustainable Development Goals**
+```{r echo=FALSE, out.width='90%', fig.align='center',fig.cap="17 Sustainable Development Goals. Source: @unitednationsCommunicationsMaterialsn.d."}
+knitr::include_graphics("img/sdg.png")
+```
+
+The Sustainable Development Goals is a set of 17 objectives that serves as a 'blueprint to a to achieve a better and more sustainable future for all', led by the United Nations. The SDGs pushes for sustainable development that recognises the interconnectedness of  social, economic and environmental aspect of society.
 
 **UN SDG11**: Make cities and human settlements inclusive, safe, resilient and sustainable
 
 **Target 11.1**: By 2030, ensure access for all to adequate, safe and affordable housing and basic services and upgrade slums.
+
+**UN SDG02**: End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
+
+**Target 02.1**: By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round.
+
+
+
+### Urban-level framework
 
 **Nairobi Climate Action Plan 2020-2050**
 
@@ -18,9 +46,6 @@
 -   This city is extremely vulnerable against impact of the climate crisis--- haltering food security, reduce access to clean water, exposure to extreme heat.
 -   Nairobi has set out 15 climate resilience action to strength the city against extreme weather, of which pertained very little detail onto how laid actions would be implemented.
 
-```{r echo=FALSE, out.width='90%', fig.align='center'}
-knitr::include_graphics("img/nairobi_15actions")
-```
 
 ### FOCUS Action 13: increase access to climate resilience programme.
 
@@ -35,6 +60,7 @@ knitr::include_graphics("img/nairobi_action13.png")
 -   Slum mapping --- see where slums will expand and provide amenities accordingly.
 
 ## Application
+### Slum identification
 
 **Increase access to climate resilience programme** --- Identify arid land/flood zones, disaster mapping.
 

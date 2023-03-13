@@ -71,6 +71,11 @@ knitr::include_graphics("img/GEE_object_classes.png")
 ```
 
 ### Applying
+
+```{r echo=FALSE, out.width='90%', fig.align='center',fig.cap="Process of GEE analysis in Week 5 practical"}
+knitr::include_graphics("img/GEE_flow.png")
+```
+
 #### Loading In
 When loading in `ee.ImageCollection` , we need to/can specify:
 
@@ -227,8 +232,7 @@ Map.addLayer(glcm, {min:14, max: 650}, 'glcm');
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/texture_layer.png")
 ```
-We made a purple texture layer! 
-size 1 bc its the size of the neighbourhood to include in each GLCM. it means value of 1 creates a surrounding 3x3 grid. Refer to prac for more!!
+We made a texture layer! This can then be used in conjuncture with other bands for analysis.
 
 #### Principle Component Analysis 
 Refer to Week 3 Correction for more PCA content.
@@ -332,6 +336,11 @@ var pcImage = getPrincipalComponents(centered, scale, region);
 ```
 
 Now from PercentageVariance we know that the first 2 layers explains almost 90% of the variance.
+
+```{r echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics("img/PCA.png")
+```
+
 So we can print out the first 2 layers:
 ```{r eval=FALSE}
 Map.addLayer(pcImage, {bands: ['pc2', 'pc1'], min: -2, max: 2}, 'PCA bands 1 and 2');
@@ -344,6 +353,20 @@ Or if we want to whole stack:
  }
 ```
 
-#Application
+## Application
+Since what we learnt this week was mainly understanding how Google Earth Engine made using already open source Earth Observation data so accessible, I want to highlight the projects that were made possible because of this plaform.
+
+## Journalism!
+
+
+### Bellingcat!
+
+### Financial Times!
 
 ## Reflection
+Google Earth Engine has made processing and analysing Earth Observation data much more accessible. This allows individuals to access and process large scale geospatial data without the need for powerful hardwares and softwares. Because everything is hosted on the server, this enables scalability processes involving larger datasets that otherwise would be too big for desktop-based processing. GGE also streamlines the analysis process, eliminating the need for switching between multiple softwares, integrating instantaneous visualisation, data sourcing and scripting in one space. The vast volume of images available on GEE also reduces time spent on locating and sourcing geospatial data drastically. 
+
+Since GGE is already a web-hosted platform, it makes distributing and presenting analysis/maps much simpler. This is great when communicating with non-geospatial trained clients and enables more geosptial output/discussion. 
+
+
+
