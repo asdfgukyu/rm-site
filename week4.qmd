@@ -11,8 +11,8 @@ knitr::include_graphics("img/informal_set.png")
 -   Until the Covid-19 pandemic, Nairobi was one of the fastest growing economies in Africa with annual average growth of 5.9% between 2010 - 2018 (@EconomicGrowthTrade2023a), GDP worth \$36 billion (@Nairobia)
 -   2/3 of Kenyans continues to live in poverty, making less than £3.2 per day
 -   70% Kenyan families are chronically vulnerable to food and nutrition insecurity and preventable diseases.
--   75% of Nairobi is informal settlements, with predicted number of urban population living in slums to double in the next 15 years.
--   Informal settlements covers 5% of total residential land of the city. (UN Habitat, 2005)
+-   75% of urban population growth in Nairobi is absorbed by informal settlements, with predicted number of urban population living in slums to double in the next 15 years.
+-   Informal settlements covers 5% of total residential land of the city, but inhabited by half of the city's population (@unhabitatKenyaNairobiUrban)
 -   This city is extremely vulnerable against impact of the climate crisis--haltering food security, reduce access to clean water, exposure to extreme heat.
 
 ### International Framework
@@ -24,13 +24,26 @@ knitr::include_graphics("img/sdg.png")
 
 The Sustainable Development Goals is a set of 17 objectives that serves as a 'blueprint to a to achieve a better and more sustainable future for all', led by the United Nations. The SDGs pushes for sustainable development that recognises the interconnectedness of  social, economic and environmental aspect of society.
 
-**UN SDG11**: Make cities and human settlements inclusive, safe, resilient and sustainable
-
-**Target 11.1**: By 2030, ensure access for all to adequate, safe and affordable housing and basic services and upgrade slums.
+Relevant goals:
 
 **UN SDG02**: End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
 
-**Target 02.1**: By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round.
+- **Target 02.1**: By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round.
+
+- **Indicator**: Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES)
+
+
+**UN SDG06**: Ensure availability and sustainable management of water and sanitation for all.
+
+- **Target 06.2**: By 2030, achieve access to adequate and equitable sanitation and hygiene for all and end open defecation, paying special attention to the needs of women and girls and those in vulnerable situations.
+
+- **Indicator**: Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water
+
+**UN SDG11**: Make cities and human settlements inclusive, safe, resilient and sustainable
+
+- **Target 11.1**: By 2030, ensure access for all to adequate, safe and affordable housing and basic services and upgrade slums.
+
+- **Indicator**: Proportion of urban population living in slums, informal settlements or inadequate housing
 
 
 
