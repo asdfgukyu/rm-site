@@ -239,6 +239,8 @@ Sometimes you don't know if an image needs to be corrected or not if there are n
 
 ## Reflection
 
-This week was actually quite interesting. To understand how satellite images are tweaked and handled before they could actually be used for analysis feels the same as data cleaning before we go into EDA. Although cumbersome at times, I feel this is the most effective way to get to know your data before conducting analysis.
+Understanding how satellite images are tweaked and handled before they could actually be used for analysis feels the same as data cleaning before we go into EDA. Although cumbersome at times, I feel this is the most effective way to get to know your data before conducting analysis. I'm also looking forward to GEE and see how the platform streamlines the process.
 
-It's actually very useful to know how these correction and enhancement methods work before we dive straight into GEE with ARD. I feel more confident knowing how to deal with earth observation data, in case I ever need to deal with raw images.
+The possibilities with Earth Observation data seems to be... endless? Essentially anything activities larger than 10 by 10m can be detected on satellite images 
+
+It's been very useful to know how these correction and enhancement methods work before we dive straight into GEE with ARD. I feel more confident knowing how to deal with earth observation data, in case I ever need to deal with raw images.

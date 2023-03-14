@@ -366,7 +366,8 @@ Since what we learnt this week was mainly understanding how Google Earth Engine 
 ## Reflection
 Google Earth Engine has made processing and analysing Earth Observation data much more accessible. This allows individuals to access and process large scale geospatial data without the need for powerful hardwares and softwares. Because everything is hosted on the server, this enables scalability processes involving larger datasets that otherwise would be too big for desktop-based processing. GGE also streamlines the analysis process, eliminating the need for switching between multiple softwares, integrating instantaneous visualisation, data sourcing and scripting in one space. The vast volume of images available on GEE also reduces time spent on locating and sourcing geospatial data drastically. 
 
-Since GGE is already a web-hosted platform, it makes distributing and presenting analysis/maps much simpler. This is great when communicating with non-geospatial trained clients and enables more geosptial output/discussion. 
+Since GGE is already a web-hosted platform, it makes distributing and presenting analysis/maps much simpler. This is great when communicating with non-geospatial trained clients and enables more geospatial output/discussion. 
 
+Although looking back onto the codes we used to process images on R, the codes are **much shorter** than codes on GEE (eg: code for PCA on R is above 4 lines?!). However this is the trade off of having a web-based platform that enables streamline image sourcing and visualization -- and this requires Javascript. Ultimately R is still ...
 
 
