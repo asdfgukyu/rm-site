@@ -44,7 +44,7 @@ How do we know where to cut?
 -  Outcome: each leaf should represent the value that is close to the data
 
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
-  knitr::include_graphics("img/regtree_cutting")
+  knitr::include_graphics("img/regtree_cutting.jpg")
 ```
 
 **Public Enemy: Overfittiing**
