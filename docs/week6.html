@@ -159,7 +159,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-machine-learning" id="toc-introduction-to-machine-learning" class="nav-link active" data-scroll-target="#introduction-to-machine-learning"><span class="toc-section-number">6.1</span>  Introduction to Machine Learning</a>
+  <ul class="collapse">
+  <li><a href="#classification-regression-trees-cart-classification" id="toc-classification-regression-trees-cart-classification" class="nav-link" data-scroll-target="#classification-regression-trees-cart-classification"><span class="toc-section-number">6.1.1</span>  Classification &amp; Regression Trees (CART): Classification</a></li>
+  </ul></li>
+  <li><a href="#random-forest" id="toc-random-forest" class="nav-link" data-scroll-target="#random-forest"><span class="toc-section-number">6.2</span>  Random Forest</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -180,8 +190,96 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Week 6 is about classification! When we get an image from satellites, we need the programme to be able to identify types of land cover for masses of data. While we can't do this manually, we need to rely on Machine Learning methods.</p>
+<section id="introduction-to-machine-learning" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="introduction-to-machine-learning"><span class="header-section-number">6.1</span> Introduction to Machine Learning</h2>
+<p><strong>Machine Learning is the science of computer modelling of learning process.</strong></p>
+<p>Machine learning models use a type of inductive inference where the knowledge base (rule of thumbs) are learned from specific historical example (the training data), and these general conclusion to predict future.</p>
+<section id="classification-regression-trees-cart-classification" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="classification-regression-trees-cart-classification"><span class="header-section-number">6.1.1</span> Classification &amp; Regression Trees (CART): Classification</h3>
+<p><strong>Classification Trees</strong></p>
+<ul>
+<li><p>When a decision tree classify things to categories.</p></li>
+<li><p>Classify data into 2+ discrete categories, split into further branches until all categories of decision have been made.</p></li>
+</ul>
+<p>INSERT IMAGE</p>
+<ul>
+<li><p>A good classification tree should be multi layered because just one independent vary would often result in impure results (where the predictive power of the independent variable is not 100% accurate)</p></li>
+<li><p>The more relevant dependent variables in the tree, the less impure the result should be, and the stronger the predictive accuracy.</p></li>
+</ul>
+<p>How do we know what order we put our dependent variables in the classification tree?</p>
+<ul>
+<li><p>We calculate a <strong>Gini Impurity</strong> for each variable, and the one with the lowest impurity becomes the root.</p></li>
+<li><p>we dont expect the leaves from the root node to be pure, so we calculate the the Gini impurity of the remaining variables, and choose the variable with the lowerst Gini impurity score, split the node and so on, until nodes become leaves.</p></li>
+</ul>
+<p><strong>Regression Trees</strong></p>
+<ul>
+<li><p>When decision tree predicts numeric, continous discrete values</p></li>
+<li><p>When linear 1 relationship does not fit data, we split the data into smaller subset, and run several different regressions for each chunk</p></li>
+</ul>
+<p>INSERT IMAGE</p>
+<p>How do we know where to cut?</p>
+<ul>
+<li>Sections are divided based on thresholds (nodes) and the <strong>SSR (Sum of Square Residuals)</strong> is calcuated.</li>
+<li>Again, ones with lowest SSR becomes the root, and so on.</li>
+<li>Outcome: each leaf should represent the value that is close to the data</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/regtree_cutting.png" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Public Enemy: Overfittiing</strong></p>
+<p>Subsetting and dividing dataset too much could lead to overfitting — meaning the model is so fine tuned to the detail on the dataset it is learning from, it is unable to effectly predict outcome with a different dataset.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/overfit.png" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Bias</strong>: difference between predicted value and true value — bad a being precise</p>
+<p><strong>Variance</strong>: variability of model for a given point — bad a generalising</p>
+<p>You want a bit of both!</p>
+<p><strong>Preventative measures:</strong></p>
+<ol type="1">
+<li><p>Limit how the tree grows — set minimum of at least 20pixel per leaf</p></li>
+<li><p>Weakest Link pruning:</p></li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/weakestlink.webp" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Calculate SSR for each tree. From no leaf removal to more leaves removal</p>
+<p>It is expected that as more leaves are removed, the SSR gets bigger. The point is so that the model doesn’t fit the training data too well anyway</p>
+<p>With each tree's SSR, we calcuate the <strong>Tree Score</strong> – the lower the better.</p>
+<p><strong>Tree Score = SSR + αT</strong></p>
+<p><strong>T</strong> = number of leaves</p>
+<p><strong>α</strong> = tree penalty. The more leaves removed, the higher the <strong>α.</strong></p>
+<p><strong>How to decide on α?</strong></p>
+<p>Build a full size (training and testing) regression tree, wher α becomes 0, where tree score is the lowest. Repeat and get a different α values for each tree.</p>
+<ul>
+<li>Return to the training data, and apply α values from before, which dictakes where the data is split</li>
+</ul>
+<p>Do this process 10 times for cross validation — the value of <strong>α</strong> that gives the smallest ~SSR is the final value → slect the tree that used the full data with that specific alpha</p>
+</section>
+</section>
+<section id="random-forest" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="random-forest"><span class="header-section-number">6.2</span> Random Forest</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

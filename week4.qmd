@@ -1,5 +1,5 @@
 # Policy
-This week focuses on how we may utilise insights gained from Earth Observation analysis to assist local, regional and national government to implement data-drive policies, whilst increasing compliance to urban/glolbal agendas.
+This week focuses on how we may utilise insights gained from Earth Observation analysis to assist local, regional and national government to implement data-drive policies, whilst increasing compliance to urban/global agendas.
 
 ## Case Study: Informal Settlements in Nairobi, Kenya
 ### Context
@@ -8,12 +8,13 @@ This week focuses on how we may utilise insights gained from Earth Observation a
 knitr::include_graphics("img/informal_set.png")
 ```
 
--   Until the Covid-19 pandemic, Nairobi was one of the fastest growing economies in Africa with annual average growth of 5.9% between 2010 - 2018 (@EconomicGrowthTrade2023a), GDP worth \$36 billion (@Nairobia)
--   2/3 of Kenyans continues to live in poverty, making less than £3.2 per day
--   70% Kenyan families are chronically vulnerable to food and nutrition insecurity and preventable diseases.
+-   Until the Covid-19 pandemic, Nairobi was one of the fastest growing economies in Africa with annual average growth of 5.9% between 2010 - 2018 (@EconomicGrowthTrade2023a), GDP worth \$36 billion (@Nairobia). 
+-  Despite  rapid growth, the city is unable to provide housing infrastructure for increasing population.
 -   75% of urban population growth in Nairobi is absorbed by informal settlements, with predicted number of urban population living in slums to double in the next 15 years.
 -   Informal settlements covers 5% of total residential land of the city, but inhabited by half of the city's population (@unhabitatKenyaNairobiUrban)
--   This city is extremely vulnerable against impact of the climate crisis--haltering food security, reduce access to clean water, exposure to extreme heat.
+-   2/3 of Kenyans continues to live in poverty, making less than £3.2 per day
+-   70% Kenyan families are chronically vulnerable to food and nutrition insecurity and preventable diseases.
+-   This city is also extremely vulnerable against impact of the climate crisis--haltering food security, reduce access to clean water, exposure to extreme heat.
 
 ### International Framework
 
@@ -46,33 +47,32 @@ Relevant goals:
 - **Indicator**: Proportion of urban population living in slums, informal settlements or inadequate housing
 
 
-
 ### Urban-level framework
 
 **Nairobi Climate Action Plan 2020-2050**
 
--   Until the Covid-19 pandemic, Nairobi was one of the fastest growing economies in Africa with annual average growth of 5.9% between 2010 - 2018 (USAid, nd), GDP worth \$36 billion (C40, nd)
--   2/3 of Kenyans continues to live in poverty, making less than £3.2 per day
--   70% Kenyan families are chronically vulnerable to food and nutrition insecurity and preventable diseases.
--   75% of Nairobi is informal settlements, with predicted number of urban population living in slums to double in the next 15 years.
--   Informal settlements only cover 5% of total residential land of the city. (UN Habitat, 2005)
--   This city is extremely vulnerable against impact of the climate crisis--- haltering food security, reduce access to clean water, exposure to extreme heat.
--   Nairobi has set out 15 climate resilience action to strength the city against extreme weather, of which pertained very little detail onto how laid actions would be implemented.
+-   Nairobi has set out 15 climate resilience actions to strength the city against extreme weather, of which pertained very little detail onto how laid actions would be implemented.
 
-
-### FOCUS Action 13: increase access to climate resilience programme.
+Relevant actions include:
+#### Action 13: increase access to climate resilience programme.
 
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/nairobi_action13.png")
 ```
 
--   Question on \*\*\*\*\*\*how\*\*\*\*\*\* the city of Nairobi aims to move towards such goals is unclear from this document.
+-   How the city of Nairobi aims to move towards such goals is unclear from this document.
 -   The only mention of geospatial technology (GIS, satellite imagery) is briefly mentioned once, where the government acknowledge the lack of GIS technology to further enable an accessible and wide-spread urban transit system.
 -   This shows the Nairobi government has a little idea onto how to harness Earth Observation data to push forward their urban climate agenda.
--   Build houses in climate sensitive areas?????
+-   The document also seems to encourage residential house buildings in climate sensitive areas.
 -   Slum mapping --- see where slums will expand and provide amenities accordingly.
 
 ## Application
+Informal settlements in Nairobi are recognised as a serious issues by the city level government, national government and referenced by the United Nations as a worsening problem.
+
+Informal settlements need to be identified with regards to their direction of expansion and population variations within the settlements, such that sanitation infrastructure can be built in areas of high population density.
+
+Areas of environmental vulnerability also needs to be identified.
+
 ### Slum identification
 
 **Increase access to climate resilience programme** --- Identify arid land/flood zones, disaster mapping.

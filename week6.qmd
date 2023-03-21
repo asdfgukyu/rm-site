@@ -1,1 +1,92 @@
 # Classification I
+
+Week 6 is about classification! When we get an image from satellites, we need the programme to be able to identify types of land cover for masses of data. While we can\'t do this manually, we need to rely on Machine Learning methods.
+
+## Introduction to Machine Learning
+
+**Machine Learning is the science of computer modelling of learning process.**
+
+Machine learning models use a type of inductive inference where the knowledge base (rule of thumbs) are learned from specific historical example (the training data), and these general conclusion to predict future.
+
+### Classification & Regression Trees (CART): Classification
+
+**Classification Trees**
+
+
+-   When a decision tree classify things to categories.
+
+-   Classify data into 2+ discrete categories, split into further branches until all categories of decision have been made.
+
+INSERT IMAGE
+
+-   A good classification tree should be multi layered because just one independent vary would often result in impure results (where the predictive power of the independent variable is not 100% accurate)
+
+-   The more relevant dependent variables in the tree, the less impure the result should be, and the stronger the predictive accuracy.
+
+How do we know what order we put our dependent variables in the classification tree?
+
+-   We calculate a **Gini Impurity** for each variable, and the one with the lowest impurity becomes the root.
+
+-   we dont expect the leaves from the root node to be pure, so we calculate the the Gini impurity of the remaining variables, and choose the variable with the lowerst Gini impurity score, split the node and so on, until nodes become leaves.
+
+**Regression Trees**
+
+-   When decision tree predicts numeric, continous discrete values
+
+-   When linear 1 relationship does not fit data, we split the data into smaller subset, and run several different regressions for each chunk
+
+INSERT IMAGE
+
+How do we know where to cut?
+
+-  Sections are divided based on thresholds (nodes) and the **SSR (Sum of Square Residuals)** is calcuated.
+- Again, ones with lowest SSR becomes the root, and so on.
+-  Outcome: each leaf should represent the value that is close to the data
+
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+  knitr::include_graphics("img/regtree_cutting")
+```
+
+**Public Enemy: Overfittiing**
+
+Subsetting and dividing dataset too much could lead to overfitting --- meaning the model is so fine tuned to the detail on the dataset it is learning from, it is unable to effectly predict outcome with a different dataset.
+
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+  knitr::include_graphics("img/overfit.png")
+```
+**Bias**: difference between predicted value and true value --- bad a being precise
+
+**Variance**: variability of model for a given point --- bad a generalising
+
+You want a bit of both!
+
+**Preventative measures:**
+
+1.  Limit how the tree grows --- set minimum of at least 20pixel per leaf
+
+2.  Weakest Link pruning:
+
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+  knitr::include_graphics("img/weakestlink.webp")
+```
+Calculate SSR for each tree. From no leaf removal to more leaves removal
+
+It is expected that as more leaves are removed, the SSR gets bigger. The point is so that the model doesn't fit the training data too well anyway
+
+With each tree\'s SSR, we calcuate the **Tree Score** -- the lower the better.
+
+**Tree Score = SSR + αT**
+
+**T** = number of leaves
+
+**α** = tree penalty. The more leaves removed, the higher the **α.**
+
+**How to decide on α?**
+
+Build a full size (training and testing) regression tree, wher α becomes 0, where tree score is the lowest. Repeat and get a different α values for each tree.
+
+-   Return to the training data, and apply α values from before, which dictakes where the data is split
+
+Do this process 10 times for cross validation --- the value of **α** that gives the smallest \~SSR is the final value → slect the tree that used the full data with that specific alpha
+
+## Random Forest

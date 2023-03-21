@@ -1,4 +1,7 @@
 # Corrections
+This week is about image corrections, including geometric correction, atmospheric correction, relative correction, absolute correction, empirical line correction, orthorectification correction, mosaicking, texturing and PCA.
+
+Code provided is in R.
 
 ## Summary
 
