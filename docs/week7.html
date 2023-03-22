@@ -159,7 +159,13 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#object-based-image-analysis-sub-pizel-analysis-accuracy-assessment" id="toc-object-based-image-analysis-sub-pizel-analysis-accuracy-assessment" class="nav-link active" data-scroll-target="#object-based-image-analysis-sub-pizel-analysis-accuracy-assessment"><span class="toc-section-number">7.1</span>  Object Based Image Analysis, Sub Pizel Analysis, Accuracy Assessment</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -180,8 +186,54 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p><strong>Land cover classification, Continued</strong></p>
+<p>Should we bother with creating new ones or use pre-classified data</p>
+<ul>
+<li>GlobeLand30</li>
+<li>ESA Climate Change Initiatiec annual global land cover</li>
+<li>Dynamic world — neae real time classification of sentinel 2 10m -Google building data</li>
+<li>MODIS – quite coarse</li>
+</ul>
+<p>Looking into dynamic world</p>
+<ul>
+<li><p>Semi-supervised approach: divide world into region, region into biomes</p></li>
+<li><p>Allows people to classify areas themselves, of min mapping unit of 50m2</p>
+<ul>
+<li>Experts and non-experts</li>
+</ul></li>
+<li><p>Use surface reflectance to label, but uses Top of Atmosphere for modelling (bc they had a bigger data archive TOA at the time)</p></li>
+<li><p>Did some augmentation: rotated images</p></li>
+<li><p>Did Band ratioing — NVDI</p></li>
+<li><p>Logtransformed from the raw reflectance values</p></li>
+<li><p>Used Convolution Neural Networks — classified some data — feed into machine — output</p></li>
+<li><p>Criticism: images are <strong>blobby</strong> — no clear definition</p>
+<ul>
+<li>this is due to making users/definers use 5M2 pixels, meaning the whole areas got no texture</li>
+</ul></li>
+<li><p>Accuracy: Used confusion matrix</p>
+<ul>
+<li><p>confusion matrix doesnt update as images updates</p></li>
+<li><p>Radiant Machine Learning Hub — trained data resource.</p></li>
+</ul></li>
+</ul>
+<p>Evaluation: Its good for larges scale analysis.</p>
+<section id="object-based-image-analysis-sub-pizel-analysis-accuracy-assessment" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="object-based-image-analysis-sub-pizel-analysis-accuracy-assessment"><span class="header-section-number">7.1</span> Object Based Image Analysis, Sub Pizel Analysis, Accuracy Assessment</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/OBIA.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>There are more detail to Accuracy Assessment in Machine Learning, but we’ll stop there.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
