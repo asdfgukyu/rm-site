@@ -154,39 +154,46 @@
     "text": "Week 6 is about classification! When we get an image from satellites, we need the programme to be able to identify types of land cover for masses of data. While we can't do this manually, we need to rely on Machine Learning methods."
   },
   {
-    "objectID": "week6.html#introduction-to-machine-learning",
-    "href": "week6.html#introduction-to-machine-learning",
+    "objectID": "week6.html#summary",
+    "href": "week6.html#summary",
     "title": "6  Classification I",
-    "section": "6.1 Introduction to Machine Learning",
-    "text": "6.1 Introduction to Machine Learning\nMachine Learning is the science of computer modelling of learning process.\nMachine learning models use a type of inductive inference where the knowledge base (rule of thumbs) are learned from specific historical example (the training data), and these general conclusion to predict future.\n\n6.1.1 Classification & Regression Trees (CART): Classification\nClassification Trees\n\nWhen a decision tree classify things to categories.\nClassify data into 2+ discrete categories, split into further branches until all categories of decision have been made.\n\nINSERT IMAGE\n\nA good classification tree should be multi layered because just one independent vary would often result in impure results (where the predictive power of the independent variable is not 100% accurate)\nThe more relevant dependent variables in the tree, the less impure the result should be, and the stronger the predictive accuracy.\n\nHow do we know what order we put our dependent variables in the classification tree?\n\nWe calculate a Gini Impurity for each variable, and the one with the lowest impurity becomes the root.\nwe dont expect the leaves from the root node to be pure, so we calculate the the Gini impurity of the remaining variables, and choose the variable with the lowerst Gini impurity score, split the node and so on, until nodes become leaves.\n\nRegression Trees\n\nWhen decision tree predicts numeric, continous discrete values\nWhen linear 1 relationship does not fit data, we split the data into smaller subset, and run several different regressions for each chunk\n\nINSERT IMAGE\nHow do we know where to cut?\n\nSections are divided based on thresholds (nodes) and the SSR (Sum of Square Residuals) is calcuated.\nAgain, ones with lowest SSR becomes the root, and so on.\nOutcome: each leaf should represent the value that is close to the data\n\n\n\n\n\n\n\n\n\n\nPublic Enemy: Overfittiing\nSubsetting and dividing dataset too much could lead to overfitting — meaning the model is so fine tuned to the detail on the dataset it is learning from, it is unable to effectly predict outcome with a different dataset.\n\n\n\n\n\n\n\n\n\nBias: difference between predicted value and true value — bad a being precise\nVariance: variability of model for a given point — bad a generalising\nYou want a bit of both!\nPreventative measures:\n\nLimit how the tree grows — set minimum of at least 20pixel per leaf\nWeakest Link pruning:\n\n\n\n\n\n\n\n\n\n\nCalculate SSR for each tree. From no leaf removal to more leaves removal\nIt is expected that as more leaves are removed, the SSR gets bigger. The point is so that the model doesn’t fit the training data too well anyway\nWith each tree's SSR, we calcuate the Tree Score – the lower the better.\nTree Score = SSR + αT\nT = number of leaves\nα = tree penalty. The more leaves removed, the higher the α.\nHow to decide on α?\nBuild a full size (training and testing) regression tree, wher α becomes 0, where tree score is the lowest. Repeat and get a different α values for each tree.\n\nReturn to the training data, and apply α values from before, which dictakes where the data is split\n\nDo this process 10 times for cross validation — the value of α that gives the smallest ~SSR is the final value → slect the tree that used the full data with that specific alpha"
+    "section": "6.1 Summary",
+    "text": "6.1 Summary\n\n6.1.1 Introduction to Machine Learning\nMachine Learning is the science of computer modelling of learning process.\nMachine learning models use a type of inductive inference where the knowledge base (rule of thumbs) are learned from specific historical example (the training data), and these general conclusion to predict future.\n\n6.1.1.1 Classification & Regression Trees (CART): Classification\nClassification Trees\n\nWhen a decision tree classify things to categories.\nClassify data into 2+ discrete categories, split into further branches until all categories of decision have been made.\n\nINSERT IMAGE\n\nA good classification tree should be multi layered because just one independent vary would often result in impure results (where the predictive power of the independent variable is not 100% accurate)\nThe more relevant dependent variables in the tree, the less impure the result should be, and the stronger the predictive accuracy.\n\nHow do we know what order we put our dependent variables in the classification tree?\n\nWe calculate a Gini Impurity for each variable, and the one with the lowest impurity becomes the root.\nwe dont expect the leaves from the root node to be pure, so we calculate the the Gini impurity of the remaining variables, and choose the variable with the lowerst Gini impurity score, split the node and so on, until nodes become leaves.\n\nRegression Trees\n\nWhen decision tree predicts numeric, continous discrete values\nWhen linear 1 relationship does not fit data, we split the data into smaller subset, and run several different regressions for each chunk\n\nINSERT IMAGE\nHow do we know where to cut?\n\nSections are divided based on thresholds (nodes) and the SSR (Sum of Square Residuals) is calcuated.\nAgain, ones with lowest SSR becomes the root, and so on.\nOutcome: each leaf should represent the value that is close to the data\n\n\n\n\n\n\n\n\n\n\nPublic Enemy: Overfittiing\nSubsetting and dividing dataset too much could lead to overfitting — meaning the model is so fine tuned to the detail on the dataset it is learning from, it is unable to effectly predict outcome with a different dataset.\n\n\n\n\n\n\n\n\n\nBias: difference between predicted value and true value — bad a being precise\nVariance: variability of model for a given point — bad a generalising\nYou want a bit of both!\nPreventative measures:\n\nLimit how the tree grows — set minimum of at least 20pixel per leaf\nWeakest Link pruning:\n\n\n\n\n\n\n\n\n\n\nCalculate SSR for each tree. From no leaf removal to more leaves removal\nIt is expected that as more leaves are removed, the SSR gets bigger. The point is so that the model doesn’t fit the training data too well anyway\nWith each tree's SSR, we calcuate the Tree Score – the lower the better.\nTree Score = SSR + αT\nT = number of leaves\nα = tree penalty. The more leaves removed, the higher the α.\nHow to decide on α?\nBuild a full size (training and testing) regression tree, wher α becomes 0, where tree score is the lowest. Repeat and get a different α values for each tree.\n\nReturn to the training data, and apply α values from before, which dictakes where the data is split\n\nDo this process 10 times for cross validation — the value of α that gives the smallest ~SSR is the final value → slect the tree that used the full data with that specific alpha\n\n\n\n6.1.2 Random Forest\nMany decision trees from 1 set of data.\nDecision trees on their own are pretty inaccurate, not flexible when classifying new samples.\n\nRandom Forests are simple, but also very adaptable when met with new data, improving accuracy\n\n\n\n\n\n\n\n\n\nValidation data: different from OOB, not in the original dataset at all.\nBootstrapping: Where you randomly select samples, and you’re allowed to pick the same sample more than once.\n\n\n6.1.3 Image Classification\nOkay, so how do we apply what we learned above onto image classification, and how do they relate?"
   },
   {
-    "objectID": "week6.html#random-forest",
-    "href": "week6.html#random-forest",
+    "objectID": "week6.html#application",
+    "href": "week6.html#application",
     "title": "6  Classification I",
-    "section": "6.2 Random Forest",
-    "text": "6.2 Random Forest\nMany decision trees from 1 set of data.\nDecision trees on their own are pretty inaccurate, not flexible when classifying new samples.\n\nRandom Forests are simple, but also very adaptable when met with new data, improving accuracy\n\n\n\n\n\n\n\n\n\nValidation data: different from OOB, not in the original dataset at all.\nBootstrapping: Where you randomly select samples, and you’re allowed to pick the same sample more than once."
+    "section": "6.2 Application",
+    "text": "6.2 Application"
   },
   {
-    "objectID": "week6.html#image-classification",
-    "href": "week6.html#image-classification",
+    "objectID": "week6.html#reflection",
+    "href": "week6.html#reflection",
     "title": "6  Classification I",
-    "section": "6.3 Image Classification",
-    "text": "6.3 Image Classification\nOkay, so how do we apply what we learned above onto image classification, and how do they relate?"
+    "section": "6.3 Reflection",
+    "text": "6.3 Reflection"
   },
   {
     "objectID": "week7.html",
     "href": "week7.html",
     "title": "7  Classification II",
     "section": "",
-    "text": "Land cover classification, Continued\nShould we bother with creating new ones or use pre-classified data"
+    "text": "Land cover classification, Continued"
   },
   {
-    "objectID": "week7.html#object-based-image-analysis-sub-pixel-analysis-accuracy-assessment",
-    "href": "week7.html#object-based-image-analysis-sub-pixel-analysis-accuracy-assessment",
+    "objectID": "week7.html#summary",
+    "href": "week7.html#summary",
     "title": "7  Classification II",
-    "section": "7.1 Object Based Image Analysis, Sub Pixel Analysis, Accuracy Assessment",
-    "text": "7.1 Object Based Image Analysis, Sub Pixel Analysis, Accuracy Assessment\n\n\n\n\n\n\n\n\n\nThere are more detail to Accuracy Assessment in Machine Learning, but we’ll stop there."
+    "section": "7.1 Summary",
+    "text": "7.1 Summary\nShould we bother with creating new ones or use pre-classified data?\n\nGlobeLand30\nESA Climate Change Initiatiec annual global land cover\nDynamic world — near real time classification of sentinel 2 10m\nGoogle building data\nMODIS – quite coarse\n\nThe answer is, depends.\n\n7.1.1 Object Based Image Analysis, Sub Pixel Analysis, Accuracy Assessment\nHere is a flow chart/mind map that describes and explains Object Based Image Analysis, Sub pixel Analysis and briefly touches on Accuracy Assessment."
+  },
+  {
+    "objectID": "week8.html",
+    "href": "week8.html",
+    "title": "8  Urban Heat Island",
+    "section": "",
+    "text": "The impacts of the Urban Heat Island (UHI) effect have been difficult to ignore in recent years. Alongside rising global temperatures, higher temperatures experienced in urban areas pose a serious risk toward the health and wellbeing of urban populations. In the UK, the five-day heat wave in July 2022 was associated with 2,800 deaths in over-65s across the country as temperatures rose as high as 40C in central London.\nPhysical factors contributing to UHI vulnerability are well documented. Key determinants of health risk include features of the built environment, such as buildings with high energy efficiency as well as the type of buildings themselves, with flats more susceptible to overheating than two-storey houses (Samuelson, et al 2020; Mavrogianni et al. 2009). Replacement of natural cover, such as trees and natural water features, with concrete roads and high-density buildings drastically reduces cities’ capacity to absorb heat, or increase albedo, further contributing to higher urban temperatures compared to surrounding non-urbanised areas (Mohajerani, 2017; Voskamp, 2015).\nNeighbourhood socio-economic characteristics are also an important determinant of vulnerability. Harlan et al. (2013) conducted a comprehensive study identifying social and environmental predictors of heat vulnerability in Arizona. The study found deprived areas, especially those with majority black populations and areas of spatial deprivation (Nayak et al 2018; Madrigano et al 2015), where dwellings are considered overcrowded (Vellei et al. 2017), are particularly vulnerable to heat-related deaths.\nOften, it is exactly these poor urban areas that have the least access to green and blue covers and further away from hospitals for medical assistance (Prosdocimi and Klima 2020). Nicholl et al. (2007) found that risk of death is increased by 1.02% per kilometre of distance."
   },
   {
     "objectID": "references.html",

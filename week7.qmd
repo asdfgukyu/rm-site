@@ -2,24 +2,26 @@
 
 **Land cover classification, Continued**
 
-Should we bother with creating new ones or use pre-classified data
+## Summary
+
+Should we bother with creating new ones or use pre-classified data?
 
 - GlobeLand30
+
 - ESA Climate Change Initiatiec annual global land cover
-- Dynamic world --- neae real time classification of sentinel 2 10m
--Google building data
+
+- Dynamic world --- near real time classification of sentinel 2 10m
+
+- Google building data
+
 - MODIS -- quite coarse
 
-## Object Based Image Analysis, Sub Pixel Analysis, Accuracy Assessment
+The answer is, depends.
 
+### Object Based Image Analysis, Sub Pixel Analysis, Accuracy Assessment
+Here is a flow chart/mind map that describes and explains Object Based Image Analysis, Sub pixel Analysis and briefly touches on Accuracy Assessment.
 ```{r, echo = FALSE, out.width='70%'}
 xaringanExtra::embed_xaringan(
   url = "https://miro.com/app/board/uXjVMa1M_yw=/?share_link_id=113675726787",
   ratio = "16:10")
 ```
-
-- There are more detail to Accuracy Assessment in Machine Learning, but we'll stop there. 
-
-
-
-
