@@ -96,9 +96,15 @@ Decision trees on their own are pretty inaccurate, not flexible when classifying
 
 - Random Forests are simple, but also very adaptable when met with new data, improving accuracy
 
-```{r echo=FALSE, out.width='100%', fig.align='center'}
-  knitr::include_graphics("img/random_forest.jpg")
+
+```{r, echo = FALSE, out.width='70%'}
+xaringanExtra::embed_xaringan(
+  url = "https://miro.com/app/board/uXjVMb8Exp4=/?share_link_id=602548066271",
+  ratio = "16:10")
 ```
+
+
+
 
 Validation data: different from OOB, not in the original dataset at all.
 
@@ -108,6 +114,16 @@ Bootstrapping: Where you randomly select samples, and you’re allowed to pick t
 ## Image Classification
 Okay, so how do we apply what we learned above onto image classification, and how do they relate?
 
-```{r echo=FALSE, out.width='100%', fig.align='center'}
-  knitr::include_graphics("img/Image_class.jpg")
+
+
+```{r, echo = FALSE, out.width='70%'}
+xaringanExtra::embed_xaringan(
+  url = "https://miro.com/app/board/uXjVMa1M_VU=/?share_link_id=630260854983",
+  ratio = "16:10")
 ```
+
+
+
+
+
+

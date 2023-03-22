@@ -43,11 +43,16 @@ Looking into dynamic world
 
 Evaluation: Its good for larges scale analysis.
 
-## Object Based Image Analysis, Sub Pizel Analysis, Accuracy Assessment
-```{r echo=FALSE, out.width='100%', fig.align='center'}
-  knitr::include_graphics("img/OBIA.jpg")
+## Object Based Image Analysis, Sub Pixel Analysis, Accuracy Assessment
+
+```{r, echo = FALSE, out.width='70%'}
+xaringanExtra::embed_xaringan(
+  url = "https://miro.com/app/board/uXjVMa1M_yw=/?share_link_id=113675726787",
+  ratio = "16:10")
 ```
+
 - There are more detail to Accuracy Assessment in Machine Learning, but we'll stop there. 
+
 
 
 
