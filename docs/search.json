@@ -165,7 +165,14 @@
     "href": "week6.html#random-forest",
     "title": "6  Classification I",
     "section": "6.2 Random Forest",
-    "text": "6.2 Random Forest\nMany decision trees from 1 set of data.\nDecision trees on their own are pretty inaccurate, not flexible when classifying new samples.\n\nRandom Forests are simple, but also very adaptable when met with new data, improving accuracy\n\n\n\n\n\n\n\n\n\n\nValidation data: different from OOB, not in the original dataset at all. Bootstrapping: Where you randomly select samples, and you’re allowed to pick the same sample more than once."
+    "text": "6.2 Random Forest\nMany decision trees from 1 set of data.\nDecision trees on their own are pretty inaccurate, not flexible when classifying new samples.\n\nRandom Forests are simple, but also very adaptable when met with new data, improving accuracy\n\n\n\n\n\n\n\n\n\n\nValidation data: different from OOB, not in the original dataset at all.\nBootstrapping: Where you randomly select samples, and you’re allowed to pick the same sample more than once."
+  },
+  {
+    "objectID": "week6.html#image-classification",
+    "href": "week6.html#image-classification",
+    "title": "6  Classification I",
+    "section": "6.3 Image Classification",
+    "text": "6.3 Image Classification\nOkay, so how do we apply what we learned above onto image classification, and how do they relate?"
   },
   {
     "objectID": "references.html",
