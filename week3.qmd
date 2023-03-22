@@ -1,4 +1,5 @@
 # Corrections
+
 This week is about image corrections, including geometric correction, atmospheric correction, relative correction, absolute correction, empirical line correction, orthorectification correction, mosaicking, texturing and PCA.
 
 Code provided is in R.
@@ -51,7 +52,7 @@ Adjacency Effect: reflective surfaces bleeds into other pixels caused by scatter
 **When and when not to correct:**
 
 | Unnecessary                                      |                                                               Necessary |
-|---------------------------------|--------------------------------------:|
+|--------------------------------------------------|------------------------------------------------------------------------:|
 | Classification of a single image                 | Biophysical parameters needed (e.g. temperature, leaf area index, NDVI) |
 | Independent classification of multi date imagery |                        Using spectral signatures through time and space |
 | Single dates data                                |                                                                         |
@@ -244,6 +245,6 @@ Sometimes you don't know if an image needs to be corrected or not if there are n
 
 Understanding how satellite images are tweaked and handled before they could actually be used for analysis feels the same as data cleaning before we go into EDA. Although cumbersome at times, I feel this is the most effective way to get to know your data before conducting analysis. I'm also looking forward to GEE and see how the platform streamlines the process.
 
-The possibilities with Earth Observation data seems to be... endless? Essentially anything activities larger than 10 by 10m can be detected on satellite images 
+The possibilities with Earth Observation data seems to be... endless? Essentially anything activities larger than 10 by 10m can be detected on satellite images
 
 It's been very useful to know how these correction and enhancement methods work before we dive straight into GEE with ARD. I feel more confident knowing how to deal with earth observation data, in case I ever need to deal with raw images.

@@ -356,6 +356,10 @@ Or if we want to whole stack:
 ## Application
 Since what we learnt this week was mainly understanding how Google Earth Engine made using already open source Earth Observation data so accessible, I want to highlight the projects that were made possible because of this plaform.
 
+In particular, citizen journalism website Bellincat has made use of Google Earth Engine to do detailed environmental analysis, as well as using geospatial data more generally to support its wider work detailing human rights abuses in conflicts such as the war in Yemen.
+
+In 2020, Bellingcat released data illustrating the fast decline of water levels in the Quitobaquito Springs on the US-Mexico border, making  use of Google Earth Engine data to access, filter and analyse satellite data of the springs. The journalists pointed to the open-source nature and ease of use of the programme as a key benefit.
+
 
 ## Reflection
 Google Earth Engine has made processing and analysing Earth Observation data much more accessible. This allows individuals to access and process large scale geospatial data without the need for powerful hardwares and softwares. Because everything is hosted on the server, this enables scalability processes involving larger datasets that otherwise would be too big for desktop-based processing. GGE also streamlines the analysis process, eliminating the need for switching between multiple softwares, integrating instantaneous visualisation, data sourcing and scripting in one space. The vast volume of images available on GEE also reduces time spent on locating and sourcing geospatial data drastically. 

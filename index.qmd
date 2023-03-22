@@ -12,12 +12,12 @@ I am a socio-cultural geographer, a producer in the culture sector and a spatial
 
 </div>
 
-Swiftly after graduation I entered the cultural sector where I assist in theatre, dance, visual art and moving images programme curation and production in Hong Kong and London for three years.
+After graduation, I entered the cultural sector where I worked in theatre, dance, visual art and moving images programme curation and production in Hong Kong and London for three years.
 
-Currently at CASA, I would like to further my geographic knowledge and gain technical skills and enter the field of urban sustainability. I am particularly interested in the topics of public housing, equity and climate resilience !
+At CASA, I am looking to develop my geographic knowledge, gain technical skills and - hopefully - enter the field of urban sustainability. I am particularly interested in the topics of public housing, social justice and climate resilience !
 
 ## Purpose
 
-This learning diary is the assignment output of CASA00023 Remote Sensing Cities and Environment. The structure this book will be broken down by weeks, each with a different learning objective.
+This learning diary is the assignment output of CASA00023 Remote Sensing Cities and Environment. This book is  broken down by weeks, each with a different learning objective.
 
 This book is created from R markdown and executable code.

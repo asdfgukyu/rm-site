@@ -1,51 +1,52 @@
 # Policy
+
 This week focuses on how we may utilise insights gained from Earth Observation analysis to assist local, regional and national government to implement data-drive policies, whilst increasing compliance to urban/global agendas.
 
 ## Case Study: Informal Settlements in Nairobi, Kenya
+
 ### Context
 
 ```{r echo=FALSE, out.width='90%', fig.align='center',fig.cap= "Source: @globalpartnershipforresult-basedappraoachesKenyaAssessmentKayoleSowetond."}
 knitr::include_graphics("img/informal_set.png")
 ```
 
--   Until the Covid-19 pandemic, Nairobi was one of the fastest growing economies in Africa with annual average growth of 5.9% between 2010 - 2018 (@EconomicGrowthTrade2023a), GDP worth \$36 billion (@Nairobia). 
--  Despite  rapid growth, the city is unable to provide housing infrastructure for increasing population.
--   75% of urban population growth in Nairobi is absorbed by informal settlements, with predicted number of urban population living in slums to double in the next 15 years.
--   Informal settlements covers 5% of total residential land of the city, but inhabited by half of the city's population (@unhabitatKenyaNairobiUrban)
--   2/3 of Kenyans continues to live in poverty, making less than £3.2 per day
+-   Until the Covid-19 pandemic, Nairobi was one of the fastest growing urban economies in Africa with annual average GDP growth of 5.9% between 2010 - 2018 (@EconomicGrowthTrade2023a). The GDP of the city amounted to 36 billion USD (@Nairobia).
+-   Despite rapid economic growth, the city has been unable to provide housing infrastructure for its increasing population. The spoils of growth have not yet been used to support the city's sustainable expansion.
+-   75% of urban population growth in Nairobi is accounted for by informal settlements, and the proportion of urban population living in slums is predicted to double in the next 15 years.
+-   Informal settlements cover 5% of total residential land of the city but house half of the city's total population (@unhabitatKenyaNairobiUrban).
+-   2/3 of Kenyans continue to live in poverty, making less than 3.2 GBP per day.
 -   70% Kenyan families are chronically vulnerable to food and nutrition insecurity and preventable diseases.
--   This city is also extremely vulnerable against impact of the climate crisis--haltering food security, reduce access to clean water, exposure to extreme heat.
+-   Nairobi is also extremely vulnerable to impact of the climate crisis -- leading to food insecurity, reducing access to clean water, and exposing residents to increasingly frequent instances extreme heat.
 
 ### International Framework
 
 **Sustainable Development Goals**
+
 ```{r echo=FALSE, out.width='90%', fig.align='center',fig.cap="17 Sustainable Development Goals. Source: @unitednationsCommunicationsMaterialsn.d."}
 knitr::include_graphics("img/sdg.png")
 ```
 
-The Sustainable Development Goals is a set of 17 objectives that serves as a 'blueprint to a to achieve a better and more sustainable future for all', led by the United Nations. The SDGs pushes for sustainable development that recognises the interconnectedness of  social, economic and environmental aspect of society.
+The Sustainable Development Goals are a set of 17 objectives that serve as a 'blueprint to a to achieve a better and more sustainable future for all', devised and led by the United Nations. The SDGs pushes for sustainable development that recognises the interconnectedness of social, economic and environmental aspect of society.
 
 Relevant goals:
 
 **UN SDG02**: End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
 
-- **Target 02.1**: By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round.
+-   **Target 02.1**: By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round.
 
-- **Indicator**: Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES)
-
+-   **Indicator**: Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES).
 
 **UN SDG06**: Ensure availability and sustainable management of water and sanitation for all.
 
-- **Target 06.2**: By 2030, achieve access to adequate and equitable sanitation and hygiene for all and end open defecation, paying special attention to the needs of women and girls and those in vulnerable situations.
+-   **Target 06.2**: By 2030, achieve access to adequate and equitable sanitation and hygiene for all and end open defecation, paying special attention to the needs of women and girls and those in vulnerable situations.
 
-- **Indicator**: Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water
+-   **Indicator**: Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water.
 
-**UN SDG11**: Make cities and human settlements inclusive, safe, resilient and sustainable
+**UN SDG11**: Make cities and human settlements inclusive, safe, resilient and sustainable.
 
-- **Target 11.1**: By 2030, ensure access for all to adequate, safe and affordable housing and basic services and upgrade slums.
+-   **Target 11.1**: By 2030, ensure access for all to adequate, safe and affordable housing and basic services and upgrade slums.
 
-- **Indicator**: Proportion of urban population living in slums, informal settlements or inadequate housing
-
+-   **Indicator**: Proportion of urban population living in slums, informal settlements or inadequate housing.
 
 ### Urban-level framework
 
@@ -53,25 +54,27 @@ Relevant goals:
 
 -   Nairobi has set out 15 climate resilience actions to strength the city against extreme weather, of which pertained very little detail onto how laid actions would be implemented.
 
-Relevant actions include:
-#### Action 13: increase access to climate resilience programme.
+Relevant actions include: \#### Action 13: increase access to a climate resilience programme.
 
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/nairobi_action13.png")
 ```
 
 -   How the city of Nairobi aims to move towards such goals is unclear from this document.
--   The only mention of geospatial technology (GIS, satellite imagery) is briefly mentioned once, where the government acknowledge the lack of GIS technology to further enable an accessible and wide-spread urban transit system.
--   This shows the Nairobi government has a little idea onto how to harness Earth Observation data to push forward their urban climate agenda.
--   The document also seems to encourage residential house buildings in climate sensitive areas.
+-   Geospatial technology (GIS, satellite imagery) is mentioned only once, where the local authority acknowledges that the lack of GIS technology means that they are unable to provide an accessible and wide-spread urban transit system.
+-   This shows the Nairobi government is unable at present to effectively harness Earth Observation data to push forward their urban climate agenda.
+-   The document also seems to encourage residential house building in climate sensitive areas.
 -   Slum mapping --- see where slums will expand and provide amenities accordingly.
 
 ## Application
-Informal settlements in Nairobi are recognised as a serious issues by the city level government, national government and referenced by the United Nations as a worsening problem.
 
-Informal settlements need to be identified with regards to their direction of expansion and population variations within the settlements, such that sanitation infrastructure can be built in areas of high population density.
+Informal settlements in Nairobi are recognised as a serious issues by the city level government and national government, and is referenced by the United Nations as a worsening problem.
 
-Areas of environmental vulnerability also needs to be identified.
+Informal settlements need to be identified easily, at low cost and with increasing frequency, so that the local government is able to understand the direction of their expansion and population variations within the settlements.
+
+Geospatial mapping would enable local authorities to build much-needed sanitation infrastructure in areas of high and increasing population density. An up-to-date understanding of the growing population in informal settlements could provide much-needed information for social policymakers for wider programmes of healthcare, education or other public services.
+
+Earth observation data would also allow the government to identify areas of environmental vulnerability so that they are able to concentrate limited resources on regulating or halting the further expansion of informal settlements in the most environmentally sensitive areas.
 
 ### Slum identification
 
@@ -81,3 +84,9 @@ Areas of environmental vulnerability also needs to be identified.
 -   <https://www.mdpi.com/2072-4292/8/6/455>
 
 ## Reflection
+
+-   Without the necessary public policy interventions or structures in place, rapid economic growth can coexist with increasingly severe housing, environmental and health issues. The right understanding of the urban landscape, how it is changing and what the demographic and economic profile of residents are can be used to solve some of those problems.
+
+-   Geospatial data is useful not just to evaluate the existing status of built environments but as a tool to observe almost real-time changes in a rapidly expanding urban environment. This provides signifcant advantages for policymakers who are often required to dedicate limited resources to solving rapidly changing problems, moreso in areas such as Nairobi where there is a fast-growing population and increasingly severe problem of informal settlements.
+
+-   Earth observation data is not always widely used in the policy space, and is - particularly in this instance - sometimes not seriously acknowledged by governments as a major tool for urban policymaking, despite its relatively low cost to access and high potential to improve the understanding of the urban landscape. It is unclear why this is the case, and what could be done to draw greater attention to geospatial data within policymaking at a local level.

@@ -12,38 +12,38 @@ xaringanExtra::embed_xaringan(
 
 ### Electromagnetic Spectrum
 
-The electromagnetic spectrum is made up of thousands of bands. From visible light, UV, Infrared, Radar, FM TV, short wave.
+The electromagnetic spectrum is made up of thousands of bands, including visible light, UV, infrared, radar, FM, TV and short wave.
 
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/Atmospheric-Electromagnetic-Opacity.png")
 ```
 
--   The earth surface either **absorb** energy or **transmit** energy.
--   The colour we see is the visible light waves that is reflected off of the object. Apple is red because it absorbs all visible light and reflects red.
+-   The earth's surface either **absorbs** energy or **transmits** energy.
+-   The colour we see is the visible light waves that is reflected off of the object. Apple is red because it reflects red and absorbs all other visible light.
 
 ### Resolutions of remote sensing images
 
-**Spatial**: Size of raster grid per pixel (cm/m). The smaller the measure the more detailed the image will be.
+**Spatial**: The size of a raster grid per pixel (cm/m). The smaller the measure, the more detailed the image.
 
-**Spectral**: Number of bands from the electromagnetic spectrum it is surveying. Often earth surfaces require multispectral data for it to form a true colour image.
+**Spectral**: The number of bands from the electromagnetic spectrum being surveyed. Often earth surfaces require multispectral data to form a true colour image.
 
--   ie: green vegetation mainly requires red and near-infrared bands to detect, whereas soil requires mid-infrared bands (6 and 7) to be detected. Bodies of water can be detected mostly within visible light, RBGs.
+-   i.e. green vegetation mostly requires red and near-infrared bands to detect, whereas soil requires mid-infrared bands (6 and 7) to be detected; bodies of water can be detected mostly within visible light (RBGs).
 -   Landsat data surveys visible light, near infrared and short wave infrared.
 
-An example from the practical: This scatter image was produced from sentinel data of Dhakar, Bangladesh. Band 4 = Red Band 8 = NIR \* High NIR and Low Red - high vegetation since veg peaks in NIR (see above) \* Low red Low NIR - Wet soil.
+An example from the practical: The below scatter image was produced from sentinel data of Dhakar, Bangladesh. Band 4 = Red Band 8 = NIR \* High NIR and Low Red - high vegetation since veg peaks in NIR (see above) \* Low red Low NIR - Wet soil.
 
 ```{r echo=FALSE, out.width='50%', fig.align='center'}
 
 knitr::include_graphics("img/scatter_bangladesh.png")
 ```
 
-**Temporal**: How frequently the data is collected. Often there is a direct trade off between pixel resolution and update frequency -- higher the resolution, lower the update frequency. Good rm data is spenny!!
+**Temporal**: How frequently the data is collected. Often there is a direct trade-off between pixel resolution and update frequency -- the higher the resolution, the lower the update frequency. Good rm data is spenny!!
 
 **Radiometric**: Able to identify difference in light or reflectance of Earth surface.
 
--   The higher the bit, the higher the depth, the higher the ability to detect texture
+-   The higher the bit, the higher the depth, the higher the ability to detect texture.
 
-Data format: Generally raster, but depending on sensor.
+**Data format:** Generally raster, but depending on sensor.
 
 -   LiDAR is point data in x, y and z (height) → good for elevation models.
 
@@ -83,11 +83,11 @@ A bit of thinking: *Applications of varying temporal and spatial resolution, wha
 
 ## Application
 
-Since the emergence of accessible Landsat Satellite images in 1967, earth data have since been used for a wide range of purposes including tracking land use, urbanisation, drought, wildfires, biomass changes and other natural and human caused changes (USGS, nd).
+Since the emergence of accessible Landsat Satellite images in 1967, earth data has been used for a wide range of purposes including tracking land use, urbanisation, drought, wildfires, biomass changes and other natural and human caused changes (USGS, nd).
 
 #### Environment
 
-The Intergovernmental Panel on Climate Change stated Earth observing satellites as a critical and valuable tool to track changes and improving climate predictions (@ESAClimate). Coupled with substantial environmental changes in recent decades, remote sensing data has allowed changes to be tracked and analysed over the last century. @sultanaAssessmentUrbanisationUrban2020a have used satellite imagery to assess the rate of urbanization and urban heat island intensities in urban India. @matricardiAssessmentTropicalForest2010a analysed the effects of tropical forest degradation as a result of logging and fire, and implemented policy recommendation accordingly, taking advantage of the extensive spectral bands available. Extensive reports by international climate driven bodies have used earth data to measure glacier and sea ice decline, sea level rise and climate modelling.
+The Intergovernmental Panel on Climate Change stated earth-observing satellites are a critical and valuable tool to track changes and improving climate predictions (@ESAClimate). Coupled with substantial environmental changes in recent decades, remote sensing data has allowed changes to be tracked and analysed over the last century. @sultanaAssessmentUrbanisationUrban2020a have used satellite imagery to assess the rate of urbanisation and urban heat island intensities in urban India. @matricardiAssessmentTropicalForest2010a analysed the effects of tropical forest degradation as a result of logging and fire, and implemented policy recommendation accordingly, taking advantage of the extensive spectral bands available. Extensive reports by international climate driven bodies have used earth data to measure glacier and sea ice decline, sea level rise and climate modelling.
 
 #### Urban Development
 
@@ -104,7 +104,7 @@ Satellite imagery has allowed for a spatial perspective when it comes to studyin
 
 ## Reflection
 
--   Remote sensing data has in a way revolutionised how people approach spatial analysis. Especially since these earth data became publicly available and free to access.
--   Utilising the varying spectral properties of earth surfaces and objects, analysis of urban areas have hugely benefitted, with high density buildings, transport networks, urban vegetation --- RM data essentially the need to physically surface overviews of urban characteristics (although detailed, high resolution ones still relies on manual surveying).
--   Although powerful, earth data often needs to be in company of other data, especially demographic, social and economic data for urban analysis to translate into urban policies.
--   There is a wide range of analysis that could be done with RM data, including regression analysis, neural network deep learning, principal component analysis and classification. Options are endless!!!!
+-   Remote sensing data has in a way revolutionised how people approach spatial analysis, providing an unprecedented amount of data about the earth's surface with lrelatively ow barriers to access compared to previous available methods, such as costal surveying. This has been especially true since remote sensing data became publicly available, democratising access.
+-   Utilising the varying spectral properties of earth surfaces and objects, our understanding and ability to analyse urban areas has significantly improved, with scientists more easily able to map high density buildings, transport networks and urban vegetation. RM data essentially removes the need to physically surface overviews of urban characteristics (although detailed, high resolution analysis still relies on manual surveying).
+-   Although powerful, earth data is often used in conjunction with other data, especially demographic, social and economic data for urban analysis to translate into urban policies. For example, satellite imaging can be used to map certain visible characteristics of urban poverty, alongside census data to give a more nuanced picture.
+-   There is a wide range of analysis that could be done with RM data, including regression analysis, neural network deep learning, principal component analysis and classification. The options are endless!!!!
