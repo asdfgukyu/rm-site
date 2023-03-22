@@ -10,39 +10,6 @@ Should we bother with creating new ones or use pre-classified data
 -Google building data
 - MODIS -- quite coarse
 
-
-
-Looking into dynamic world
-
-- Semi-supervised approach: divide world into region, region into biomes
-
-- Allows people to classify areas themselves, of min mapping unit of 50m2
-
-  - Experts and non-experts
-
-- Use surface reflectance to label, but uses Top of Atmosphere for modelling (bc they had a bigger data archive TOA at the time)
-
-
-- Did some augmentation: rotated images
-
-- Did Band ratioing --- NVDI
-
-- Logtransformed from the raw reflectance values
-
-- Used Convolution Neural Networks --- classified some data --- feed into machine --- output
-
-- Criticism: images are **blobby** --- no clear definition
-
-  - this is due to making users/definers use 5M2 pixels, meaning the whole areas got no texture
-
-- Accuracy: Used confusion matrix
-
-  - confusion matrix doesnt update as images updates
-
-  - Radiant Machine Learning Hub --- trained data resource.
-
-Evaluation: Its good for larges scale analysis.
-
 ## Object Based Image Analysis, Sub Pixel Analysis, Accuracy Assessment
 
 ```{r, echo = FALSE, out.width='70%'}
