@@ -126,6 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/fitvids-2.1.1/fitvids.min.js"></script>
 
 
 </head>
@@ -205,11 +206,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Urban Heat Island</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Glossary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -663,13 +659,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="5.2" class="anchored" data-anchor-id="application"><span class="header-section-number">5.2</span> Application</h2>
 <p>Since what we learnt this week was mainly understanding how Google Earth Engine made using already open source Earth Observation data so accessible, I want to highlight the projects that were made possible because of this plaform.</p>
 <p>In particular, citizen journalism website Bellincat has made use of Google Earth Engine to do detailed environmental analysis, as well to support its wider work detailing breaches of international humanitarian law in conflicts such as the war in Yemen.</p>
-<p>In 2020, Bellingcat released data illustrating the fast decline of water levels in the Quitobaquito Springs on the US-Mexico border, making use of Google Earth Engine data to access, filter and analyse satellite data of the springs. The journalists pointed to the open-source nature and ease of use of the programme as a key benefit.</p>
+<p>In 2020, Bellingcat released data illustrating the fast decline of water levels in the Quitobaquito Springs on the US-Mexico border, making use of Google Earth Engine data to access, filter and analyse satellite data of the springs over multiple timescale. The analysis was fairly simple, using the Palmer Drought Severity Index as a measure for drought condition. However it is the low barrier to entry enabled by GEE has made geodata journalism much more widespread and democratised.The journalist also pointed to the open-source nature and ease of use of the programme as a key benefit.</p>
+<p>Expanding a little further, it is exactly because of this accessibility, and that knowledge and techniques are not as heavily gatekept (although quite specific skillsets are still required), many are using GEE for activism. Bellingcat has an entire section focusing on the invasion in Ukraine because remote sensing data allow for close monitoring without having to be in the field. Although I am sure geodata journalism is not single-handedly enabled by Google itself, it definitely played a significant role in exposing people to geodata analysis.</p>
+<p>And to go on: GEE makes it reallly easy to make and distribute interactive map. This is especially helpful to communicate with non-data trained individuals (without having to send them a stack of QGIS files), it is simple, contained, intuitive and engaging.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
+<iframe src="https://google.earthengine.app/view/forest-change" width="1600" height="1000" style="border:2px solid currentColor;" loading="lazy" allowfullscreen=""></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>
+</div>
+</div>
+<p>I mean look at this. It’s pretty cool.</p>
 </section>
 <section id="reflection" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">5.3</span> Reflection</h2>
 <p>Google Earth Engine has made processing and analysing Earth Observation data much more accessible. This allows individuals to access and process large scale geospatial data without the need for powerful hardwares and softwares. Because everything is hosted on the server, this enables scalability processes involving larger datasets that otherwise would be too big for desktop-based processing. GGE also streamlines the analysis process, eliminating the need for switching between multiple softwares, integrating instantaneous visualisation, data sourcing and scripting in one space. The vast volume of images available on GEE also reduces time spent on locating and sourcing geospatial data drastically.</p>
 <p>Since GGE is already a web-hosted platform, it makes distributing and presenting analysis/maps much simpler. This is great when communicating with non-geospatial trained clients and enables more geospatial output/discussion.</p>
-<p>Although looking back onto the codes we used to process images on R, the codes are <strong>much shorter</strong> than codes on GEE (eg: code for PCA on R is above 4 lines?!). However this is the trade off of having a web-based platform that enables streamline image sourcing and visualization – and this requires Javascript. Ultimately R is still</p>
+<p>Although looking back onto the codes we used to process images on R, the codes are <strong>much shorter</strong> than codes on GEE (eg: code for PCA on R is around 4 lines?!). However this is the trade off of having a web-based platform that enables streamline image sourcing and visualization – and this requires Javascript. R is still more computationally more robust, but ultimately it depends on what you want to achieve! And who says you can’t use both!</p>
 
 
 </section>

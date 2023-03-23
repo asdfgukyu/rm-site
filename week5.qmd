@@ -358,7 +358,20 @@ Since what we learnt this week was mainly understanding how Google Earth Engine 
 
 In particular, citizen journalism website Bellincat has made use of Google Earth Engine to do detailed environmental analysis, as well to support its wider work detailing breaches of international humanitarian law in conflicts such as the war in Yemen.
 
-In 2020, Bellingcat released data illustrating the fast decline of water levels in the Quitobaquito Springs on the US-Mexico border, making  use of Google Earth Engine data to access, filter and analyse satellite data of the springs. The journalists pointed to the open-source nature and ease of use of the programme as a key benefit.
+
+In 2020, Bellingcat released data illustrating the fast decline of water levels in the Quitobaquito Springs on the US-Mexico border, making use of Google Earth Engine data to access, filter and analyse satellite data of the springs over multiple timescale. The analysis was fairly simple, using the Palmer Drought Severity Index as a measure for drought condition. However it is the low barrier to entry enabled by GEE has made geodata journalism much more widespread and democratised.The journalist also pointed to the open-source nature and ease of use of the programme as a key benefit. 
+
+Expanding a little further, it is exactly because of this accessibility, and that knowledge and techniques are not as heavily gatekept (although quite specific skillsets are still required), many are using GEE for activism. Bellingcat has an entire section focusing on the invasion in Ukraine because remote sensing data allow for close monitoring without having to be in the field. Although I am sure geodata journalism is not single-handedly enabled by Google itself, it definitely played a significant role in exposing people to geodata analysis.
+
+And to go on: GEE makes it reallly easy to make and distribute interactive map. This is especially helpful to communicate with non-data trained individuals (without having to send them a stack of QGIS files), it is simple, contained, intuitive and engaging.
+
+
+```{r, echo = FALSE, out.width='70%'}
+xaringanExtra::embed_xaringan(
+  url = "https://google.earthengine.app/view/forest-change",
+  ratio = "16:10")
+```
+I mean look at this. It's pretty cool.
 
 
 ## Reflection
@@ -366,5 +379,5 @@ Google Earth Engine has made processing and analysing Earth Observation data muc
 
 Since GGE is already a web-hosted platform, it makes distributing and presenting analysis/maps much simpler. This is great when communicating with non-geospatial trained clients and enables more geospatial output/discussion. 
 
-Although looking back onto the codes we used to process images on R, the codes are **much shorter** than codes on GEE (eg: code for PCA on R is above 4 lines?!). However this is the trade off of having a web-based platform that enables streamline image sourcing and visualization -- and this requires Javascript. Ultimately R is still 
+Although looking back onto the codes we used to process images on R, the codes are **much shorter** than codes on GEE (eg: code for PCA on R is around 4 lines?!). However this is the trade off of having a web-based platform that enables streamline image sourcing and visualization -- and this requires Javascript. R is still more computationally more robust, but ultimately it depends on what you want to achieve! And who says you can't use both!
 
