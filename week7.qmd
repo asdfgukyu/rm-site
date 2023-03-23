@@ -30,6 +30,8 @@ xaringanExtra::embed_xaringan(
 
 ## Application
 
+**Identifying objects and features**
+
 OBIA is essentially a step up from last week's supervised and unsupervised image classification techniques, and is a more contemporary and accurate method in comparison as it uses spectral and contextual information.
 
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
@@ -42,7 +44,9 @@ Using OBIA to track unplanned urban development such as spread of densely packed
 
 Random forest classification was used, where dataset was bootstrapped and 1/3 were left as OOB for validation.
 
-They used very-high-resolution (VHR) imagery and terrain data, and produced 3 land classifications (environment, settlements and object) and 14 indicators that provide more details into the building density, road accessibility, where water way be gathering and proximity to social services and hazardous terrains.
+They used very-high-resolution (VHR) imagery and terrain data, and produced 3 land classifications (environment, settlements and object) and 14 indicators (14!!!!!) that provide more details into the building density, road accessibility, where water way be gathering and proximity to social services and hazardous terrains.
+
+This is pretty incredible. To be able to detect so many features in one go goes to show the power of OBIA.
 
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
   knitr::include_graphics("img/jeddah.png")
@@ -50,8 +54,20 @@ They used very-high-resolution (VHR) imagery and terrain data, and produced 3 la
 
 When compared to the OBIA only approach at a 5km\^2 scale, the study found the ML approach generated marked improvement in formal settlement (77% to 85%) and road network (73% to 95%) identification. However vegetation accuracy fell from 100% to 60%. But they ultimately found at a city-scale, the ML approach performance improved with overall accuracy of 91% compared to the OBIA only approach at 83%.
 
-This was a very interesting paper to read as it ties a lot of what I've learnt in this class and the CASA Data science module together First classifying images and objects through OBIA, then use that classification and apply machine learning technique.
+This was a very interesting paper to read as it ties a lot of what I've learnt in this class and the CASA Data science module together First classifying images and objects through OBIA, then use that classification and apply machine learning techniques.
+
+**Accuracy Assessment**
+
+A big part of classification is to validation the outcome through accuracy assessment and confusion matrix. In Ghorbanzadeh's work on landslide detection using OBIA and deep learning techniques, they visualised their accuracy assessment as a map. Through this visualisation you can clearly see model is generating the highest overall accuracy across different terrains.
+
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+  knitr::include_graphics("img/accuracy.png")
+```
+
+Interestingly, both Ghorbanzadeh and Fallatah's work suggest that OBIA accuracy is substantially increased when used in conjuncture with machine learning methods. Ghorbanzadeh went on and highlighted OBIA is highly dependent on expert knowledge in order to get satisfactory results, and deep learning techniques could be a solution to this dependence.
 
 ## Reflection
+
+To me, this was probably one of the hardest week in terms of content. It's difficult to get my head around how we are able to build such powerful machines, especially when it's just a few lines of code on GEE.
 
 Overall, it is really impressive to be able to gather information on aspects of urban life that would not be otherwise available through census surveys or traditional surveying methods, especially in least developed or developing countries. However my problem with classification is intra-class diversity and variations. A religious building in Rome is going to look very different to one in the Congo. How we do then make sure we have comprehensive and inclusive set of labelled data to hand when we conduct classification? And that the classification is tailored and contextualised to local environments, instead of a researcher based in the US looking to evaluate LULC in Cambodia, without real knowledge of the nuance and context of their built environment? I think this week really highlighted the importance of expert knowledge when dealing with earth observation data. Because EO images are so easily accessible now through GEE and other platforms, us as geospatial researchers need to be responsible when designing the classification structures and ensure the classification is appropriate to local context.
