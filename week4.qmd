@@ -16,7 +16,7 @@ knitr::include_graphics("img/informal_set.png")
 -   Informal settlements cover 5% of total residential land of the city but house half of the city's total population (@unhabitatKenyaNairobiUrban).
 -   2/3 of Kenyans continue to live in poverty, making less than 3.2 GBP per day.
 -   70% Kenyan families are chronically vulnerable to food and nutrition insecurity and preventable diseases.
--   Nairobi is also extremely vulnerable to impact of the climate crisis -- leading to food insecurity, reducing access to clean water, and exposing residents to increasingly frequent instances extreme heat.
+-   Nairobi is also extremely vulnerable to impact of the climate crisis -- leading to food insecurity, reducing access to clean water, and exposing residents to increasingly frequent instances extreme heat and preventable diseases.
 
 ### International Framework
 
@@ -78,10 +78,24 @@ Earth observation data would also allow the government to identify areas of envi
 
 ### Slum identification
 
+#### Data
+
+#### Methods
+Remote sensing imagery combined with machine learning algorithms could support the reduction of these inconsistencies. This study evaluates the performance of two machine learning algorithms, i.e., support vector machine (SVM) and random forest (RF), for slum mapping in support of the slum mapping campaign in Bandung, Indonesia
+
+
+Overall, the highest accuracy (88.5%) was achieved by the SVM with SFS using contextual, morphological, and spectral features, which is higher than the estimated accuracy of the SBSM.
+
+
+
+
+
 **Increase access to climate resilience programme** --- Identify arid land/flood zones, disaster mapping.
 
 -   Slum identification --- see where slums will expand and provide amenities accordingly.
 -   <https://www.mdpi.com/2072-4292/8/6/455>
+
+
 
 ## Reflection
 

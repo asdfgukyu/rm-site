@@ -6,22 +6,45 @@
 
 Should we bother with creating new ones or use pre-classified data?
 
-- GlobeLand30
+-   GlobeLand30
 
-- ESA Climate Change Initiatiec annual global land cover
+-   ESA Climate Change Initiatiec annual global land cover
 
-- Dynamic world --- near real time classification of sentinel 2 10m
+-   Dynamic world --- near real time classification of sentinel 2 10m
 
-- Google building data
+-   Google building data
 
-- MODIS -- quite coarse
+-   MODIS -- quite coarse
 
 The answer is, depends.
 
 ### Object Based Image Analysis, Sub Pixel Analysis, Accuracy Assessment
+
 Here is a flow chart/mind map that describes and explains Object Based Image Analysis, Sub pixel Analysis and briefly touches on Accuracy Assessment.
+
 ```{r, echo = FALSE, out.width='70%'}
 xaringanExtra::embed_xaringan(
   url = "https://miro.com/app/board/uXjVMa1M_yw=/?share_link_id=113675726787",
   ratio = "16:10")
 ```
+
+## Application
+
+Remote sensing techniques enables us to detect anything that occurs on the earth surface, as long as the spatial resolution allows. Land Use and Land Cover classification is especially useful for for tracking unplanned or urban development such as spread of informal settlements. Initial spatial assessment of where informal settlements area spreading in relation to the natural topography or direction of arrival of immigrants are vital to implement effective urban policies to protect those who live in them and increase their living standards by providing adequate sanitation. @Fallatah2018 used **objected-based random forest classification alongside Machine Learning techniques** to identify informal settlements in Jeddah, western Saudi Arabia, using GeoEye-1 Multi Spectral Image with 0.5m panchromatic resolution and 2m multispectral. The paper critiqued OBIA is too time consuming and not viable to for mapping large scale data such as the entire city of Jeddah. The OBIA-ML fusion technique therefore extract the classified and grouped pixels into segments. These segments are then used as training data to for the machine learning model and execute subsequent classification.
+
+Random forest classification was used, where dataset was bootstrapped and 1/3 were left as OOB for validation.
+
+They used very-high-resolution (VHR) imagery and terrain data, and produced 3 land classifications (environment, settlements and object) and 14 indicators that provide more details into the building density, road accessibility, where water way be gathering and proximity to social services and hazardous terrains.
+
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+  knitr::include_graphics("img/jeddah.png")
+```
+
+When compared to the OBIA only approach at a 5km^2 scale, the study found the ML approach generated marked improvement in formal settlement (77% to 85%) and road network (73% to 95%) identification. However vegetation accuracy fell from 100% to 60%. But they ultimately found at a city-scale, the ML approach performance improved with overall accuracy of 91% compared to the OBIA only approach at 83%. 
+
+## Relfection
+
+Overall, it is really impressive to be able to gather information on aspects of urban life that would not be otherwise available through census surveys or traditional surveying methods, especially in least developed or developing countries. However my problem with classification is intra-class diversity and variations. A religious building in Rome is going to look very different to one in the Congo. How we do then make sure we have comprehensive and inclusive set of labelled data to hand when we conduct classification? And that the classification is tailored and contextualised to local environments, instead of a researcher based in the US looking to evaluate LULC in Cambodia, without real knowledge of the nuance and context of their built environment?
+I think this week really highlighted the importance of expert knowledge when dealing with earth observation data. Because EO images are so easily accessible now through GEE and other platforms, us as geospatial researchers need to be responsible when designing the classification structures and ensure the classification is appropriate to local context. 
+
+

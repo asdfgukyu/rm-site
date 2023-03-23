@@ -52,7 +52,7 @@ Adjacency Effect: reflective surfaces bleeds into other pixels caused by scatter
 **When and when not to correct:**
 
 | Unnecessary                                      |                                                               Necessary |
-|--------------------------------------------------|------------------------------------------------------------------------:|
+|---------------------------------|--------------------------------------:|
 | Classification of a single image                 | Biophysical parameters needed (e.g. temperature, leaf area index, NDVI) |
 | Independent classification of multi date imagery |                        Using spectral signatures through time and space |
 | Single dates data                                |                                                                         |
@@ -243,8 +243,8 @@ Sometimes you don't know if an image needs to be corrected or not if there are n
 
 ## Reflection
 
-Understanding how satellite images are tweaked and handled before they could actually be used for analysis feels the same as data cleaning before we go into EDA. Although cumbersome at times, I feel this is the most effective way to get to know your data before conducting analysis. I'm also looking forward to GEE and see how the platform streamlines the process.
+Understanding how satellite images are tweaked and handled before they could actually be used for analysis feels the same as data cleaning before we go into EDA. Although cumbersome at times, I feel this is the most effective way to get to know data before conducting analysis. It's also generally good practice to understand how values are generated through by calculating them step by step, rather than just one line of code provided by a package. We will eventually encounter data that isn't corrected. It's good to at least to know generally how to approach correction. I'm also looking forward to GEE and see how the platform streamlines the process.
 
-The possibilities with Earth Observation data seems to be... endless? Essentially anything activities larger than 10 by 10m can be detected on satellite images
+The possibilities with Earth Observation data seems to be... endless? Essentially anything activities larger than 10 by 10m can be detected on satellite images. That thought in itself is quite overwhelming, because when you can do everything, where do you start?
 
-It's been very useful to know how these correction and enhancement methods work before we dive straight into GEE with ARD. I feel more confident knowing how to deal with earth observation data, in case I ever need to deal with raw images.
+It's been very useful to know how these correction and enhancement methods work before we dive straight into GEE with ARD. Surprisingly I didn't find this week's content that overwhelming (compared to week 7, just you wait). In contrast I really felt it laid the necessary foundation for me to understand how one would process earth observation data. I feel more confident knowing how to deal with earth observation data, in case I ever need to deal with raw images.

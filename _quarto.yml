@@ -5,7 +5,7 @@ project:
 book:
   title: "CASA0023 Remote Sensing Cities and Environment"
   author: "Guk Yu"
-  date: '`r Sys.Date()`'
+  date: '24 March 2023'
   favicon: favicon-32x32.png
   chapters:
     - index.qmd
