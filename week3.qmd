@@ -52,7 +52,7 @@ Adjacency Effect: reflective surfaces bleeds into other pixels caused by scatter
 **When and when not to correct:**
 
 | Unnecessary                                      |                                                               Necessary |
-|---------------------------------|--------------------------------------:|
+|--------------------------------------------------|------------------------------------------------------------------------:|
 | Classification of a single image                 | Biophysical parameters needed (e.g. temperature, leaf area index, NDVI) |
 | Independent classification of multi date imagery |                        Using spectral signatures through time and space |
 | Single dates data                                |                                                                         |
