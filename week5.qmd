@@ -25,7 +25,7 @@ Can't run individual code chunk → must run the whole script!
 **Client v Server Side**
 
 | Client                       | Server                                          |
-|------------------------------|-------------------------------------------------|
+|----------------------------|--------------------------------------------|
 | Frontend                     | Backend                                         |
 | Our scripts                  | processing the code                             |
 | light! Nothing store locally | storing all EO data (anything with `.ee` in it) |
@@ -64,15 +64,19 @@ Thing to manipulate data with
 -   Join: can even join landsat and sentinel data!
 -   Array: spreadsheet
 
-```{r echo=FALSE, out.width='90%', fig.align='center',fig.cap="Object class. Source: @ObjectsMethodsOverview"}
+```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/GEE_object_classes.png")
 ```
+
+Source: @objects
 
 ### Applying
 
 ```{r echo=FALSE, out.width='90%', fig.align='center',fig.cap="Process of GEE analysis in Week 5 practical"}
 knitr::include_graphics("img/GEE_flow.png")
 ```
+
+Source: self
 
 #### Loading In
 
@@ -132,7 +136,7 @@ print(median, "median") //Print to Console
 
 **Attacking Scaling Factor**
 
-Every EO data has its specific Scale Factor information. Here from the @HowUseScale, Landsat Level 2 images have Surface Reflectance and Surface Temperature scale factors...
+Every EO data has its specific Scale Factor information. Here from @usgsHowUseScalen.d , Landsat Level 2 images have Surface Reflectance and Surface Temperature scale factors...
 
 ```{r echo=FALSE, out.width='90%', fig.align='center', fig.cap="Landsat Level 2 Scale Factor Source: @HowUseScale"}
 knitr::include_graphics("img/usgs_landsat2.png")

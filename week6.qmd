@@ -2,6 +2,8 @@
 
 Week 6 is about classification! When we get an image from satellites, we need the programme to be able to identify types of land cover for masses of data. While we can't do this manually, we need to rely on Machine Learning methods.
 
+From this point onwards I am going to focus on explaining the concepts and understanding the methods instead of codes. I want to spend this time to make sure I really understand ML and classification methods before I execute codes.
+
 ## Summary
 
 ### Introduction to Machine Learning
@@ -43,6 +45,8 @@ How do we know where to cut?
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
   knitr::include_graphics("img/regtree_cutting.jpg")
 ```
+
+Source: @statquestwithjoshstarmer2018
 
 **Public Enemy: Overfittiing**
 
