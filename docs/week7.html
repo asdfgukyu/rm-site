@@ -244,6 +244,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>Source: <span class="citation" data-cites="gisgeography2014">GISGeography (<a href="references.html#ref-gisgeography2014" role="doc-biblioref">2014</a>)</span></p>
 <p>Using OBIA to track unplanned urban development such as spread of densely packed informal settlements is extremely effective as it can add more complex classes that are defined by spatial and hierarchical relationships, given a more complex land composition.</p>
 <p><span class="citation" data-cites="fallatah2020">Fallatah, Jones, and Mitchell (<a href="references.html#ref-fallatah2020" role="doc-biblioref">2020</a>)</span> used <strong>objected-based random forest classification alongside Machine Learning techniques</strong> to identify informal settlements in Jeddah, western Saudi Arabia, using GeoEye-1 Multi Spectral Image with 0.5m panchromatic resolution and 2m multispectral. The paper critiqued OBIA is too time consuming and not viable to for mapping large scale data such as the entire city of Jeddah. The OBIA-ML fusion technique therefore extract the classified and grouped pixels into segments. These segments are then used as training data to for the machine learning model and execute subsequent classification.</p>
 <p>Random forest classification was used, where dataset was bootstrapped and 1/3 were left as OOB for validation.</p>
@@ -258,6 +259,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>Source: <span class="citation" data-cites="fallatah2020">Fallatah, Jones, and Mitchell (<a href="references.html#ref-fallatah2020" role="doc-biblioref">2020</a>)</span></p>
 <p>When compared to the OBIA only approach at a 5km^2 scale, the study found the ML approach generated marked improvement in formal settlement (77% to 85%) and road network (73% to 95%) identification. However vegetation accuracy fell from 100% to 60%. But they ultimately found at a city-scale, the ML approach performance improved with overall accuracy of 91% compared to the OBIA only approach at 83%.</p>
 <p>This was a very interesting paper to read as it ties a lot of what I’ve learnt in this class and the CASA Data science module together First classifying images and objects through OBIA, then use that classification and apply machine learning techniques.</p>
 <p><strong>Accuracy Assessment</strong></p>
@@ -271,6 +273,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>Source: <span class="citation" data-cites="ghorbanzadeh2022">Ghorbanzadeh et al. (<a href="references.html#ref-ghorbanzadeh2022" role="doc-biblioref">2022</a>)</span></p>
 <p>Interestingly, both Ghorbanzadeh and Fallatah’s work suggest that OBIA accuracy is substantially increased when used in conjuncture with machine learning methods. Ghorbanzadeh went on and highlighted OBIA is highly dependent on expert knowledge in order to get satisfactory results, and deep learning techniques could be a solution to this dependence.</p>
 </section>
 <section id="reflection" class="level2" data-number="7.3">
@@ -285,6 +288,9 @@ Fallatah, Ahmad, Simon Jones, and David Mitchell. 2020. <span>“Object-Based Ra
 </div>
 <div id="ref-ghorbanzadeh2022" class="csl-entry" role="doc-biblioentry">
 Ghorbanzadeh, Omid, Hejar Shahabi, Alessandro Crivellari, Saeid Homayouni, Thomas Blaschke, and Pedram Ghamisi. 2022. <span>“Landslide Detection Using Deep Learning and Object-Based Image Analysis.”</span> <em>Landslides</em> 19 (4): 929–39. <a href="https://doi.org/10.1007/s10346-021-01843-x">https://doi.org/10.1007/s10346-021-01843-x</a>.
+</div>
+<div id="ref-gisgeography2014" class="csl-entry" role="doc-biblioentry">
+GISGeography. 2014. <span>“Image Classification Techniques in Remote Sensing.”</span> <a href="https://gisgeography.com/image-classification-techniques-remote-sensing/">https://gisgeography.com/image-classification-techniques-remote-sensing/</a>.
 </div>
 </div>
 </section>

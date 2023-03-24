@@ -1,16 +1,14 @@
 # Introduction to Google Earth Engine
 
-Because this week's material is mainly to get acquainted with GEE using the skills and methodologies we learnt in previous weeks -- this week's learning diary will mainly feature GEE scripts, so I can refer here for main codes for basic analysis. 
+Because this week's material is mainly to get acquainted with GEE using the skills and methodologies we learnt in previous weeks -- this week's learning diary will mainly feature GEE scripts, so I can refer here for main codes for basic analysis.
 
 ## Summary
 
 **What is GEE?**
 
-A geospatial processing service, allow for large scale analysis
--   EO data are all stored on the server
-Handy because it maps out the output immediately --- good for visualisation
+A geospatial processing service, allow for large scale analysis - EO data are all stored on the server Handy because it maps out the output immediately --- good for visualisation
 
-_Google does things a little differently..._
+*Google does things a little differently...*
 
 **Naming Things...**
 
@@ -26,10 +24,10 @@ Can't run individual code chunk → must run the whole script!
 
 **Client v Server Side**
 
-| Client                       | Server                                        |
+| Client                       | Server                                          |
 |------------------------------------|------------------------------------|
-| Frontend                     | Backend                                       |
-| Our scripts                  | processing the code                           |
+| Frontend                     | Backend                                         |
+| Our scripts                  | processing the code                             |
 | light! Nothing store locally | storing all EO data (anything with `.ee` in it) |
 
 Notes:
@@ -77,6 +75,7 @@ knitr::include_graphics("img/GEE_flow.png")
 ```
 
 #### Loading In
+
 When loading in `ee.ImageCollection` , we need to/can specify:
 
 -   `.filterDate(’start date’, ‘end date’)`
@@ -87,6 +86,7 @@ When loading in `ee.ImageCollection` , we need to/can specify:
 **Add Features & Geometries**
 
 Import GADM boundary map that has Delhi boundaries, in this case column GID_1 row IND.25.1_1
+
 ```{r eval=FALSE}
 var india = ee.FeatureCollection('users/asdfgukyu/india-2')
     .filter('GID_1 == "IND.25_1"');
@@ -95,6 +95,7 @@ var india = ee.FeatureCollection('users/asdfgukyu/india-2')
 **Load Landsat 9 data**
 
 filter by date, month, and bound. Each image has 19 bands, and when we add the map layer, with no filter on the bands to include.
+
 ```{r eval=FALSE}
 var oneimage = ee.ImageCollection('LANDSAT/LC09/C02/T1_L2')
   .filterDate('2020-01-01', '2022-10-10')
@@ -102,13 +103,16 @@ var oneimage = ee.ImageCollection('LANDSAT/LC09/C02/T1_L2')
   .filter(ee.Filter.lt("CLOUD_COVER", 0.1));
 ```
 
-**True Layer** 
+**True Layer**
 
 If we want to get a true colour layer made with RGB.
+
 ```{r eval=FALSE}
 Map.addLayer(oneimage, {bands: ["SR_B4", "SR_B3", "SR_B2"]})
 ```
+
 Otherwise, if we want all 19 bands:
+
 ```{r eval=FALSE}
 Map.addLayer(oneimage)
 ```
@@ -116,10 +120,11 @@ Map.addLayer(oneimage)
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/layer1_GEE.png")
 ```
-Both of the results show very dark images, but no clouds. We need to reduce all of these images so we get 1 that we can work with. We're going ahead with the 19 bands here (oneimage). 
 
-**Developing an image reducer**
-The method we used here is reducing by median, but there are better ways to do this, like percentile or seasonal methods.
+Both of the results show very dark images, but no clouds. We need to reduce all of these images so we get 1 that we can work with. We're going ahead with the 19 bands here (oneimage).
+
+**Developing an image reducer** The method we used here is reducing by median, but there are better ways to do this, like percentile or seasonal methods.
+
 ```{r eval=FALSE}
 var median = oneimage.reduce(ee.Reducer.median());
 print(median, "median") //Print to Console
@@ -134,6 +139,7 @@ knitr::include_graphics("img/usgs_landsat2.png")
 ```
 
 We then apply these scaling factors in a function.
+
 ```{r eval=FALSE}
 function applyScaleFactors(image) {
   var opticalBands = image.select('SR_B.').multiply(0.0000275).add(-0.2);
@@ -142,16 +148,20 @@ function applyScaleFactors(image) {
               .addBands(thermalBands, null, true);
 }
 ```
+
 And now we apply the scale function to our image collection, and apply to median reducer as well.
+
 ```{r eval=FALSE}
 var oneimage_scale = oneimage.map(applyScaleFactors);
 
 //apply the median reducer from above
 var oneimage_scale_median = oneimage.reduce(ee.Reducer.median());
 ```
+
 We still have 19 bands but only 1 image. Each band is a median of all the image layers we used.
 
 #### Mapping
+
 ```{r eval=FALSE}
 var vis_params = {
   bands: ['SR_B4_median', 'SR_B3_median', 'SR_B2_median'],
@@ -166,11 +176,13 @@ Map.addLayer(oneimage_scale_median, vis_params,'True Color (432)');
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/scaled_median_GEE.png")
 ```
+
 And now we can see!
 
 #### Mosaicking
-Joining 2 tiles together.
-From the image above you can see clear lines where the tiles overlap (due to date of collection + atmospheric correction applied). We're gna get rid of the lines.
+
+Joining 2 tiles together. From the image above you can see clear lines where the tiles overlap (due to date of collection + atmospheric correction applied). We're gna get rid of the lines.
+
 ```{r eval=FALSE}
 //Using the image collection before taking the medians.
 var mosaic = oneimage_scale.mosaic();
@@ -183,19 +195,24 @@ var vis_params2 = {
 
 Map.addLayer(mosaic, vis_params2, 'spatial mosaic');
 ```
+
 Not much better, the demarcations are even more obvious..
 
 Andy: instead of using the reducer, the easier and better way is just to take the mean of all the images.
+
 ```{r eval=FALSE}
 var meanImage = oneimage_scale.mean();
 
 Map.addLayer(meanImage, vis_params2, 'mean');
 ```
+
 Here the image is much better blended... But what's the point of the median reducer???
 
 #### Clipping
+
 Now we want to clip to the shape of Delhi
-````{r eval=FALSE}
+
+```{r eval=FALSE}
 var clip = meanImage.clip(india)
   .select(['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7']);
 
@@ -212,11 +229,13 @@ Map.addLayer(clip, vis_params3, 'clip');
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/clipped_GEE.png")
 ```
+
 Clipped!
 
 #### Making and Adding Texture Layer
-We want to compute texture using `glcmTexture()`. To do this we need to multiply the surface reflectance so it doesn't reduce to 1 and 0 (bc the glcmtexture function only read integers).
-Note: there's a lot of data here, if unresponsive, reduce bands.
+
+We want to compute texture using `glcmTexture()`. To do this we need to multiply the surface reflectance so it doesn't reduce to 1 and 0 (bc the glcmtexture function only read integers). Note: there's a lot of data here, if unresponsive, reduce bands.
+
 ```{r eval=FALSE}
 var glcm = clip.select(['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7'])
   .multiply(1000)
@@ -232,12 +251,15 @@ Map.addLayer(glcm, {min:14, max: 650}, 'glcm');
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/texture_layer.png")
 ```
+
 We made a texture layer! This can then be used in conjuncture with other bands for analysis.
 
-#### Principle Component Analysis 
+#### Principle Component Analysis
+
 Refer to Week 3 Correction for more PCA content.
 
 Need to look at this section....
+
 ```{r eval=FALSE}
 // Scale and band names
 var scale = 30;
@@ -271,6 +293,7 @@ var getNewBandNames = function(prefix) {
 ```
 
 Now we have what we need for PCA.
+
 ```{r eval=FALSE}
 // This function accepts mean centered imagery, a scale and
 // a region in which to perform the analysis.  It returns the
@@ -342,10 +365,13 @@ knitr::include_graphics("img/PCA.png")
 ```
 
 So we can print out the first 2 layers:
+
 ```{r eval=FALSE}
 Map.addLayer(pcImage, {bands: ['pc2', 'pc1'], min: -2, max: 2}, 'PCA bands 1 and 2');
 ```
+
 Or if we want to whole stack:
+
 ```{r eval=FALSE}
  for (var i = 0; i < bandNames.length().getInfo(); i++) {
    var band = pcImage.bandNames().get(i).getInfo();
@@ -354,30 +380,29 @@ Or if we want to whole stack:
 ```
 
 ## Application
+
 Since what we learnt this week was mainly understanding how Google Earth Engine made using already open source Earth Observation data so accessible, I want to highlight the projects that were made possible because of this plaform.
 
 In particular, citizen journalism website Bellingcat has made use of Google Earth Engine to do detailed environmental analysis, as well to support its wider work detailing breaches of international humanitarian law in conflicts such as the war in Yemen.
 
-
-In 2020, Bellingcat released data illustrating the fast decline of water levels in the Quitobaquito Springs on the US-Mexico border (@teamDisappearanceQuitobaquitoSprings2020), making use of Google Earth Engine data to access, filter and analyse satellite data of the springs over multiple timescale. The analysis was fairly simple, using the Palmer Drought Severity Index as a measure for drought condition. However it is the low barrier to entry enabled by GEE has made geodata journalism much more widespread and democratised.The journalist also pointed to the open-source nature and ease of use of the programme as a key benefit. 
+In 2020, Bellingcat released data illustrating the fast decline of water levels in the Quitobaquito Springs on the US-Mexico border ( @team2020 ), making use of Google Earth Engine data to access, filter and analyse satellite data of the springs over multiple timescale. The analysis was fairly simple, using the Palmer Drought Severity Index as a measure for drought condition. However it is the low barrier to entry enabled by GEE has made geodata journalism much more widespread and democratised.The journalist also pointed to the open-source nature and ease of use of the programme as a key benefit.
 
 Expanding a little further, it is exactly because of this accessibility, and that knowledge and techniques are not as heavily gatekept (although quite specific skillsets are still required), many are using GEE for activism. Bellingcat has an entire section focusing on the invasion in Ukraine because remote sensing data allow for close monitoring without having to be in the field. Although I am sure geodata journalism is not single-handedly enabled by Google itself, it definitely played a significant role in exposing people to geodata analysis.
 
 And to go on: GEE makes it reallly easy to make and distribute interactive map. This is especially helpful to communicate with non-data trained individuals (without having to send them a stack of QGIS files), it is simple, contained, intuitive and engaging.
-
 
 ```{r, echo = FALSE, out.width='70%'}
 xaringanExtra::embed_xaringan(
   url = "https://google.earthengine.app/view/forest-change",
   ratio = "16:10")
 ```
+
 I mean look at this. It's pretty cool.
 
-
 ## Reflection
-Google Earth Engine has made processing and analysing Earth Observation data much more accessible. This allows individuals to access and process large scale geospatial data without the need for powerful hardwares and softwares. Because everything is hosted on the server, this enables scalability processes involving larger datasets that otherwise would be too big for desktop-based processing. GGE also streamlines the analysis process, eliminating the need for switching between multiple softwares, integrating instantaneous visualisation, data sourcing and scripting in one space. The vast volume of images available on GEE also reduces time spent on locating and sourcing geospatial data drastically. 
 
-Since GGE is already a web-hosted platform, it makes distributing and presenting analysis/maps much simpler. This is great when communicating with non-geospatial trained clients and enables more geospatial output/discussion. 
+Google Earth Engine has made processing and analysing Earth Observation data much more accessible. This allows individuals to access and process large scale geospatial data without the need for powerful hardwares and softwares. Because everything is hosted on the server, this enables scalability processes involving larger datasets that otherwise would be too big for desktop-based processing. GGE also streamlines the analysis process, eliminating the need for switching between multiple softwares, integrating instantaneous visualisation, data sourcing and scripting in one space. The vast volume of images available on GEE also reduces time spent on locating and sourcing geospatial data drastically.
+
+Since GGE is already a web-hosted platform, it makes distributing and presenting analysis/maps much simpler. This is great when communicating with non-geospatial trained clients and enables more geospatial output/discussion.
 
 Although looking back onto the codes we used to process images on R, the codes are **much shorter** than codes on GEE (eg: code for PCA on R is around 4 lines?!). However this is the trade off of having a web-based platform that enables streamline image sourcing and visualization -- and this requires Javascript. R is still more computationally more robust, but ultimately it depends on what you want to achieve! And who says you can't use both!
-

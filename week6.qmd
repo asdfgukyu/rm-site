@@ -18,8 +18,6 @@ Machine learning models use a type of inductive inference where the knowledge ba
 
 -   Classify data into 2+ discrete categories, split into further branches until all categories of decision have been made.
 
-INSERT IMAGE
-
 -   A good classification tree should be multi layered because just one independent vary would often result in impure results (where the predictive power of the independent variable is not 100% accurate)
 
 -   The more relevant dependent variables in the tree, the less impure the result should be, and the stronger the predictive accuracy.
