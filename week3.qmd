@@ -26,6 +26,8 @@ Process of removing geometric distortions caused by factors such as sensor persp
 ![](img/geometric_distortion2.jpeg)
 :::
 
+Images:![Maclachlan](https://andrewmaclachlan.github.io/CASA0023-lecture-3/?panelset3=dn2&panelset4=ratio2&panelset5=pca2#18)
+
 #### Solution
 
 **Ground Control Points** (GPS) to match satellite images to a reference datasets --- another map, GPS data etc, using regression.
@@ -47,12 +49,12 @@ During this, data might be slightly shifted → so must resample the final raste
 
 Adjacency Effect: reflective surfaces bleeds into other pixels caused by scattering, making the image hazy and reduces contrast.
 
-![Atmospheric correction for 3 images.](img/atmos-correction.png)
+![Atmospheric correction for 3 images.](img/atmos-correction.png) Image: @wangEffectSamplingDesign2012a
 
 **When and when not to correct:**
 
 | Unnecessary                                      |                                                               Necessary |
-|--------------------------------------------------|------------------------------------------------------------------------:|
+|------------------------------|-----------------------------------------:|
 | Classification of a single image                 | Biophysical parameters needed (e.g. temperature, leaf area index, NDVI) |
 | Independent classification of multi date imagery |                        Using spectral signatures through time and space |
 | Single dates data                                |                                                                         |
@@ -88,7 +90,7 @@ Psuedo Invariant Features (PIF)
 
 Make things nadir. This would be used if satellite passes adjacent to a mountain top instead of directly above it.
 
-![Orthorectification of a mountain top to nadir.](img/topolo-correction.jpeg)
+![Orthorectification of a mountain top to nadir. Source: @whatis](img/topolo-correction.jpeg)
 
 Often uses cosine correction to calculate sun's zenith and incidence angle
 

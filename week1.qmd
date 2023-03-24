@@ -18,6 +18,8 @@ The electromagnetic spectrum is made up of thousands of bands, including visible
 knitr::include_graphics("img/Atmospheric-Electromagnetic-Opacity.png")
 ```
 
+Source: @gisgeography2017
+
 -   The earth's surface either **absorbs** energy or **transmits** energy.
 -   The colour we see is the visible light waves that is reflected off of the object. Apple is red because it reflects red and absorbs all other visible light.
 
@@ -52,6 +54,8 @@ knitr::include_graphics("img/scatter_bangladesh.png")
 knitr::include_graphics("img/w1app.png")
 
 ```
+
+Source: @jensen1986
 
 A bit of thinking: *Applications of varying temporal and spatial resolution, what occasion it's best for and what satellite provides that spatial resolution. An interesting point is RM data for emergency responses require fairly granular spatial resolution and frequent temporal resolution -- so as to track minute changes in landscapes. However as mentioned above, there are direct trade offs between temporal and pixel resolution. For satellites to provide both high temporal and spatial resolution requires huge sums of cost and investment. With growing threats from the climate crisis on the urban landscape -- do we currently have the capacity to effectively monitor damages and respond on time?*
 
@@ -97,6 +101,8 @@ Development of urban areas can be measured with medium to high spatial resolutio
 
 knitr::include_graphics("img/wk1_urban_dev.png")
 ```
+
+Source: @sitesui
 
 #### Assisting social analysis
 
