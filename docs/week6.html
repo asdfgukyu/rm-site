@@ -184,10 +184,7 @@ div.csl-indent {
   <li><a href="#random-forest" id="toc-random-forest" class="nav-link" data-scroll-target="#random-forest"><span class="toc-section-number">6.1.2</span>  Random Forest</a></li>
   <li><a href="#image-classification" id="toc-image-classification" class="nav-link" data-scroll-target="#image-classification"><span class="toc-section-number">6.1.3</span>  Image Classification</a></li>
   </ul></li>
-  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">6.2</span>  Application</a>
-  <ul class="collapse">
-  <li><a href="#identifying-land-cover-and-land-use-for-sustainable-land-management" id="toc-identifying-land-cover-and-land-use-for-sustainable-land-management" class="nav-link" data-scroll-target="#identifying-land-cover-and-land-use-for-sustainable-land-management"><span class="toc-section-number">6.2.1</span>  Identifying Land Cover and Land Use for Sustainable Land Management</a></li>
-  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">6.2</span>  Application</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">6.3</span>  Reflection</a></li>
   </ul>
 </nav>
@@ -343,24 +340,37 @@ div.csl-indent {
 </div>
 <p>Above you can see the classification outputs for each methods. All 3 methods performed well with accuracies above 85%, with decision trees performing slightly better with overall accuracy of 93%.</p>
 <p>It is important to note however, each classification methods has it’s pros and cons. Often which method you choose to use depends on the nature of your data and what output you are looking for. And sometimes, it might be down to the overall accuracy to decide.</p>
-<section id="identifying-land-cover-and-land-use-for-sustainable-land-management" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="identifying-land-cover-and-land-use-for-sustainable-land-management"><span class="header-section-number">6.2.1</span> Identifying Land Cover and Land Use for Sustainable Land Management</h3>
-<p>Classification methods are especially good to track rapid urbanisation and LULC where the physical environment undergoes a drastic transformation over time and space. This study by <span class="citation" data-cites="thonfeld2020">Thonfeld et al. (<a href="references.html#ref-thonfeld2020" role="doc-biblioref">2020</a>)</span> used random forest classification to measure land use change in the Kilombero catchment in Tanzania as a result of growing food production over the past 45 years. This paper’s goal is to understand the extent and where land change has occurred in order to plan for a sustainable urban growth policy.</p>
-<p>11 classes of land use were used in this study (Montane Forest, Close Woodland, Open Woodland, teak plantation, swamp, grassland, Savanna, upland agriculture, rice built0up an water.) Classification were</p>
+<p>For complex systems, non parametric approaches are often more flexible and data driven as they do not require any assumptions or mathematical models about the underlying probability distribution of your data.</p>
+<p>Within more well researched fields, such as LULC and vegetation classification, Maximum Likehood tends to be more popular as there are often clear distinction between different feature classes.</p>
+<section id="monitoring-invasive-species-using-svm" class="level4" data-number="6.2.0.1">
+<h4 data-number="6.2.0.1" class="anchored" data-anchor-id="monitoring-invasive-species-using-svm"><span class="header-section-number">6.2.0.1</span> Monitoring invasive species using SVM</h4>
+<p><span class="citation" data-cites="gavier-pizarro2012">Gavier-Pizarro et al. (<a href="references.html#ref-gavier-pizarro2012" role="doc-biblioref">2012</a>)</span> did a really interesting and novel project using Landsat TM/ETM+ data and SVM to monitor the invasion of the Chinese tree glossy privet that is aggressively replacing native forests in Argentina, causing huge cause of concern regarding conservation.</p>
+<p>Landsat TM/ETM+ data are only at 30m resolution, but these images have been successful in mapping invasion for single points in time that forms homogenous patches larger than 0.5 hectres, given surround phenology of native species are different. Glossy Privets are much lower in luminosity compared to native vegetation.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/glossy.png" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Source: <span class="citation" data-cites="gavier-pizarro2012">Gavier-Pizarro et al. (<a href="references.html#ref-gavier-pizarro2012" role="doc-biblioref">2012</a>)</span></p>
+<p>Since the classes are not linearly seperable, a Gaussian kernal function was applied to gain the optimal values of C and gamma. These parameters were then used to classify the multitemporal stacks of Landsat images to map glossy privet invasion.</p>
+<p>I find this technique of mapping single points in time to overcome the problem of low spatial resolution very interesting. The authors did not mention if this approach has reduced the overall accuracy either. Another problem with is approach is that the spread of invasive species has to be quite prominent already for detection to occur. The study highlighted areas of mixed species/early stages were classified as native forest. This this analysis only allows for a reactive measure against the invasive expansion.</p>
 </section>
 </section>
 <section id="reflection" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.3</span> Reflection</h2>
 <p>This week we looked into the early days methods of classification, first diving into the concept of decision trees and random forests.These methods are very intuitive to me. The highest performing variable will be set as the root to maximise chance of an accurate classification. And we need to make a LOT of trees so that we remove stochatiscity – Makes sense! But it got a little complicated when it came to image classification.</p>
-<p>Data poverty – continuation of colonisation trhough knowledge.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-gavier-pizarro2012" class="csl-entry" role="doc-biblioentry">
+Gavier-Pizarro, Gregorio I., Tobias Kuemmerle, Laura E. Hoyos, Susan I. Stewart, Cynthia D. Huebner, Nicholas S. Keuler, and Volker C. Radeloff. 2012. <span>“Monitoring the Invasion of an Exotic Tree (Ligustrum Lucidum) from 1983 to 2006 with Landsat TM/ETM+ Satellite Data and Support Vector Machines in Córdoba, Argentina.”</span> <em>Remote Sensing of Environment</em>, Landsat Legacy Special Issue, 122 (July): 134–45. <a href="https://doi.org/10.1016/j.rse.2011.09.023">https://doi.org/10.1016/j.rse.2011.09.023</a>.
+</div>
 <div id="ref-otukei2010" class="csl-entry" role="doc-biblioentry">
 Otukei, J. R., and T. Blaschke. 2010. <span>“Land Cover Change Assessment Using Decision Trees, Support Vector Machines and Maximum Likelihood Classification Algorithms.”</span> <em>International Journal of Applied Earth Observation and Geoinformation</em>, Supplement Issue on <span>"</span>Remote Sensing for Africa <span></span> A Special Collection from the African Association for Remote Sensing of the Environment (AARSE)<span>"</span>, 12 (February): S27–31. <a href="https://doi.org/10.1016/j.jag.2009.11.002">https://doi.org/10.1016/j.jag.2009.11.002</a>.
-</div>
-<div id="ref-thonfeld2020" class="csl-entry" role="doc-biblioentry">
-Thonfeld, Frank, Stefanie Steinbach, Javier Muro, and Fridah Kirimi. 2020. <span>“Long-Term Land Use/Land Cover Change Assessment of the Kilombero Catchment in Tanzania Using Random Forest Classification and Robust Change Vector Analysis.”</span> <em>Remote Sensing</em> 12 (7): 1057. <a href="https://doi.org/10.3390/rs12071057">https://doi.org/10.3390/rs12071057</a>.
 </div>
 </div>
 </section>

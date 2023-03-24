@@ -136,14 +136,26 @@ Above you can see the classification outputs for each methods. All 3 methods per
 
 It is important to note however, each classification methods has it's pros and cons. Often which method you choose to use depends on the nature of your data and what output you are looking for. And sometimes, it might be down to the overall accuracy to decide.
 
-### Identifying Land Cover and Land Use for Sustainable Land Management
+For complex systems, non parametric approaches are often more flexible and data driven as they do not require any assumptions or mathematical models about the underlying probability distribution of your data.
 
-Classification methods are especially good to track rapid urbanisation and LULC where the physical environment undergoes a drastic transformation over time and space. This study by @thonfeld2020 used random forest classification to measure land use change in the Kilombero catchment in Tanzania as a result of growing food production over the past 45 years. This paper's goal is to understand the extent and where land change has occurred in order to plan for a sustainable urban growth policy.
+Within more well researched fields, such as LULC and vegetation classification, Maximum Likehood tends to be more popular as there are often clear distinction between different feature classes.
 
-11 classes of land use were used in this study (Montane Forest, Close Woodland, Open Woodland, teak plantation, swamp, grassland, Savanna, upland agriculture, rice built0up an water.) Classification were
+#### Monitoring invasive species using SVM
+
+@gavier-pizarro2012 did a really interesting and novel project using Landsat TM/ETM+ data and SVM to monitor the invasion of the Chinese tree glossy privet that is aggressively replacing native forests in Argentina, causing huge cause of concern regarding conservation.
+
+Landsat TM/ETM+ data are only at 30m resolution, but these images have been successful in mapping invasion for single points in time that forms homogenous patches larger than 0.5 hectres, given surround phenology of native species are different. Glossy Privets are much lower in luminosity compared to native vegetation.
+
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+  knitr::include_graphics("img/glossy.png")
+```
+
+Source: @gavier-pizarro2012
+
+Since the classes are not linearly seperable, a Gaussian kernal function was applied to gain the optimal values of C and gamma. These parameters were then used to classify the multitemporal stacks of Landsat images to map glossy privet invasion.
+
+I find this technique of mapping single points in time to overcome the problem of low spatial resolution very interesting. The authors did not mention if this approach has reduced the overall accuracy either. Another problem with is approach is that the spread of invasive species has to be quite prominent already for detection to occur. The study highlighted areas of mixed species/early stages were classified as native forest. This this analysis only allows for a reactive measure against the invasive expansion.
 
 ## Reflection
 
 This week we looked into the early days methods of classification, first diving into the concept of decision trees and random forests.These methods are very intuitive to me. The highest performing variable will be set as the root to maximise chance of an accurate classification. And we need to make a LOT of trees so that we remove stochatiscity -- Makes sense! But it got a little complicated when it came to image classification.
-
-Data poverty -- continuation of colonisation trhough knowledge.
