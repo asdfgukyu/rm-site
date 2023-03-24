@@ -227,17 +227,16 @@ div.csl-indent {
 <p>How do we know what order we put our dependent variables in the classification tree?</p>
 <ul>
 <li><p>We calculate a <strong>Gini Impurity</strong> for each variable, and the one with the lowest impurity becomes the root.</p></li>
-<li><p>we dont expect the leaves from the root node to be pure, so we calculate the the Gini impurity of the remaining variables, and choose the variable with the lowerst Gini impurity score, split the node and so on, until nodes become leaves.</p></li>
+<li><p>we dont expect the leaves from the root node to be pure, so we calculate the the Gini impurity of the remaining variables, and choose the variable with the lowest Gini impurity score, split the node and so on, until nodes become leaves.</p></li>
 </ul>
 <p><strong>Regression Trees</strong></p>
 <ul>
-<li><p>When decision tree predicts numeric, continous discrete values</p></li>
+<li><p>When decision tree predicts numeric, continuous discrete values</p></li>
 <li><p>When linear 1 relationship does not fit data, we split the data into smaller subset, and run several different regressions for each chunk</p></li>
 </ul>
-<p>INSERT IMAGE</p>
 <p>How do we know where to cut?</p>
 <ul>
-<li>Sections are divided based on thresholds (nodes) and the <strong>SSR (Sum of Square Residuals)</strong> is calcuated.</li>
+<li>Sections are divided based on thresholds (nodes) and the <strong>SSR (Sum of Square Residuals)</strong> is calculated.</li>
 <li>Again, ones with lowest SSR becomes the root, and so on.</li>
 <li>Outcome: each leaf should represent the value that is close to the data</li>
 </ul>
@@ -251,7 +250,7 @@ div.csl-indent {
 </div>
 </div>
 <p><strong>Public Enemy: Overfittiing</strong></p>
-<p>Subsetting and dividing dataset too much could lead to overfitting — meaning the model is so fine tuned to the detail on the dataset it is learning from, it is unable to effectly predict outcome with a different dataset.</p>
+<p>Subsetting and dividing dataset too much could lead to overfitting — meaning the model is so fine tuned to the detail on the dataset it is learning from, it is unable to effectively predict outcome with a different dataset.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -266,7 +265,7 @@ div.csl-indent {
 <p>You want a bit of both!</p>
 <p><strong>Preventative measures:</strong></p>
 <ol type="1">
-<li><p>Limit how the tree grows — set minimum of at least 20pixel per leaf</p></li>
+<li><p>Limit how the tree grows – set minimum of at least 20pixel per leaf</p></li>
 <li><p>Weakest Link pruning:</p></li>
 </ol>
 <div class="cell" data-layout-align="center">
@@ -278,27 +277,25 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>Image: The formidable Anne Robinson</p>
 <p>Calculate SSR for each tree. From no leaf removal to more leaves removal</p>
-<p>It is expected that as more leaves are removed, the SSR gets bigger. The point is so that the model doesn’t fit the training data too well anyway</p>
-<p>With each tree’s SSR, we calcuate the <strong>Tree Score</strong> – the lower the better.</p>
+<p>It is expected that as more leaves are removed, the SSR gets bigger. The point is so that the model doesn’t fit the training data too well anyway.</p>
+<p>With each tree’s SSR, we calculate the <strong>Tree Score</strong> (the lower the better).</p>
 <p><strong>Tree Score = SSR + αT</strong></p>
 <p><strong>T</strong> = number of leaves</p>
 <p><strong>α</strong> = tree penalty. The more leaves removed, the higher the <strong>α.</strong></p>
 <p><strong>How to decide on α?</strong></p>
-<p>Build a full size (training and testing) regression tree, wher α becomes 0, where tree score is the lowest. Repeat and get a different α values for each tree.</p>
+<p>Build a full size (training and testing) regression tree, where α becomes 0, where tree score is the lowest. Repeat and get a different α values for each tree.</p>
 <ul>
-<li>Return to the training data, and apply α values from before, which dictakes where the data is split</li>
+<li>Return to the training data, and apply α values from before, which dictates where the data is split</li>
 </ul>
-<p>Do this process 10 times for cross validation — the value of <strong>α</strong> that gives the smallest ~SSR is the final value → slect the tree that used the full data with that specific alpha</p>
+<p>Do this process 10 times for cross validation — the value of <strong>α</strong> that gives the smallest ~SSR is the final value → select the tree that used the full data with that specific alpha</p>
 </section>
 </section>
 <section id="random-forest" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="random-forest"><span class="header-section-number">6.1.2</span> Random Forest</h3>
 <p>Many decision trees from 1 set of data.</p>
-<p>Decision trees on their own are pretty inaccurate, not flexible when classifying new samples.</p>
-<ul>
-<li>Random Forests are simple, but also very adaptable when met with new data, improving accuracy</li>
-</ul>
+<p>Decision trees on their own are pretty inaccurate, not flexible when classifying new samples. Random Forests are simple, but also very adaptable when met with new data, improving accuracy</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
@@ -344,8 +341,8 @@ div.csl-indent {
 <p>Within more well researched fields, such as LULC and vegetation classification, Maximum Likehood tends to be more popular as there are often clear distinction between different feature classes.</p>
 <section id="monitoring-invasive-species-using-svm" class="level4" data-number="6.2.0.1">
 <h4 data-number="6.2.0.1" class="anchored" data-anchor-id="monitoring-invasive-species-using-svm"><span class="header-section-number">6.2.0.1</span> Monitoring invasive species using SVM</h4>
-<p><span class="citation" data-cites="gavier-pizarro2012">Gavier-Pizarro et al. (<a href="references.html#ref-gavier-pizarro2012" role="doc-biblioref">2012</a>)</span> did a really interesting and novel project using Landsat TM/ETM+ data and SVM to monitor the invasion of the Chinese tree glossy privet that is aggressively replacing native forests in Argentina, causing huge cause of concern regarding conservation.</p>
-<p>Landsat TM/ETM+ data are only at 30m resolution, but these images have been successful in mapping invasion for single points in time that forms homogenous patches larger than 0.5 hectres, given surround phenology of native species are different. Glossy Privets are much lower in luminosity compared to native vegetation.</p>
+<p><span class="citation" data-cites="gavier-pizarro2012">Gavier-Pizarro et al. (<a href="references.html#ref-gavier-pizarro2012" role="doc-biblioref">2012</a>)</span> did a really interesting and novel project using Landsat TM/ETM+ data and SVM to monitor the invasion of the Chinese tree glossy privet that is aggressively replacing native forests in Argentina, causing huge cause of concern regarding conservation. SVM was chosen simply because this approach has been proven to be effective in vegetation classification.</p>
+<p>Landsat TM/ETM+ data are only at 30m resolution, but these images have been successful in mapping invasion for single points in time that forms homogeneous patches larger than 0.5 hectares, given surround phenology of native species are different. Glossy Privets are much lower in luminosity compared to native vegetation.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -356,13 +353,23 @@ div.csl-indent {
 </div>
 </div>
 <p>Source: <span class="citation" data-cites="gavier-pizarro2012">Gavier-Pizarro et al. (<a href="references.html#ref-gavier-pizarro2012" role="doc-biblioref">2012</a>)</span></p>
-<p>Since the classes are not linearly seperable, a Gaussian kernal function was applied to gain the optimal values of C and gamma. These parameters were then used to classify the multitemporal stacks of Landsat images to map glossy privet invasion.</p>
+<p>Since the classes are not linearly separable, a Gaussian kernal function was applied to gain the optimal values of C and gamma for SVM. These parameters were then used to classify the multitemporal stacks of Landsat images to map glossy privet invasion.</p>
 <p>I find this technique of mapping single points in time to overcome the problem of low spatial resolution very interesting. The authors did not mention if this approach has reduced the overall accuracy either. Another problem with is approach is that the spread of invasive species has to be quite prominent already for detection to occur. The study highlighted areas of mixed species/early stages were classified as native forest. This this analysis only allows for a reactive measure against the invasive expansion.</p>
 </section>
 </section>
 <section id="reflection" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.3</span> Reflection</h2>
-<p>This week we looked into the early days methods of classification, first diving into the concept of decision trees and random forests.These methods are very intuitive to me. The highest performing variable will be set as the root to maximise chance of an accurate classification. And we need to make a LOT of trees so that we remove stochatiscity – Makes sense! But it got a little complicated when it came to image classification.</p>
+<p>This week we looked into the early days methods of classification, first diving into the concept of decision trees and random forests. These methods are very intuitive to me. I visualise this as a person walks down the street and decide if they want to go left or right at a junction. A path is then paved depending on the characteristics of the person: their ethnicity, social class, how they’re feeling that day.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/tradeoff.png" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Andy ended this week’s lecture highlighting the accuracy and interpretability trade off between different classification methods. Coming from a social science background, I would intuitively choose a classifier that is easier to understand. My approach to data science is that insights gains are ultimately generated to inform policy making. The problem of the blackbox is concerning because when stakeholders, clients and even data scientists themselves don’t entirely understand how these insights are generated, this threaten the trustworthiness of this insight. I think as machine learning and deep learning continue to advance rapidly, increasing interpretability needs to be prioritised. Because utimately, data isn’t always correct. And if we don’t know how insights came to be, we wouldn’t know what went wrong and how we would fix it.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
