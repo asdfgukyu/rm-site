@@ -38,6 +38,8 @@ OBIA is essentially a step up from last week's supervised and unsupervised image
   knitr::include_graphics("img/image-class-tech.jpeg")
 ```
 
+Source: @gisgeography2014
+
 Using OBIA to track unplanned urban development such as spread of densely packed informal settlements is extremely effective as it can add more complex classes that are defined by spatial and hierarchical relationships, given a more complex land composition.
 
 @fallatah2020 used **objected-based random forest classification alongside Machine Learning techniques** to identify informal settlements in Jeddah, western Saudi Arabia, using GeoEye-1 Multi Spectral Image with 0.5m panchromatic resolution and 2m multispectral. The paper critiqued OBIA is too time consuming and not viable to for mapping large scale data such as the entire city of Jeddah. The OBIA-ML fusion technique therefore extract the classified and grouped pixels into segments. These segments are then used as training data to for the machine learning model and execute subsequent classification.
@@ -52,6 +54,8 @@ This is pretty incredible. To be able to detect so many features in one go goes 
   knitr::include_graphics("img/jeddah.png")
 ```
 
+Source: @fallatah2020
+
 When compared to the OBIA only approach at a 5km\^2 scale, the study found the ML approach generated marked improvement in formal settlement (77% to 85%) and road network (73% to 95%) identification. However vegetation accuracy fell from 100% to 60%. But they ultimately found at a city-scale, the ML approach performance improved with overall accuracy of 91% compared to the OBIA only approach at 83%.
 
 This was a very interesting paper to read as it ties a lot of what I've learnt in this class and the CASA Data science module together First classifying images and objects through OBIA, then use that classification and apply machine learning techniques.
@@ -63,6 +67,8 @@ A big part of classification is to validation the outcome through accuracy asses
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
   knitr::include_graphics("img/accuracy.png")
 ```
+
+Source: @ghorbanzadeh2022
 
 Interestingly, both Ghorbanzadeh and Fallatah's work suggest that OBIA accuracy is substantially increased when used in conjuncture with machine learning methods. Ghorbanzadeh went on and highlighted OBIA is highly dependent on expert knowledge in order to get satisfactory results, and deep learning techniques could be a solution to this dependence.
 

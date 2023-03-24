@@ -2,29 +2,43 @@
 
 This week focuses on how we may utilise insights gained from Earth Observation analysis to assist local, regional and national government to implement data-drive policies, whilst increasing compliance to urban/global agendas.
 
-## Case Study: Informal Settlements in Nairobi, Kenya
+## Case Study: Informal Settlements & Flood risks in Nairobi, Kenya
 
 ### Context
 
-```{r echo=FALSE, out.width='90%', fig.align='center',fig.cap= "Source: @globalpartnershipforresult-basedappraoachesKenyaAssessmentKayoleSowetond."}
+```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/informal_set.png")
 ```
 
--   Until the Covid-19 pandemic, Nairobi was one of the fastest growing urban economies in Africa with annual average GDP growth of 5.9% between 2010 - 2018 (@EconomicGrowthTrade2023a). The GDP of the city amounted to 36 billion USD (@Nairobia).
+Source: @globalpartnershipforresult-basedappraoaches
+
+#### Informal Settlement Expansion
+
+-   Until the Covid-19 pandemic, Nairobi was one of the fastest growing urban economies in Africa with annual average GDP growth of 5.9% between 2010 - 2018 ( @economic2023 ) The GDP of the city amounted to 36 billion USD ( @nairobi ).
 -   Despite rapid economic growth, the city has been unable to provide housing infrastructure for its increasing population. The spoils of growth have not yet been used to support the city's sustainable expansion.
 -   75% of urban population growth in Nairobi is accounted for by informal settlements, and the proportion of urban population living in slums is predicted to double in the next 15 years.
--   Informal settlements cover 5% of total residential land of the city but house half of the city's total population (@unhabitatKenyaNairobiUrban).
+-   Informal settlements cover 5% of total residential land of the city but house half of the city's total population (@unhabitat ).
 -   2/3 of Kenyans continue to live in poverty, making less than 3.2 GBP per day.
 -   70% Kenyan families are chronically vulnerable to food and nutrition insecurity and preventable diseases.
 -   Nairobi is also extremely vulnerable to impact of the climate crisis -- leading to food insecurity, reducing access to clean water, and exposing residents to increasingly frequent instances extreme heat and preventable diseases.
+
+#### Flood Risk
+
+-   Around 22,000 Kiberans live within 30m of the Ngong River, where over 50% of the residents reported their homes were flood during the 2015 long rains. @mulligan2017
+
+-   Climate change is due to exacerbate Nairobi rainfall, with rainfall projected to be increase by 1/3. @cook2020
+
+-   Despite risks, informal settlements continue to expand towards the river as those areas are often less regulated, and residents encounter less resistance building towards that area.
 
 ### International Framework
 
 **Sustainable Development Goals**
 
-```{r echo=FALSE, out.width='90%', fig.align='center',fig.cap="17 Sustainable Development Goals. Source: @unitednationsCommunicationsMaterialsn.d."}
+```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/sdg.png")
 ```
+
+Source: @unitednationsCommunicationsMaterialsn.d.
 
 The Sustainable Development Goals are a set of 17 objectives that serve as a 'blueprint to a to achieve a better and more sustainable future for all', devised and led by the United Nations. The SDGs pushes for sustainable development that recognises the interconnectedness of social, economic and environmental aspect of society.
 
@@ -54,11 +68,15 @@ Relevant goals:
 
 -   Nairobi has set out 15 climate resilience actions to strength the city against extreme weather, of which pertained very little detail onto how laid actions would be implemented.
 
-Relevant actions include: \#### Action 13: increase access to a climate resilience programme.
+Relevant actions include:
+
+#### Action 13: Increase access to climate resilience programmes.
 
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics("img/nairobi_action13.png")
 ```
+
+Source: @nairobi2022
 
 -   How the city of Nairobi aims to move towards such goals is unclear from this document.
 -   Geospatial technology (GIS, satellite imagery) is mentioned only once, where the local authority acknowledges that the lack of GIS technology means that they are unable to provide an accessible and wide-spread urban transit system.
@@ -78,11 +96,35 @@ Earth observation data would also allow the government to identify areas of envi
 
 ### Slum identification
 
-#### Data
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Approach                            | Purpose                                                                                                                                                                              | Data                                                                                | References                                                                                                                                                                                                                                                                                                                                                                                          |
++=====================================+======================================================================================================================================================================================+=====================================================================================+=====================================================================================================================================================================================================================================================================================================================================================================================================+
+| LULC                                | To identify the spatial distribution of informal settlements, Buid- up areas with high population density, bodies of water, barren land, road networks.                              | Landsat TM/ Landsat 8/Rapid Eye Images                                              | @badmos2018 used LULC and Landsat images and generated 6 land classification: water, vegetated area, open space, road, slum and other urban, through 2009 to 2015.                                                                                                                                                                                                                                  |
+|                                     |                                                                                                                                                                                      |                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                     |
+|                                     |                                                                                                                                                                                      |                                                                                     | They were then able to track how the slums are encroaching other unsafe spaces (water) which could increase mortality.                                                                                                                                                                                                                                                                              |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Environment (Flood Risk) Assessment | To identify areas of low elevation and areas susceptible to flooding.                                                                                                                | NASADEM Global Elevation Model                                                      | @derisi2013 Established a general framework for conduction flood risk assessment for informal settlements.                                                                                                                                                                                                                                                                                          |
+|                                     |                                                                                                                                                                                      |                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                     |
+|                                     |                                                                                                                                                                                      | Historical rainfall data (SM2RAIN-ASCAT)                                            | Using Digital Elevation Models alongside historical rainfall data, a geospatial climate model is produced to identify areas of high flood risks.                                                                                                                                                                                                                                                    |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Infrastructure Assessment           | Identify quality and type of infrastructure in informal settlements to identify areas vulnerable to flood risk. Often Informal settlement infrastructure are not up to housing code. | Very High Resolution images: Landsat TM, SPOT                                       | @assarkhaniki2021 noted that often developing nations do not have the funds and resources to access high resolution images. This is especially true the Nairobi. OSM layered over medium resolution Landsat 8 can provide a much more accessible method to achieve resilience and SDGs in informal settlements. Geometric features can be extracted and different building types can be classified. |
+|                                     |                                                                                                                                                                                      |                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                     |
+|                                     |                                                                                                                                                                                      | An alternative is open sourced data: OSM and medium Resolution satellite imageries  |                                                                                                                                                                                                                                                                                                                                                                                                     |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Insights gain from the above geospatial analysis can enable local government to make data informed policy. These information forms the foundation of sustainable resilience.
 
 #### Methodology
 
-@leonita2018 used spport vector machine (SVM) and random forest (RF), for slum mapping in support of the slum mapping campaign in Bandung, Indonesia.
+@owusu2021's paper highlights the ethical considerations when producing insight from geospatial analysis with the aims of policy application.
+
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+knitr::include_graphics("img/rm_ethics.png")
+```
+
+Source: @owusu2021
+
+The image above is what they deem as key deliverables when working with clients. I think strikes a good balance between focusing on technicality in remote sensing, but also considering the wider policy application context and consequences.
 
 ## Reflection
 
