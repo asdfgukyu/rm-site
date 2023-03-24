@@ -163,13 +163,3 @@ This week we looked into the early days methods of classification, first diving 
 ```
 
 Andy ended this week's lecture highlighting the accuracy and interpretability trade off between different classification methods. Coming from a social science background, I would intuitively choose a classifier that is easier to understand. My approach to data science is that insights gains are ultimately generated to inform policy making. The problem of the blackbox is concerning because when stakeholders, clients and even data scientists themselves don't entirely understand how these insights are generated, this threaten the trustworthiness of this insight. I think as machine learning and deep learning continue to advance rapidly, increasing interpretability needs to be prioritised. Because utimately, data isn't always correct. And if we don't know how insights came to be, we wouldn't know what went wrong and how we would fix it.
-
-
-
-
-
-
-
-
-
-

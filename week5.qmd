@@ -25,7 +25,7 @@ Can't run individual code chunk → must run the whole script!
 **Client v Server Side**
 
 | Client                       | Server                                          |
-|------------------------------------|------------------------------------|
+|------------------------------|-------------------------------------------------|
 | Frontend                     | Backend                                         |
 | Our scripts                  | processing the code                             |
 | light! Nothing store locally | storing all EO data (anything with `.ee` in it) |

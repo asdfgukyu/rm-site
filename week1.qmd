@@ -1,5 +1,7 @@
 # Introduction
 
+Welcome to Remote Sensing! This week we will cover the basic grounds -- what is light? What is an electromagnetic waves, how do satellites work?
+
 ## Summary
 
 ### Lecture Overview: What is Remote Sensing?
@@ -60,6 +62,8 @@ Source: @jensen1986
 A bit of thinking: *Applications of varying temporal and spatial resolution, what occasion it's best for and what satellite provides that spatial resolution. An interesting point is RM data for emergency responses require fairly granular spatial resolution and frequent temporal resolution -- so as to track minute changes in landscapes. However as mentioned above, there are direct trade offs between temporal and pixel resolution. For satellites to provide both high temporal and spatial resolution requires huge sums of cost and investment. With growing threats from the climate crisis on the urban landscape -- do we currently have the capacity to effectively monitor damages and respond on time?*
 
 ### Factors influencing Electromagnetic waves
+
+A lot of things happen from when electromagnetic wave is emitted from sun/satellites and when it hits the earth surface. And these things could interfere with the images and data we get.
 
 **Rayleigh Scattering**: Scattering of waves off of molecules in the air (the atmosphere).
 

@@ -1,4 +1,6 @@
 # Classification II
+More classification this week, but this time we're looking at the most modern technique -- Object Based Image Analysis. This means we move from raster grid cells to detecting objects according to their shapes and colours. 
+We then look into how we make sure our classifications are accurate using the confusion matrix.
 
 **Land cover classification, Continued**
 

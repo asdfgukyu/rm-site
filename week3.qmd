@@ -86,8 +86,6 @@ Psuedo Invariant Features (PIF)
 
 ### Orthorectification Correction
 
-(Refer to glossary for terms)
-
 Make things nadir. This would be used if satellite passes adjacent to a mountain top instead of directly above it.
 
 ![Orthorectification of a mountain top to nadir. Source: @whatis](img/topolo-correction.jpeg)
