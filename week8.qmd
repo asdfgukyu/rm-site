@@ -22,11 +22,7 @@ The impacts of the Urban Heat Island (UHI) effect have been difficult to ignore 
 
 Want more detail? Well well well, you're in luck:
 
-```{r, echo = FALSE, out.width='70%'}
-xaringanExtra::embed_xaringan(
-  url = "https://grand-tuck-757.notion.site/Urban-Heat-Island-Interpretive-Dance-5a97bd9ac958489188ab689db54e59a8",
-  ratio = "16:10")
-```
+[Click here!](https://grand-tuck-757.notion.site/Urban-Heat-Island-Interpretive-Dance-5a97bd9ac958489188ab689db54e59a8)
 
 If you're not seeing anything there at the moment, check back later. It's worth it -- trust me.
 
