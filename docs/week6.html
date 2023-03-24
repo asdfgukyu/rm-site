@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -167,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">6.2</span>  Application</a>
   <ul class="collapse">
-  <li><a href="#identifying-land-cover-and-land-use" id="toc-identifying-land-cover-and-land-use" class="nav-link" data-scroll-target="#identifying-land-cover-and-land-use"><span class="toc-section-number">6.2.1</span>  Identifying Land Cover and Land Use</a></li>
+  <li><a href="#identifying-land-cover-and-land-use-for-sustainable-land-management" id="toc-identifying-land-cover-and-land-use-for-sustainable-land-management" class="nav-link" data-scroll-target="#identifying-land-cover-and-land-use-for-sustainable-land-management"><span class="toc-section-number">6.2.1</span>  Identifying Land Cover and Land Use for Sustainable Land Management</a></li>
   </ul></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">6.3</span>  Reflection</a></li>
   </ul>
@@ -314,7 +333,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="6.2" class="anchored" data-anchor-id="application"><span class="header-section-number">6.2</span> Application</h2>
 <p><em>Examples of image classification</em></p>
 <p><strong>Support Vector Machine &amp; Maximum Likelihood: which is better?</strong></p>
-<p><span class="citation" data-cites="Otukei">(<a href="references.html#ref-Otukei" role="doc-biblioref"><strong>Otukei?</strong></a>)</span> explored and compared Decision Trees, Support Vector Machines and Maximum Likelihood techniques when it comes to classifying land cover change in Uganda . They highlighted that expert knowledge is essential in creating the thresholds and boundaries when building analysis, but this is often lacking in the Global South. They proposed to use data mining approaches to determine decision threshold for these analyses.</p>
+<p><span class="citation" data-cites="otukei2010">Otukei and Blaschke (<a href="references.html#ref-otukei2010" role="doc-biblioref">2010</a>)</span> explored and compared Decision Trees, Support Vector Machines and Maximum Likelihood techniques when it comes to classifying land cover change in Uganda . They highlighted that expert knowledge is essential in creating the thresholds and boundaries when building analysis, but this is often lacking in the Global South. They proposed to use data mining approaches to determine decision threshold for these analyses.</p>
 <p>Uganda has undergone huge land cover changes, where wetlands have been converted to crop fields to support livelihoods. The was conducted to evaluate the land cover change that has happened between 1981 and 2001.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -327,30 +346,26 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Above you can see the classification outputs for each methods. All 3 methods performed well with accuracies above 85%, with decision trees performing slightly better with overall accuracy of 93%.</p>
 <p>It is important to note however, each classification methods has it’s pros and cons. Often which method you choose to use depends on the nature of your data and what output you are looking for. And sometimes, it might be down to the overall accuracy to decide.</p>
-<section id="identifying-land-cover-and-land-use" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="identifying-land-cover-and-land-use"><span class="header-section-number">6.2.1</span> Identifying Land Cover and Land Use</h3>
-<p>Classification methods are especially good to track rapid urbanisation and LULC where the physical environment undergoes a drastic transformation over time and space. This study by <span class="citation" data-cites="fashae">(<a href="references.html#ref-fashae" role="doc-biblioref"><strong>fashae?</strong></a>)</span> tracks LULC of the city of Ibadan, Nigeria from 1984 to 2019 using <strong>random forest machine learning classifier</strong> on GEE. The study also tracks the land surface temperature, to monitor the effects of ubranisation on urban temperature.</p>
-<p><strong>Data</strong></p>
-<p>The study used Landsat series TM, ETM+ and OLI satellite images from December 1984, December 2002 and January 2019. They extracted band 1 to 5 (visible, near-infrared, shortwave infrareds) of Landsat ETMS +. Thermal bands ETM+ (band 6) and OLI band 10 were used to derive Land Surface data. Additional data on annual rainfall from within that period were also included.</p>
-<p><strong>Outcome</strong> At the end, 5 prominent land use/land cover types were identified: heavy forest, light forest, light built-up area, heavy built-up area, and water bodies.</p>
-<p>The RF highest classification accuracy was achieved with ten trees on bands 1, 2, 3, 4, 5, and 7 (TM and ETM+) and bands 2, 3, 4, 5, 6, and 7 (OLI) of the pre-processed images to generate the land use/land cover pattern.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/nigeria.png" class="img-fluid figure-img" style="width:90.0%"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="identifying-land-cover-and-land-use-for-sustainable-land-management" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="identifying-land-cover-and-land-use-for-sustainable-land-management"><span class="header-section-number">6.2.1</span> Identifying Land Cover and Land Use for Sustainable Land Management</h3>
+<p>Classification methods are especially good to track rapid urbanisation and LULC where the physical environment undergoes a drastic transformation over time and space. This study by <span class="citation" data-cites="thonfeld2020">Thonfeld et al. (<a href="references.html#ref-thonfeld2020" role="doc-biblioref">2020</a>)</span> used random forest classification to measure land use change in the Kilombero catchment in Tanzania as a result of growing food production over the past 45 years. This paper’s goal is to understand the extent and where land change has occurred in order to plan for a sustainable urban growth policy.</p>
+<p>11 classes of land use were used in this study (Montane Forest, Close Woodland, Open Woodland, teak plantation, swamp, grassland, Savanna, upland agriculture, rice built0up an water.) Classification were</p>
 </section>
 </section>
 <section id="reflection" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.3</span> Reflection</h2>
-<p>Really enjoyed this week! This week we looked into the early days methods of classification, first diving into the concept of decision trees and random forests.These methods are very intuitive to me. The highest performing variable will be set as the root to maximise chance of an accurate classification. And we need to make a LOT of trees so that we remove stochatiscity – Makes sense! But it got a little complicated when it came to image classification.</p>
+<p>This week we looked into the early days methods of classification, first diving into the concept of decision trees and random forests.These methods are very intuitive to me. The highest performing variable will be set as the root to maximise chance of an accurate classification. And we need to make a LOT of trees so that we remove stochatiscity – Makes sense! But it got a little complicated when it came to image classification.</p>
 <p>Data poverty – continuation of colonisation trhough knowledge.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-otukei2010" class="csl-entry" role="doc-biblioentry">
+Otukei, J. R., and T. Blaschke. 2010. <span>“Land Cover Change Assessment Using Decision Trees, Support Vector Machines and Maximum Likelihood Classification Algorithms.”</span> <em>International Journal of Applied Earth Observation and Geoinformation</em>, Supplement Issue on <span>"</span>Remote Sensing for Africa <span></span> A Special Collection from the African Association for Remote Sensing of the Environment (AARSE)<span>"</span>, 12 (February): S27–31. <a href="https://doi.org/10.1016/j.jag.2009.11.002">https://doi.org/10.1016/j.jag.2009.11.002</a>.
+</div>
+<div id="ref-thonfeld2020" class="csl-entry" role="doc-biblioentry">
+Thonfeld, Frank, Stefanie Steinbach, Javier Muro, and Fridah Kirimi. 2020. <span>“Long-Term Land Use/Land Cover Change Assessment of the Kilombero Catchment in Tanzania Using Random Forest Classification and Robust Change Vector Analysis.”</span> <em>Remote Sensing</em> 12 (7): 1057. <a href="https://doi.org/10.3390/rs12071057">https://doi.org/10.3390/rs12071057</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

@@ -356,10 +356,10 @@ Or if we want to whole stack:
 ## Application
 Since what we learnt this week was mainly understanding how Google Earth Engine made using already open source Earth Observation data so accessible, I want to highlight the projects that were made possible because of this plaform.
 
-In particular, citizen journalism website Bellincat has made use of Google Earth Engine to do detailed environmental analysis, as well to support its wider work detailing breaches of international humanitarian law in conflicts such as the war in Yemen.
+In particular, citizen journalism website Bellingcat has made use of Google Earth Engine to do detailed environmental analysis, as well to support its wider work detailing breaches of international humanitarian law in conflicts such as the war in Yemen.
 
 
-In 2020, Bellingcat released data illustrating the fast decline of water levels in the Quitobaquito Springs on the US-Mexico border, making use of Google Earth Engine data to access, filter and analyse satellite data of the springs over multiple timescale. The analysis was fairly simple, using the Palmer Drought Severity Index as a measure for drought condition. However it is the low barrier to entry enabled by GEE has made geodata journalism much more widespread and democratised.The journalist also pointed to the open-source nature and ease of use of the programme as a key benefit. 
+In 2020, Bellingcat released data illustrating the fast decline of water levels in the Quitobaquito Springs on the US-Mexico border (@teamDisappearanceQuitobaquitoSprings2020), making use of Google Earth Engine data to access, filter and analyse satellite data of the springs over multiple timescale. The analysis was fairly simple, using the Palmer Drought Severity Index as a measure for drought condition. However it is the low barrier to entry enabled by GEE has made geodata journalism much more widespread and democratised.The journalist also pointed to the open-source nature and ease of use of the programme as a key benefit. 
 
 Expanding a little further, it is exactly because of this accessibility, and that knowledge and techniques are not as heavily gatekept (although quite specific skillsets are still required), many are using GEE for activism. Bellingcat has an entire section focusing on the invasion in Ukraine because remote sensing data allow for close monitoring without having to be in the field. Although I am sure geodata journalism is not single-handedly enabled by Google itself, it definitely played a significant role in exposing people to geodata analysis.
 

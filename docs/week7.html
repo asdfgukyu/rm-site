@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -226,7 +245,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>Using OBIA to track unplanned urban development such as spread of densely packed informal settlements is extremely effective as it can add more complex classes that are defined by spatial and hierarchical relationships, given a more complex land composition.</p>
-<p><span class="citation" data-cites="Fallatah2018">(<a href="references.html#ref-Fallatah2018" role="doc-biblioref"><strong>Fallatah2018?</strong></a>)</span> used <strong>objected-based random forest classification alongside Machine Learning techniques</strong> to identify informal settlements in Jeddah, western Saudi Arabia, using GeoEye-1 Multi Spectral Image with 0.5m panchromatic resolution and 2m multispectral. The paper critiqued OBIA is too time consuming and not viable to for mapping large scale data such as the entire city of Jeddah. The OBIA-ML fusion technique therefore extract the classified and grouped pixels into segments. These segments are then used as training data to for the machine learning model and execute subsequent classification.</p>
+<p><span class="citation" data-cites="fallatah2020">Fallatah, Jones, and Mitchell (<a href="references.html#ref-fallatah2020" role="doc-biblioref">2020</a>)</span> used <strong>objected-based random forest classification alongside Machine Learning techniques</strong> to identify informal settlements in Jeddah, western Saudi Arabia, using GeoEye-1 Multi Spectral Image with 0.5m panchromatic resolution and 2m multispectral. The paper critiqued OBIA is too time consuming and not viable to for mapping large scale data such as the entire city of Jeddah. The OBIA-ML fusion technique therefore extract the classified and grouped pixels into segments. These segments are then used as training data to for the machine learning model and execute subsequent classification.</p>
 <p>Random forest classification was used, where dataset was bootstrapped and 1/3 were left as OOB for validation.</p>
 <p>They used very-high-resolution (VHR) imagery and terrain data, and produced 3 land classifications (environment, settlements and object) and 14 indicators (14!!!!!) that provide more details into the building density, road accessibility, where water way be gathering and proximity to social services and hazardous terrains.</p>
 <p>This is pretty incredible. To be able to detect so many features in one go goes to show the power of OBIA.</p>
@@ -242,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
 <p>When compared to the OBIA only approach at a 5km^2 scale, the study found the ML approach generated marked improvement in formal settlement (77% to 85%) and road network (73% to 95%) identification. However vegetation accuracy fell from 100% to 60%. But they ultimately found at a city-scale, the ML approach performance improved with overall accuracy of 91% compared to the OBIA only approach at 83%.</p>
 <p>This was a very interesting paper to read as it ties a lot of what I’ve learnt in this class and the CASA Data science module together First classifying images and objects through OBIA, then use that classification and apply machine learning techniques.</p>
 <p><strong>Accuracy Assessment</strong></p>
-<p>A big part of classification is to validation the outcome through accuracy assessment and confusion matrix. In Ghorbanzadeh’s work on landslide detection using OBIA and deep learning techniques, they visualised their accuracy assessment as a map. Through this visualisation you can clearly see model is generating the highest overall accuracy across different terrains.</p>
+<p>A big part of classification is to validation the outcome through accuracy assessment and confusion matrix. In <span class="citation" data-cites="ghorbanzadeh2022">Ghorbanzadeh et al. (<a href="references.html#ref-ghorbanzadeh2022" role="doc-biblioref">2022</a>)</span> work on landslide detection using OBIA and deep learning techniques, they visualised their accuracy assessment as a map. Through this visualisation you can clearly see model is generating the highest overall accuracy across different terrains.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -260,6 +279,14 @@ ul.task-list li input[type="checkbox"] {
 <p>Overall, it is really impressive to be able to gather information on aspects of urban life that would not be otherwise available through census surveys or traditional surveying methods, especially in least developed or developing countries. However my problem with classification is intra-class diversity and variations. On the extreme, a religious building in Rome is going to look very different to one in the Congo. How we do then make sure we have comprehensive and inclusive set of labelled data to hand when we conduct classification? And that the classification is tailored and contextualised to local environments, instead of a researcher based in the US looking to evaluate LULC in Cambodia, without real knowledge of the nuance and context of their built environment? This highlights the need for the expert (rule of thumb person) to be involve throughout the analysis so that no broad assumptions are made. What is really interesting is that <span class="citation" data-cites="Douglass2020">(<a href="references.html#ref-Douglass2020" role="doc-biblioref"><strong>Douglass2020?</strong></a>)</span> highlighted that many researchers now prefer to use automated ML-OBIA methods within the remote sensing archaeology field, exactly because it helps remove human conscious or unconscious biases, where confounding assumptions could be applied. Although automated analysis could still have their limitations and assumptions, these biases are often explicit and reproducible. But again, all machine learning and automated techniques are built from the initial knowledge base/rule of thumb, so I’m still quite skeptical. Is human bias avoidable at all?</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-fallatah2020" class="csl-entry" role="doc-biblioentry">
+Fallatah, Ahmad, Simon Jones, and David Mitchell. 2020. <span>“Object-Based Random Forest Classification for Informal Settlements Identification in the Middle East: Jeddah a Case Study.”</span> <em>International Journal of Remote Sensing</em> 41 (11): 4421–45. <a href="https://doi.org/10.1080/01431161.2020.1718237">https://doi.org/10.1080/01431161.2020.1718237</a>.
+</div>
+<div id="ref-ghorbanzadeh2022" class="csl-entry" role="doc-biblioentry">
+Ghorbanzadeh, Omid, Hejar Shahabi, Alessandro Crivellari, Saeid Homayouni, Thomas Blaschke, and Pedram Ghamisi. 2022. <span>“Landslide Detection Using Deep Learning and Object-Based Image Analysis.”</span> <em>Landslides</em> 19 (4): 929–39. <a href="https://doi.org/10.1007/s10346-021-01843-x">https://doi.org/10.1007/s10346-021-01843-x</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

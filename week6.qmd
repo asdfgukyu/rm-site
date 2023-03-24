@@ -121,11 +121,12 @@ xaringanExtra::embed_xaringan(
 ```
 
 ## Application
+
 *Examples of image classification*
 
-**Support Vector Machine & Maximum Likelihood: which is better?** 
+**Support Vector Machine & Maximum Likelihood: which is better?**
 
-@Otukei explored and compared Decision Trees, Support Vector Machines and Maximum Likelihood techniques when it comes to classifying land cover change in Uganda . They highlighted that expert knowledge is essential in creating the thresholds and boundaries when building analysis, but this is often lacking in the Global South. They proposed to use data mining approaches to determine decision threshold for these analyses.
+@otukei2010 explored and compared Decision Trees, Support Vector Machines and Maximum Likelihood techniques when it comes to classifying land cover change in Uganda . They highlighted that expert knowledge is essential in creating the thresholds and boundaries when building analysis, but this is often lacking in the Global South. They proposed to use data mining approaches to determine decision threshold for these analyses.
 
 Uganda has undergone huge land cover changes, where wetlands have been converted to crop fields to support livelihoods. The was conducted to evaluate the land cover change that has happened between 1981 and 2001.
 
@@ -133,30 +134,18 @@ Uganda has undergone huge land cover changes, where wetlands have been converted
   knitr::include_graphics("img/Uganda.png")
 ```
 
-Above you can see the classification outputs for each methods. All 3 methods performed well with accuracies above 85%, with decision trees performing slightly better with overall accuracy of 93%. 
+Above you can see the classification outputs for each methods. All 3 methods performed well with accuracies above 85%, with decision trees performing slightly better with overall accuracy of 93%.
 
 It is important to note however, each classification methods has it's pros and cons. Often which method you choose to use depends on the nature of your data and what output you are looking for. And sometimes, it might be down to the overall accuracy to decide.
 
-### Identifying Land Cover and Land Use
-Classification methods are especially good to track rapid urbanisation and LULC where the physical environment undergoes a drastic transformation over time and space. This study by @fashae tracks LULC of the city of Ibadan, Nigeria from 1984 to 2019 using **random forest machine learning classifier** on GEE. The study also tracks the land surface temperature, to monitor the effects of ubranisation on urban temperature.
+### Identifying Land Cover and Land Use for Sustainable Land Management
 
-**Data**
+Classification methods are especially good to track rapid urbanisation and LULC where the physical environment undergoes a drastic transformation over time and space. This study by @thonfeld2020 used random forest classification to measure land use change in the Kilombero catchment in Tanzania as a result of growing food production over the past 45 years. This paper's goal is to understand the extent and where land change has occurred in order to plan for a sustainable urban growth policy.
 
-The study used Landsat series TM, ETM+ and OLI satellite images from December 1984, December 2002 and January 2019. They extracted band 1 to 5 (visible, near-infrared, shortwave infrareds) of Landsat ETMS +. Thermal bands ETM+ (band 6) and OLI band 10 were used to derive Land Surface data. Additional data on annual rainfall from within that period were also included.
-
-**Outcome**
-At the end, 5 prominent land use/land cover types were identified: heavy forest, light forest, light built-up area, heavy built-up area, and water bodies.
-
-The RF highest classification accuracy was achieved with ten trees on bands 1, 2, 3, 4, 5, and 7 (TM and ETM+) and bands 2, 3, 4, 5, 6, and 7 (OLI) of the pre-processed images to generate the land use/land cover pattern.
-
-``` {r echo=FALSE, out.width='90%', fig.align='center'}
-knitr::include_graphics("img/nigeria.png")
-```
+11 classes of land use were used in this study (Montane Forest, Close Woodland, Open Woodland, teak plantation, swamp, grassland, Savanna, upland agriculture, rice built0up an water.) Classification were
 
 ## Reflection
 
-Really enjoyed this week! This week we looked into the early days methods of classification, first diving into the concept of decision trees and random forests.These methods are very intuitive to me. The highest performing variable will be set as the root to maximise chance of an accurate classification. And we need to make a LOT of trees so that we remove stochatiscity -- Makes sense!
-But it got a little complicated when it came to image classification. 
+This week we looked into the early days methods of classification, first diving into the concept of decision trees and random forests.These methods are very intuitive to me. The highest performing variable will be set as the root to maximise chance of an accurate classification. And we need to make a LOT of trees so that we remove stochatiscity -- Makes sense! But it got a little complicated when it came to image classification.
 
 Data poverty -- continuation of colonisation trhough knowledge.
-

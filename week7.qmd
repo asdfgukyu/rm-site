@@ -40,7 +40,7 @@ OBIA is essentially a step up from last week's supervised and unsupervised image
 
 Using OBIA to track unplanned urban development such as spread of densely packed informal settlements is extremely effective as it can add more complex classes that are defined by spatial and hierarchical relationships, given a more complex land composition.
 
-@Fallatah2018 used **objected-based random forest classification alongside Machine Learning techniques** to identify informal settlements in Jeddah, western Saudi Arabia, using GeoEye-1 Multi Spectral Image with 0.5m panchromatic resolution and 2m multispectral. The paper critiqued OBIA is too time consuming and not viable to for mapping large scale data such as the entire city of Jeddah. The OBIA-ML fusion technique therefore extract the classified and grouped pixels into segments. These segments are then used as training data to for the machine learning model and execute subsequent classification.
+@fallatah2020 used **objected-based random forest classification alongside Machine Learning techniques** to identify informal settlements in Jeddah, western Saudi Arabia, using GeoEye-1 Multi Spectral Image with 0.5m panchromatic resolution and 2m multispectral. The paper critiqued OBIA is too time consuming and not viable to for mapping large scale data such as the entire city of Jeddah. The OBIA-ML fusion technique therefore extract the classified and grouped pixels into segments. These segments are then used as training data to for the machine learning model and execute subsequent classification.
 
 Random forest classification was used, where dataset was bootstrapped and 1/3 were left as OOB for validation.
 
@@ -58,7 +58,7 @@ This was a very interesting paper to read as it ties a lot of what I've learnt i
 
 **Accuracy Assessment**
 
-A big part of classification is to validation the outcome through accuracy assessment and confusion matrix. In Ghorbanzadeh's work on landslide detection using OBIA and deep learning techniques, they visualised their accuracy assessment as a map. Through this visualisation you can clearly see model is generating the highest overall accuracy across different terrains.
+A big part of classification is to validation the outcome through accuracy assessment and confusion matrix. In @ghorbanzadeh2022 work on landslide detection using OBIA and deep learning techniques, they visualised their accuracy assessment as a map. Through this visualisation you can clearly see model is generating the highest overall accuracy across different terrains.
 
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
   knitr::include_graphics("img/accuracy.png")
