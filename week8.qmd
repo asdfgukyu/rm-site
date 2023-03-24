@@ -20,6 +20,16 @@ The impacts of the Urban Heat Island (UHI) effect have been difficult to ignore 
 
     -   Feedback Loop: the hotter it gets, the more energy cities will use to cool itself down. This means frequent uses of air conditioners which, in the process of generating cool air, is actively pumping out hot air onto the streets.
 
+Want more detail? Well well well, you're in luck:
+
+```{r, echo = FALSE, out.width='70%'}
+xaringanExtra::embed_xaringan(
+  url = "https://grand-tuck-757.notion.site/Urban-Heat-Island-Interpretive-Dance-5a97bd9ac958489188ab689db54e59a8",
+  ratio = "16:10")
+```
+
+If you're not seeing anything there at the moment, check back later. It's worth it -- trust me.
+
 ## What are the impacts?
 
 ### Economic
